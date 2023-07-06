@@ -22,4 +22,4 @@ The Cloud Content Team spans multiple continents covering a wide range of timezo
 
 # How to Contribute
 
-Simply create a PR to this repo with your proposed changes. While a conversation about a change may originate in Slack or elsewhere, try and steer those discussions to comments on a PR here as early as possible.
+Create a PR to this repo with your proposed changes. While a conversation about a change may originate in Slack or elsewhere, try and steer those discussions to comments on a PR here as early as possible.
