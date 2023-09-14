@@ -40,7 +40,7 @@ These additional CI and automation workflows run only on the AWS repositories (a
 - `publish-docs`
   - runs when a pull request is merged to the `main` or `stable-*` branches, when a new tag is pushed, and once daily
   - builds the documentation and creates a build artifact in preparation for publication
-  - if the documentation changed compared to the pull request base branch, creates a comment on the pull request noting that the doocumentation will be updated when it is next published
+  - if the documentation changed compared to the pull request base branch, creates a comment on the pull request noting that the documentation will be updated when it is next published
 - `generate-release`
   - runs when a new tag is pushed and can also be run manually in the UI
   - generates a release log and creates a Github release
