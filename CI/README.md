@@ -33,6 +33,10 @@ The following checks are run on all repositories for all new and updated pull re
 
 These additional CI and automation workflows run only on the AWS repositories (amazon.aws, amazon.cloud, community.aws):
 
+- `update-aws-variables`
+  - runs on new pull requests and push to the `main` or `stable-*` branches
+  - ensures that the AWS user agent variable matches the collection name and version in the galaxy.yml file
+  - ensures that the boto3 and botocore test version variables match the versions in the test contraints.txt files
 - `validate-docs`
   - runs on new or updated pull requests
   - validates that the documentation can be successfully built and meets all requirements
