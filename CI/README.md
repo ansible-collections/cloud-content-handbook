@@ -45,4 +45,11 @@ These additional CI and automation workflows run only on the AWS repositories (a
   - runs when a new tag is pushed and can also be run manually in the UI
   - generates a release log and creates a Github release
 
+Additional automations using Github Actions:
+
+- `label-new-issues`
+  - runs when an issue is opened or re-opened in a repository
+  - adds a `needs_triage` label to the issue
+  - should run on all of our supported and validated content repositories
+
 [^1]: The [community.okd collection](https://github.com/ansible-collections/community.okd) uses a different CI system, Prow. Different CI workflows are run for the [terraform-provider-ansible repository](https://github.com/ansible/terraform-provider-ansible) because it is a Terraform provider, not an Ansible collection.
