@@ -57,7 +57,7 @@ Additional automations using Github Actions:
   - generates a release log, creates and publishes a Github release
 - `release-collection`
   - runs when a new release is published
-  - publishes the collection to Ansible Galaxy - should run on all of our repositories
+  - publishes the collection to Ansible Galaxy - should run on all of our repositories except validated content repositories
   - publishes the collection to Automation Hub - should run on all of our supported and validated content repositories
 
 [^1]: The [community.okd collection](https://github.com/ansible-collections/community.okd) uses a different CI system, Prow. Different CI workflows are run for the [terraform-provider-ansible repository](https://github.com/ansible/terraform-provider-ansible) because it is a Terraform provider, not an Ansible collection.
