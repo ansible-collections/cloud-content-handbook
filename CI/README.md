@@ -55,6 +55,6 @@ Additional automations using Github Actions:
 - `update-aws-variables.yaml`
   - runs on new pull requests and push to the `main` or `stable-*` branches only in the AWS repositories (amazon.aws, amazon.cloud, community.aws)
   - ensures that the AWS user agent variable matches the collection name and version in the galaxy.yml file
-  - ensures that the boto3 and botocore test version variables match the versions in the test contraints.txt files
+  - ensures that the boto3 and botocore test version variables match the versions in the test constraints.txt files
 
 [^1]: The [community.okd collection](https://github.com/ansible-collections/community.okd) uses a different CI system, Prow. Different CI workflows are run for the [terraform-provider-ansible repository](https://github.com/ansible/terraform-provider-ansible) because it is a Terraform provider, not an Ansible collection.
