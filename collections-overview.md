@@ -7,7 +7,7 @@ See the [collections release tracker](https://cloud-releases.jillr.dev/) for an 
 | **Collection Name** | **Collection Type** | **Broad Use case** |
 |---------------------|---------------------|--------------------|
 | [amazon.aws](https://github.com/ansible-collections/amazon.aws) | Supported | Automate AWS services |
-| [amazon.cloud](https://github.com/ansible-collections/amazon.cloud) | Unsupported | Generated modules for AWS using the Cloud Control API |
+| [amazon.cloud](https://github.com/ansible-collections/amazon.cloud) | Community | Generated modules for AWS using the Cloud Control API |
 | [cloud.aws_ops](https://github.com/redhat-cop/cloud.aws_ops) | Validated content | Roles and playbooks for managing AWS resources |
 | [cloud.aws_troubleshooting](https://github.com/redhat-cop/cloud.aws_troubleshooting) | Validated content | Roles to help troubleshoot AWS resources |
 | [cloud.azure_ops](https://github.com/redhat-cop/cloud.azure_ops) | Validated content | Roles and playbooks for managing Azure resources |
