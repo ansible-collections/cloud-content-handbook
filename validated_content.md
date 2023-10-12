@@ -2,7 +2,7 @@
 
 ## What is it?
 
-Validated content differs from most of our supported collection content in two ways. The first is that it primarily consists of YAML content, that is, roles and playbooks, as opposed to Python plugins. The second is that it is unsupported. These collections are intended to be an exemplar of Ansible content. The validated content that we maintain currently lives under the [Red Hat CoP org](https://github.com/redhat-cop).
+We maintain several validated content collections which all live under the [Red Hat CoP org](https://github.com/redhat-cop).  For more information on what validated content is, and how it fits into Ansible's overall content strategy, see: https://www.redhat.com/en/blog/automate-expert-ansible-validated-content.
 
 For GitHub related support such as creating a new repo or granting permissions on existing repos, file an issue or create a PR in the https://github.com/redhat-cop/org repo.
 
@@ -18,7 +18,7 @@ Keep in mind while writing validated content that this is intended to be used as
 
 ## Breaking Changes
 
-Validated content follows semantic versioning. While we should endeavor to minimize the impact of breaking changes, given that this is unsupported, we should not feel bound by the deprecation and removal timeline that we follow for supported content. If a breaking change needs to be made, make the change and note it as a breaking change in the changelog.
+Validated content follows semantic versioning. While we should endeavor to minimize the impact of breaking changes, validated content does not need to follow the same deprecation and removal timeline that we use for our supported collections. If a breaking change needs to be made, make the change and note it as a breaking change in the changelog.
 
 ## Releasing
 
