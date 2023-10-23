@@ -13,7 +13,7 @@ Keep in mind while writing validated content that this is intended to be used as
 * All roles and playbooks must be linted using Ansible Lint's `production` profile.
 * All roles and playbooks must pass sanity tests.
 * All roles and playbooks should have associated integration tests. In cases where the CI account can't support the tests, set them to `unsupported` in the aliases file.
-* All roles should define an [argument spec](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html#role-argument-validation).
+* All roles should define an [argument spec](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Roles-arguments_validation.md).
 * All roles and playbooks must be clearly documented.
 
 ## Breaking Changes
