@@ -17,9 +17,11 @@ The following checks are run on all repositories for all new and updated pull re
   - note: this check can be skipped by adding the label `skip-changelog` to a PR (but generally should not be skipped)
 - `galaxy-import.yaml`
   - builds the collection and validates that it can be successfully imported to [Ansible Galaxy](https://galaxy.ansible.com/) using [galaxy-importer](https://github.com/ansible/galaxy-importer)
+- `integration-test-prep.yaml`
+  - runs a preparatory step for the integration tests workflow, see [integration tests documentation](https://github.com/ansible-collections/cloud-content-handbook/blob/ci-overview/CI/integration-tests.md) for details
 - `integration-tests.yaml`
   - runs functional [integration tests](https://docs.ansible.com/ansible/latest/dev_guide/testing_integration.html#testing-integration) to verify that collection modules and plugins perform as expected against the relevant cloud service provider APIs
-  - because this workflow requires authentication to the cloud service providers, it has special security requirements that must be followed (detailed documentation forthcoming)
+  - because this workflow requires authentication to the cloud service providers, it has special security requirements that must be followed, see [integration tests documentation](https://github.com/ansible-collections/cloud-content-handbook/blob/ci-overview/CI/integration-tests.md) for details
   - this workflow is run against the milestone version of Ansible and the latest supported version of python
 - `linters.yaml`
   - runs the following linters to ensure the code complies with standard Ansible and python syntax/style/formatting conventions:
