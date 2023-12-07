@@ -4,8 +4,8 @@ The module promotion consists of migrating community-supported modules along wit
 
 ## How to ?
 
-The module promotion relies on the Github repository [el_grandiose_module_promoter](https://github.com/ansible-collections/el_grandiose_module_promoter.git).
-Please refer to the repository [documentation](https://github.com/ansible-collections/el_grandiose_module_promoter/blob/main/README.md) to see how to proceed.
+The module promotion can be performed using the tool here [el_grandiose_module_promoter](https://github.com/ansible-collections/el_grandiose_module_promoter.git).
+For usage information, please refer [documentation here](https://github.com/ansible-collections/el_grandiose_module_promoter/blob/main/README.md).
 
 Please note that the current version of the tool does not add the version_added_collection into modules migrated, therefore user needs to to manually add it.
 
@@ -21,13 +21,13 @@ short_description: Manage AWS IAM roles
 
 ## How it works ?
 
-The module migration consists in the following steps:
+The module promotion consists of the following steps:
 
 - Rewrite all the commits including the list of files to migrate (add information about the source collection).
-- Create patch files and apply them into the destination collection (should be ``amazon.aws``)
+- Create patch files and apply them to the destination collection (should be ``amazon.aws``)
 - Remove modules (and integration tests) from the source collection (should be ``community.aws``)
-- Refresh sanity ignore files (move reference from source collection into destination collection)
-- Update modules FQDN and imports
+- Refresh sanity ignore files (move references from the source collection to the destination collection)
+- Update modules' FQDN and imports
 - Refresh integration tests (collections keyword)
 - Add changelog files
 - Commit changes and create pull request in the upstream repository.
