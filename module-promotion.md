@@ -1,4 +1,4 @@
-# Promote modules between two collections inside the ansible-collections Github Organization
+# Promote modules between two collections in the ansible-collections Github Organization
 
 The module promotion consists of migrating community-supported modules along with tests (mainly from community.aws) into a collection supported by the cloud content team (amazon.aws).
 
