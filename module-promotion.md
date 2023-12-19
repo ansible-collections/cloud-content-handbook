@@ -2,7 +2,7 @@
 
 Module promotion involves migrating community-supported modules, primarily from community.aws, along with their tests, into a collection supported by the cloud content team (amazon.aws). 
 This migration can be triggered by an RFE (Request for Enhancement), a customer request, or when identifying the business value in AAP for having supported modules for a specific service.
-As part of the requirements, the module must be in good shape before migration (bug-free, unit/integration/sanity tests coverage). It is also a good practice to migrate a bunch of modules once in a major release instead of migrating single modules into several releases.
+As part of the requirements, the module must be in good shape before migration (bug-free, unit/integration/sanity tests coverage). Additionally, it's advisable to migrate multiple modules in a major release instead of promoting individual modules across multiple releases as a best practice.
 
 ## How to ?
 
