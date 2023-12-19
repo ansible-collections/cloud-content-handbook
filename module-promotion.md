@@ -1,6 +1,6 @@
 # Promote modules between two collections in the ansible-collections Github Organization
 
-The module promotion consists of migrating community-supported modules along with tests (mainly from community.aws) into a collection supported by the cloud content team (amazon.aws).
+Module promotion involves migrating community-supported modules, primarily from community.aws, along with their tests, into a collection supported by the cloud content team (amazon.aws). 
 This migration can be triggered by an RFE (Request for Enhancement), a customer request, or when identifying the business value in AAP for having supported modules for a specific service.
 As part of the requirements, the module must be in good shape before migration (bug-free, unit/integration/sanity tests coverage). It is also a good practice to migrate a bunch of modules once in a major release instead of migrating single modules into several releases.
 
