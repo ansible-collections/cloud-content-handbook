@@ -1,9 +1,8 @@
 # Promote modules between two collections in the ansible-collections Github Organization
 
 The module promotion consists of migrating community-supported modules along with tests (mainly from community.aws) into a collection supported by the cloud content team (amazon.aws).
-Generally we do promotions when there's an RFE/customer request, or we've identified a substantial business value to AAP for having supported modules for a service or feature set (ie; EC2 is a key AWS service, so we try to support a large number of the EC2 functionalities we have modules available for).
-The module should be in a good shape meaning the code quality is good, it is covered by unit/integration tests which are exhaustive (for example, if the module supports tagging, the functionality should be tested for CamelCase, snake_case, etc, check_mode, (almost) all the functionalities are tested). And we should probably mention when a module is promoted (when there's a customer request or maybe @jillr can help).
-We prefer to identify a bunch of modules and do a one-shot promotion in a major release rather than multiple ones.
+An RFE, a customer request can trigger the module promotion, or when we identify a business value to AAP for having supported modules for a specific service.
+As part of the requirements, the module must be in good shape before migration (bug-free, unit/integration/sanity tests coverage). It is also a good practice to migrate a bunch of modules once in a major release instead of migrating single modules into several releases.
 
 ## How to ?
 
@@ -30,7 +29,7 @@ The module promotion consists of the following steps:
 - Create patch files and apply them to the destination collection (should be ``amazon.aws``)
 - Remove modules (and integration tests) from the source collection (should be ``community.aws``)
 - Refresh sanity ignore files (move references from the source collection to the destination collection)
-- Update modules' FQDN and imports
+- Update modules' FQCN and imports
 - Refresh integration tests (collections keyword)
 - Add changelog files
 - Commit changes and create pull request in the upstream repository.
