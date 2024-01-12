@@ -34,7 +34,7 @@ Our GitHub Action workflows conduct automated checks within our Continuous Integ
 
 **_Ansible_**
 - Do not use sys.exit(). Use a module specific method, such as fail_json() or fail_json_aws().
-- Don’t raise a traceback (stacktrace). Use fail_json() from the module object.
+- Don’t raise a traceback (stacktrace). Use fail_json() or fail_aws() from the module object.
 - Split long Jinja2 expressions into multiple lines.
 - Minimize the usage of shell or command modules when equivalent Ansible modules are available.
 - Combine multiple changes to trigger a single handler to avoid unnecessary execution.
@@ -131,5 +131,11 @@ class Rectangle:
   If there are distinct sections within the code, consider using headers or comments to delineate these sections. Provide a brief description of the functionality covered by each section.
 - **Optimize for Readability:**:
   Optimize the order for readability, making it easy for others (or yourself) to understand the code. Balance the strict ordering with the need to present a coherent narrative.
-- **Start with Foundational Functions:**
-    
+
+## References
+1. https://redhat-cop.github.io/automation-good-practices
+2. https://docs.ansible.com/ansible/latest/dev_guide/
+3. https://ansible.readthedocs.io/projects/lint/rules/
+4. https://docs.ansible.com/ansible/2.8/user_guide/playbooks_best_practices.html
+5. https://google.github.io/styleguide/pyguide.html
+6. https://docs.python-guide.org/writing/style/
