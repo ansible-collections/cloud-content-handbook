@@ -22,29 +22,24 @@ Our GitHub Action workflows conduct automated checks within our Continuous Integ
 - If your code is too nested, that’s usually a sign the loop body could benefit from being a function. 
 - Leverage Python's built-in functions and standard libraries whenever suitable to reduce code verbosity and improve efficiency.
 - Do NOT use wildcards (*) for importing other python modules; instead, list the function(s) you are importing 
-- Always return useful data, even when there is no change.
+- Always return useful data, even when there is no change. Provide relevant information n the form of a log message or data data to the caller. This practice can enhance the usability and clarity of the code.
 - Use Python type hints to document variable types. Type hints are supported in Python 3.5 and greater.
     - At least annotate your public functions
     - Annotate code that is prone to type-related errors
 - Prefer specific exception handling over broad exceptions to pinpoint errors accurately.
 - Minimize the usage of global variables; prefer encapsulating logic within functions or classes.
+- Prefer to use join() instead of concatenating strings within loops.It offers improved readability.
+- Consider using f-strings for string formatting.They offer readability, conciseness, and are less susceptible to errors.
 - Use pytest for writing unit tests for plugins
 
 **_Ansible_**
-- Do not use sys.exit(). Use fail_json() from the module object.
-- Don’t raise a traceback (stacktrace). Ansible can deal with stacktraces and automatically.
+- Do not use sys.exit(). Use a module specific method, such as fail_json() or fail_json_aws().
+- Don’t raise a traceback (stacktrace). Use fail_json() from the module object.
 - Split long Jinja2 expressions into multiple lines.
-- Spell out all task arguments in YAML style and do not use key=value type of arguments
-- Use true and false for boolean values in playbooks.
-- When naming files, use the .yml extension and not .yaml. 
-- Do not override role defaults or vars or input parameters using set_fact. Use a different name instead.
-- Do not use the eq, equalto, or == Jinja tests introduced in Jinja 2.10, use Ansible built-in match, search, or regex instead.
-- Avoid the use of lineinfile wherever that might be feasible.
-- All defaults and all arguments to a role should have a name that begins with the role name to help avoid collision with other names. 
 - Minimize the usage of shell or command modules when equivalent Ansible modules are available.
-- Activate argument validation for roles by utilizing an argument specification.
 - Combine multiple changes to trigger a single handler to avoid unnecessary execution.
-- Implement error handling strategies (e.g., ignore_errors, failed_when, changed_when) to handle failures gracefully.
+- Additional and detailed guidelines for using Ansible are provided [here](https://redhat-cop.github.io/automation-good-practices/) as best practices for automation.
+- [These guidelines](https://ansible.readthedocs.io/projects/lint/rules/) outline the rules to adhere to when working with Ansible. They are verified as part of the ansible-lint workflow in our CI pipeline.
 
 ### Naming Conventions
 - Function names, variable names, and filenames should be descriptive.
@@ -60,17 +55,41 @@ Our GitHub Action workflows conduct automated checks within our Continuous Integ
 ### Documentation
 - Documentation should be written for broad audience–readable both by experts and non-experts.
 - Pay attention to punctuation, spelling, and grammar; it is easier to read well-written comments than badly written ones.
-- Module documentation should briefly and accurately define what each module and option does, and how it works with others in the underlying system.
-- Descriptions should always start with a capital letter and end with a full stop.
-- Verify that arguments in doc and module spec dict are identical.
-- For password / secret arguments no_log=True should be set.
-- For arguments that seem to contain sensitive information but do not contain secrets, such as “password_length”, set no_log=False to disable the warning message.
-- If an option is only sometimes required, describe the conditions. For example, “Required when I(state=present).”
 - Functions should have comments for their intent in the form of a docstring. Always use the three-double-quote """ format for docstrings (per PEP 257).  In addition to the intent of the function, docstring should have args, return values, exceptions raised.
-- Classes should have a docstring below the class definition describing the class. If your class has public attributes, they should be documented here in an Attributes section
+Example:
+```
+def calculate_area(length, width):
+    """
+    Calculate the area of a rectangle.
+    Args:
+        length (float): The length of the rectangle.
+        width (float): The width of the rectangle.
+    Returns:
+        float: The calculated area of the rectangle.
+    Raises:
+        ValueError: If either length or width is negative.
+    """
+```
+- Classes should have a docstring below the class definition describing the class. If your class has public attributes, they should be documented here in an Attributes section.
+Example:
+```
+class Rectangle:
+    """
+    Represents a rectangle.
+
+    Attributes:
+        length (float): The length of the rectangle.
+        width (float): The width of the rectangle.
+    """
+
+    def __init__(self, length, width):
+    < definition >
+```
 - The good place to have comments is in tricky parts of the code. If you’re going to have to explain it at the next code review, you should comment it now, as inline comment.
 - A TODO comment begins with the word TODO in all caps, a following colon, and a link to a resource that contains the context, ideally a bug reference.
 - Document playbooks and roles extensively using comments and README files to provide context and usage instructions for future reference.
+- Module documentation guidelines can be referenced [here](https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_documenting.html#module-documenting).
+
 
 ### Security
 - Passwords should never be stored in plain text.
@@ -85,9 +104,9 @@ Our GitHub Action workflows conduct automated checks within our Continuous Integ
 
 ### Performance Considerations
 **_Python_**
-- Prefer list comprehensions or generator expressions over traditional loops for better performance.
+- Prefer comprehensions or generator expressions over traditional loops for improved performance, except in situations involving nested comprehensions, as they can compromise readability. It's crucial to prioritize readability.
 - Use built-in functions (e.g., map(), filter()) for iterative operations instead of manual loops.
-- Be mindful of unnecessary copying of data structures. Use slicing or references instead of creating new copies.
+- Be mindful of unnecessary copying of data structures.
 - Use join() instead of concatenating strings within loops for improved performance.
 - Consider using f-strings for string formatting due to their faster performance compared to other methods.
 - Use generator functions to generate values on-the-fly, conserving memory by avoiding large data structures.
@@ -96,6 +115,21 @@ Our GitHub Action workflows conduct automated checks within our Continuous Integ
 
 **_Ansible_**
 - Choose Ansible modules optimized for performance over less efficient ones, especially when dealing with large-scale operations.
+ An example would be leveraging the ansible.builtin.copy module to efficiently copy files from a local machine to multiple remote servers, as opposed to employing a combination of the command or shell modules along with native shell commands like cp or rsync.
 - Organize playbooks logically and avoid unnecessary nesting to reduce execution time.
 - Leverage asynchronous actions and async support in Ansible to run tasks concurrently when applicable.
 - Design Ansible roles for reusability and efficiency to minimize duplicate code and optimize execution.
+
+### Function Organization and Ordering
+- **Start with Foundational Functions:**
+   Place foundational or fundamental functions at the beginning of the file. These functions often perform essential tasks that set the groundwork for higher-level functionalities.
+- **Progress to Higher-Level Abstractions:**
+  Follow a sequential order where functions build upon each other. Place functions that offer higher-level abstractions or encapsulate more complex logic further down in the file.
+- **Group Similar Functions:**
+  Group together functions that serve similar purposes or handle related tasks. This grouping enhances the code's organization and makes it easier for readers to locate relevant functions.
+- **Use Sections or Comments:**:
+  If there are distinct sections within the code, consider using headers or comments to delineate these sections. Provide a brief description of the functionality covered by each section.
+- **Optimize for Readability:**:
+  Optimize the order for readability, making it easy for others (or yourself) to understand the code. Balance the strict ordering with the need to present a coherent narrative.
+- **Start with Foundational Functions:**
+    
