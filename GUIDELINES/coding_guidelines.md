@@ -22,7 +22,8 @@ Our GitHub Action workflows conduct automated checks within our Continuous Integ
 - If your code is too nested, that’s usually a sign the loop body could benefit from being a function. 
 - Leverage Python's built-in functions and standard libraries whenever suitable to reduce code verbosity and improve efficiency.
 - Do NOT use wildcards (*) for importing other python modules; instead, list the function(s) you are importing 
-- Always return useful data, even when there is no change. Provide relevant information n the form of a log message or data data to the caller. This practice can enhance the usability and clarity of the code.
+- Modules should to be imported from trusted sources, and preferably limited to those that are actively maintained.
+- Always return useful data, even when there is no change. Provide relevant information n the form of a log message or data to the caller. This practice can enhance the usability and clarity of the code.
 - Use Python type hints to document variable types. Type hints are supported in Python 3.5 and greater.
     - At least annotate your public functions
     - Annotate code that is prone to type-related errors
