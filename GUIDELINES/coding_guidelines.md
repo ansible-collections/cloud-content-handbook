@@ -10,7 +10,7 @@ Our coding guidelines are a work in progress and subject to ongoing refinement. 
 
 ## Automated checks
 
-Our GitHub Action workflows conduct automated checks within our Continuous Integration (CI) pipeline. These checks utilize various tools such as ansible-lint, black, flake8, among others. Prior to submitting a PR containing your modifications, it is essential to run these tools locally. Please note that the guidelines provided may not encompass all the aspects covered by these tools.
+Our GitHub Action workflows conduct automated checks within our [Continuous Integration (CI) pipeline](https://github.com/ansible-collections/cloud-content-handbook/blob/main/CI/README.md). These checks utilize various tools such as ansible-lint, black, flake8, among others. Prior to submitting a PR containing your modifications, it is essential to run these tools locally. Please note that the guidelines provided may not encompass all the aspects covered by these tools.
 
 ## Coding Standards
 
@@ -128,15 +128,14 @@ class Rectangle:
   Follow a sequential order where functions build upon each other. Place functions that offer higher-level abstractions or encapsulate more complex logic further down in the file.
 - **Group Similar Functions:**
   Group together functions that serve similar purposes or handle related tasks. This grouping enhances the code's organization and makes it easier for readers to locate relevant functions.
-- **Use Sections or Comments:**:
+- **Use Sections or Comments:**
   If there are distinct sections within the code, consider using headers or comments to delineate these sections. Provide a brief description of the functionality covered by each section.
-- **Optimize for Readability:**:
+- **Optimize for Readability:**
   Optimize the order for readability, making it easy for others (or yourself) to understand the code. Balance the strict ordering with the need to present a coherent narrative.
 
 ## References
 1. https://redhat-cop.github.io/automation-good-practices
 2. https://docs.ansible.com/ansible/latest/dev_guide/
 3. https://ansible.readthedocs.io/projects/lint/rules/
-4. https://docs.ansible.com/ansible/2.8/user_guide/playbooks_best_practices.html
-5. https://google.github.io/styleguide/pyguide.html
-6. https://docs.python-guide.org/writing/style/
+4. https://google.github.io/styleguide/pyguide.html
+5. https://docs.python-guide.org/writing/style/
