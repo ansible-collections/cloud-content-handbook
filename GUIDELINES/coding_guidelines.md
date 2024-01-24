@@ -29,7 +29,7 @@ Our GitHub Action workflows conduct automated checks within our [Continuous Inte
     - Annotate code that is prone to type-related errors
 - Prefer specific exception handling over broad exceptions to pinpoint errors accurately.
 - Minimize the usage of global variables; prefer encapsulating logic within functions or classes.
-- Prefer to use join() instead of concatenating strings within loops.It offers improved readability.
+- Prefer to use join() instead of concatenating strings within loops. It offers improved readability.
 - Consider using f-strings for string formatting. They offer readability, conciseness, and are less susceptible to errors.
 - Use pytest for writing unit tests for plugins
 
