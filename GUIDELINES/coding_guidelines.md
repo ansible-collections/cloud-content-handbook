@@ -10,7 +10,7 @@ Our coding guidelines are a work in progress and subject to ongoing refinement. 
 
 ## Automated checks
 
-Our GitHub Action workflows conduct automated checks within our [Continuous Integration (CI) pipeline](https://github.com/ansible-collections/cloud-content-handbook/blob/main/CI/README.md). These checks utilize various tools such as ansible-lint, black, flake8, among others. Prior to submitting a PR containing your modifications, it is essential to run these tools locally. Please note that the guidelines provided may not encompass all the aspects covered by these tools.
+Our GitHub Action workflows conduct automated checks within our [Continuous Integration (CI) pipeline](https://github.com/ansible-collections/cloud-content-handbook/blob/main/CI/README.md). These checks utilize various tools such as ansible-test, ansible-lint, black, flake8, among others. Prior to submitting a PR containing your modifications, it is essential to run these tools locally. Please note that the guidelines provided may not encompass all the aspects covered by these tools.
 
 ## Coding Standards
 
