@@ -10,29 +10,37 @@ Maintaining a positive and respectful tone in feedback is essential. Acknowledge
 ### 2. Prompt Initiation of Code Reviews
 Try to initiate code reviews promptly, ideally on the same day or the next, to prevent bottlenecks and facilitate quicker iteration on code changes.
 
-### 3. Consistent Coding Standards:
-Enforce adherence to [coding standards and style guidelines]((https://github.com/ansible-collections/cloud-content-handbook/blob/main/GUIDELINES/coding_guidelines.md). [Automated tools](https://github.com/ansible-collections/cloud-content-handbook/blob/main/CI/README.md#what-checks-are-run) are leveraged to catch common issues related to coding standards.
-
-### 4. Clarity and Readability:
+### 3. Clarity and Readability:
 Ensure that the code is clear and concise. Prioritize readability to enhance understanding and maintainability.
 
-### 5. Code Examples
+### 4. Code Examples
 Provide comprehensive and illustrative snippets to support feedback and recommendations. When offering guidance or suggesting improvements, aim to go beyond mere textual explanations. Instead, supplement your comments with tangible code examples that vividly showcase the recommended practices, design patterns, or alternative approaches.
 
-### 6. Make it manageable
+### 5. Make it manageable
 Look for opportunities to split up large reviews to achieve focused and efficient assessments, reduced cognitive load, quicker turnaround, improved collaboration, easier debugging, enhanced code quality, and iterative progress.
+Example:
+When a large codebase undergoes a significant refactoring, instead of reviewing the entire refactoring in one go, the review process can be broken down into manageable segments - Module A Refactoring, Class B Improvements, New Functionality in Module C, Code Duplication Elimination etc
 
-### 7. Navigating Stalemates
+### 6. Navigating Stalemates
 Effectively navigate stalemates in code reviews through timely identification of the same, open communication, seeking common ground, involving additional perspectives, defining actionable steps, establishing a decision-making process, and documenting agreements in the [coding guidelines]((https://github.com/ansible-collections/cloud-content-handbook/blob/main/GUIDELINES/coding_guidelines.md). 
 
-### 8. Collaboration and Communication:
+### 7. Collaboration and Communication:
 Foster a positive and collaborative atmosphere during code reviews. Provide constructive feedback that promotes improvement and encourages knowledge sharing within the team.
 
-### 9. Continuous Learning:
+### 8. Continuous Learning:
 Encourage ongoing learning and knowledge sharing. Use code reviews as opportunities for mentoring and skill development.
 
-### 10. Guided Feedback
+### 9. Guided Feedback
 Ensure feedback in code reviews is tethered to coding guidelines rather than individual opinions. Promote objectivity and consistency in the evaluation process.
+
+### 10. Checklist 
+- Confirm that the proposed changes in the pull request have been locally verified. If this is not feasible, ensure that reason is mentioned in the PR comments, explicitly.
+- Gain a thorough understanding of the feature or bug fix by reviewing related requirements and documentation mentioned in the PR. In case of ambiguity, request additional details through a comprehensive PR summary, changelog, or documentation.
+- Verify that the code addresses the specified requirements and functions as intended.
+- Enforce adherence to [coding standards and style guidelines]((https://github.com/ansible-collections/cloud-content-handbook/blob/main/GUIDELINES/coding_guidelines.md). [Automated tools](https://github.com/ansible-collections/cloud-content-handbook/blob/main/CI/README.md#what-checks-are-run) are leveraged to catch common issues related to coding standards.
+- Identify and address any instances of code duplication. Encourage the use of shared functions or modules where applicable.
+- Confirm consistency with coding patterns and practices across the entire codebase.
+- Verify that the code adheres to licensing requirements and complies with legal standards.
 
 ## References
 1. https://www.processimpact.com/articles/humanizing_reviews.pdf
