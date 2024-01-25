@@ -52,6 +52,14 @@ Our GitHub Action workflows conduct automated checks within our [Continuous Inte
 - Name all tasks, plays, and task blocks to improve readability.
 - Write task names in the imperative (e.g. "Ensure service is running"), this communicates the action of the task.
 
+### Tests
+- Write clear and readable test cases. Use descriptive names for test functions and variables.
+- Ensure test cases are independent and isolated. Each test should not rely on the state of previous tests, guaranteeing consistent results.
+- Keep each test focused on a single concept or functionality. This promotes simplicity and ease of debugging.
+- Include tests for boundary conditions, edge cases, and potential failure scenarios. This ensures comprehensive coverage of the code.
+- Provide clear and concise documentation for complex test cases. This documentation aids other developers in understanding the purpose and expected behavior of each test.
+- Ensure that every code change includes relevant tests. Depending on the nature of the change, include either unit tests or integration tests, or a combination of both, as applicable. This practice guarantees that the introduced modifications are thoroughly validated and that the testing suite remains comprehensive.
+- When introducing fixes or changes, ensure that the test coverage is either maintained or increased. Adding new functionality or addressing issues should not result in a decrease in overall test coverage. (Pending: We should incorporate a test coverage monitoring tool into the continuous integration (CI) pipeline)
 
 ### Documentation
 - Documentation should be written for broad audience–readable both by experts and non-experts.
