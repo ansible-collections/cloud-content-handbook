@@ -59,14 +59,14 @@ Our GitHub Action workflows conduct automated checks within our [Continuous Inte
 - Functions should have comments for their intent in the form of a docstring. Always use the three-double-quote """ format for docstrings (per PEP 257).  In addition to the intent of the function, docstring should have args, return values, exceptions raised.
 Example:
 ```
-def calculate_area(length, width):
+def calculate_area(length: float, width: float) -> float:
     """
     Calculate the area of a rectangle.
     Args:
-        length (float): The length of the rectangle.
-        width (float): The width of the rectangle.
+        length: The length of the rectangle.
+        width: The width of the rectangle.
     Returns:
-        float: The calculated area of the rectangle.
+        The calculated area of the rectangle.
     Raises:
         ValueError: If either length or width is negative.
     """
@@ -95,12 +95,12 @@ class Rectangle:
 ### Security
 - Passwords should never be stored in plain text.
 - The exec and eval functions should be used sparingly, as they can execute arbitrary Python code. If they are used, the data passed to them should be safe and sanitized.
-- If network communication is involved, secure protocols like HTTPS should be used.
+- If network communication is involved, secure protocols like HTTPS should be used. Note that default value for validate_certs options should always be true. Refer [this](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/uri_module.html#parameter-validate_certs).
 - When fetching URLs, use fetch_url or open_url from ansible.module_utils.urls. Do not use urllib2, which does not natively verify TLS certificates and so is insecure for https.
 - Sensitive information like usernames, passwords, session tokens, etc., should not be included in URLs, as they can be logged or leaked through the Referer header.
 - Sensitive values marked with no_log=True will automatically have that value stripped from module return values. If your module could return these sensitive values as part of a dictionary key name, you should call the ansible.module_utils.basic.sanitize_keys() function to strip the values from the keys. 
 - When a random number is needed for a security purpose, such as a session ID or token, a secure random number generator should be used.
-- Check if obsolete or broken algorithms like md5 are used. Python's built-in hashlib module provides secure hash functions and message digest algorithms.
+- Check if obsolete or broken algorithms like MD5 are used. Python's built-in hashlib module provides secure hash functions and message digest algorithms.
 - Safely manage sensitive data and credentials using Ansible Vault to encrypt and secure files containing secret information while using ansible playbooks.
 
 ### Performance Considerations
