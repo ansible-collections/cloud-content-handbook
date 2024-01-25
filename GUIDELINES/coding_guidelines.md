@@ -116,7 +116,7 @@ class Rectangle:
 
 **_Ansible_**
 - Choose Ansible modules optimized for performance over less efficient ones, especially when dealing with large-scale operations.
- An example would be leveraging the ansible.builtin.copy module to efficiently copy files from a local machine to multiple remote servers, as opposed to employing a combination of the command or shell modules along with native shell commands like cp or rsync.
+  An example would be leveraging the ansible.builtin.copy module to efficiently copy files from a local machine to multiple remote servers, as opposed to employing a combination of the command or shell modules along with native shell commands like cp or rsync.
 - Organize playbooks logically and avoid unnecessary nesting to reduce execution time.
 - Leverage asynchronous actions and async support in Ansible to run tasks concurrently when applicable.
 - Design Ansible roles for reusability and efficiency to minimize duplicate code and optimize execution.
