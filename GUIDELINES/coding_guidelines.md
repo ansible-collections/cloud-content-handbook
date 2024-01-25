@@ -99,7 +99,7 @@ class Rectangle:
 - When fetching URLs, use fetch_url or open_url from ansible.module_utils.urls. Do not use urllib2, which does not natively verify TLS certificates and so is insecure for https.
 - Sensitive information like usernames, passwords, session tokens, etc., should not be included in URLs, as they can be logged or leaked through the Referer header.
 - Sensitive values marked with no_log=True will automatically have that value stripped from module return values. If your module could return these sensitive values as part of a dictionary key name, you should call the ansible.module_utils.basic.sanitize_keys() function to strip the values from the keys. 
-- When a random number is needed for a security purpose, such as a session id or token, a secure random number generator should be used.
+- When a random number is needed for a security purpose, such as a session ID or token, a secure random number generator should be used.
 - Check if obsolete or broken algorithms like md5 are used. Python's built-in hashlib module provides secure hash functions and message digest algorithms.
 - Safely manage sensitive data and credentials using Ansible Vault to encrypt and secure files containing secret information while using ansible playbooks.
 
