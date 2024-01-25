@@ -29,13 +29,13 @@ Our GitHub Action workflows conduct automated checks within our [Continuous Inte
     - Annotate code that is prone to type-related errors
 - Prefer specific exception handling over broad exceptions to pinpoint errors accurately.
 - Minimize the usage of global variables; prefer encapsulating logic within functions or classes.
-- Prefer to use join() instead of concatenating strings within loops. It offers improved readability.
+- Prefer to use `join()` instead of concatenating strings within loops. It offers improved readability.
 - Consider using f-strings for string formatting. They offer readability, conciseness, and are less susceptible to errors.
 - Use pytest for writing unit tests for plugins
 
 **_Ansible_**
-- Do not use sys.exit(). Use a module specific method, such as fail_json() or fail_json_aws().
-- Don’t raise a traceback (stacktrace). Use fail_json() or fail_aws() from the module object.
+- Do not use `sys.exit()`. Use a module specific method, such as `fail_json()` or `fail_aws()`.
+- Don’t raise a traceback (stacktrace). Use `fail_json()` or `fail_aws()` from the module object.
 - Split long Jinja2 expressions into multiple lines.
 - Minimize the usage of shell or command modules when equivalent Ansible modules are available.
 - Combine multiple changes to trigger a single handler to avoid unnecessary execution.
@@ -106,7 +106,7 @@ class Rectangle:
 - If network communication is involved, secure protocols like HTTPS should be used. Note that default value for validate_certs options should always be true. Refer [this](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/uri_module.html#parameter-validate_certs).
 - When fetching URLs, use fetch_url or open_url from ansible.module_utils.urls. Do not use urllib2, which does not natively verify TLS certificates and so is insecure for https.
 - Sensitive information like usernames, passwords, session tokens, etc., should not be included in URLs, as they can be logged or leaked through the Referer header.
-- Sensitive values marked with no_log=True will automatically have that value stripped from module return values. If your module could return these sensitive values as part of a dictionary key name, you should call the ansible.module_utils.basic.sanitize_keys() function to strip the values from the keys. 
+- Sensitive values marked with no_log=True will automatically have that value stripped from module return values. If your module could return these sensitive values as part of a dictionary key name, you should call the `ansible.module_utils.basic.sanitize_keys()` function to strip the values from the keys. 
 - When a random number is needed for a security purpose, such as a session ID or token, a secure random number generator should be used.
 - Check if obsolete or broken algorithms like MD5 are used. Python's built-in hashlib module provides secure hash functions and message digest algorithms.
 - Safely manage sensitive data and credentials using Ansible Vault to encrypt and secure files containing secret information while using ansible playbooks.
@@ -116,7 +116,6 @@ class Rectangle:
 - Prefer comprehensions or generator expressions over traditional loops for improved performance, except in situations involving nested comprehensions, as they can compromise readability. It's crucial to prioritize readability.
 - Use built-in functions (e.g., map(), filter()) for iterative operations instead of manual loops.
 - Be mindful of unnecessary copying of data structures.
-- Use join() instead of concatenating strings within loops for improved performance.
 - Consider using f-strings for string formatting due to their faster performance compared to other methods.
 - Use generator functions to generate values on-the-fly, conserving memory by avoiding large data structures.
 - Employ context managers (with statement) for file handling to ensure proper resource cleanup.
