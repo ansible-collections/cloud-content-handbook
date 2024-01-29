@@ -52,3 +52,14 @@ Leverage GitHub and Slack integration to receive real-time notifications for cod
 
 **_Drawbacks:_**
 Potential drawbacks of this option include notification overload, contextual disruption, security concerns, integration maintenance, learning curve, and dependency on external services.
+
+_**The following are possibilities that require additional investigation.**_
+
+### Option 3: Automated Reminders
+1. Implement automated reminders for pending code reviews.
+2. Utilize GitHub Actions or third-party tools to send reminders for unaddressed comments or pending approvals.
+
+### Option 4: Pull Request Labels:
+1. Define a set of labels for pull requests to categorize them (e.g., "Ready for Review," "In Progress," "Blocked").
+2. Periodically inspect the cloud content repositories for pull requests labeled with code review-related tags using a script.
+
