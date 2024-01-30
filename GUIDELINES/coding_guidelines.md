@@ -45,8 +45,8 @@ Our GitHub Action workflows conduct automated checks within our [Continuous Inte
 ### Naming Conventions
 - Function names, variable names, and filenames should be descriptive.
 - Module name MUST use underscores instead of hyphens or spaces as a word separator. Using hyphens and spaces will prevent ansible-core from importing your module.
-- Function names should use underscores: my_function_name
-- Use snake_case_naming_schemes for all YAML or Python files, variables, arguments, repositories, and other such names (like dictionary keys).
+- Function names should use underscores: `my_function_name`
+- Use `snake_case_naming_schemes` for all YAML or Python files, variables, arguments, repositories, and other such names (like dictionary keys).
 - Do not use special characters other than underscore in variable names, even if YAML/JSON allow them.
 - Avoid numbering roles and playbooks, you’ll never know how they’ll be used in the future.
 - Name all tasks, plays, and task blocks to improve readability.
@@ -64,7 +64,7 @@ Our GitHub Action workflows conduct automated checks within our [Continuous Inte
 ### Documentation
 - Documentation should be written for broad audience–readable both by experts and non-experts.
 - Pay attention to punctuation, spelling, and grammar; it is easier to read well-written comments than badly written ones.
-- Functions should have comments for their intent in the form of a docstring. Always use the three-double-quote """ format for docstrings (per PEP 257).  In addition to the intent of the function, docstring should have args, return values, exceptions raised.
+- Functions should have comments for their intent in the form of a docstring. Always use the three-double-quote `"""` format for docstrings (per PEP 257).  In addition to the intent of the function, docstring should have args, return values, exceptions raised.
 Example:
 ```
 def calculate_area(length: float, width: float) -> float:
@@ -103,18 +103,18 @@ class Rectangle:
 ### Security
 - Passwords should never be stored in plain text.
 - The exec and eval functions should be used sparingly, as they can execute arbitrary Python code. If they are used, the data passed to them should be safe and sanitized.
-- If network communication is involved, secure protocols like HTTPS should be used. Note that default value for validate_certs options should always be true. Refer [this](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/uri_module.html#parameter-validate_certs).
+- If network communication is involved, secure protocols like HTTPS should be used. Note that default value for `validate_certs` options should always be `true`. Refer [this](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/uri_module.html#parameter-validate_certs).
 - When fetching URLs, use fetch_url or open_url from ansible.module_utils.urls. Do not use urllib2, which does not natively verify TLS certificates and so is insecure for https.
 - Sensitive information like usernames, passwords, session tokens, etc., should not be included in URLs, as they can be logged or leaked through the Referer header.
-- Sensitive values marked with no_log=True will automatically have that value stripped from module return values. If your module could return these sensitive values as part of a dictionary key name, you should call the `ansible.module_utils.basic.sanitize_keys()` function to strip the values from the keys. 
+- Sensitive values marked with `no_log=True` will automatically have that value stripped from module return values. If your module could return these sensitive values as part of a dictionary key name, you should call the `ansible.module_utils.basic.sanitize_keys()` function to strip the values from the keys. 
 - When a random number is needed for a security purpose, such as a session ID or token, a secure random number generator should be used.
-- Check if obsolete or broken algorithms like MD5 are used. Python's built-in hashlib module provides secure hash functions and message digest algorithms.
+- Check if obsolete or broken algorithms like MD5 are used. Python's built-in [`hashlib` module](https://docs.python.org/3/library/hashlib.html) module provides secure hash functions and message digest algorithms.
 - Safely manage sensitive data and credentials using Ansible Vault to encrypt and secure files containing secret information while using ansible playbooks.
 
 ### Performance Considerations
 **_Python_**
 - Prefer comprehensions or generator expressions over traditional loops for improved performance, except in situations involving nested comprehensions, as they can compromise readability. It's crucial to prioritize readability.
-- Use built-in functions (e.g., map(), filter()) for iterative operations instead of manual loops.
+- Use built-in functions (e.g., `map()`, `filter()`) for iterative operations instead of manual loops.
 - Be mindful of unnecessary copying of data structures.
 - Consider using f-strings for string formatting due to their faster performance compared to other methods.
 - Use generator functions to generate values on-the-fly, conserving memory by avoiding large data structures.
