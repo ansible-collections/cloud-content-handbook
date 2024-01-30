@@ -72,10 +72,13 @@ Adhere to the project's branching strategies. Submit your PR against the appropr
 ### **9. Verify CI Status**
 Ensure that your changes pass the Continuous Integration (CI) checks. Address any CI failures promptly.
 
-### **10. Respond to Feedback**
+### **10. Don't Squash Commits Once a PR is Under ReviewR**:
+Avoid squashing commits during the review process to maintain a clear history of changes.
+
+### **11. Respond to Feedback**
 Be responsive to feedback from reviewers. Address comments, make necessary adjustments, and engage in discussions to improve the PR.
 
-### **11. Be Patient**
+### **12. Be Patient**
 Understand that code reviews take time. Be patient and responsive during the review process.
 
 ## References
