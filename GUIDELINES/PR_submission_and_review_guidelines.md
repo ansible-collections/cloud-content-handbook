@@ -38,7 +38,8 @@ Ensure feedback in code reviews is tethered to coding guidelines rather than ind
 - Enforce adherence to [coding standards and style guidelines]((https://github.com/ansible-collections/cloud-content-handbook/blob/main/GUIDELINES/coding_guidelines.md). [Automated tools](https://github.com/ansible-collections/cloud-content-handbook/blob/main/CI/README.md#what-checks-are-run) are leveraged to catch common issues related to coding standards.
 - Identify and address any instances of code duplication. Encourage the use of shared functions or modules where applicable.
 - Confirm consistency with coding patterns and practices across the entire codebase.
-- Verify that the code adheres to licensing requirements and complies with legal standards.
+- Verify that the code adheres to licensing requirements and complies with legal standards. Refer [the note](https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_in_groups.html) for more information on licensing requirements.
+- Verify that tests have been added or updated to cover all changes to the code.
 - Verify that any new or updated tests were executed and passed in the Continuous Integration (CI) environment.
 
 # Pull Request Submission Guidelines
@@ -55,7 +56,7 @@ Offer detailed descriptions for your changes. Explain the reasoning behind decis
 Keep your changes focused and avoid bundling unrelated updates. Small, incremental changes are easier to review and merge.
 
 ### **4. Check for Code Quality**
-Run linters and static code analysis tools to check for code quality issues. Address any identified problems before submitting. Donot request for review until all the sanity and linters tests pass. If these tests cannot be fixed , please mention the reasons in the description.
+Run linters and static code analysis tools to check for code quality issues. Address any identified problems before submitting. Do not request for review until all the sanity and linters tests pass. If these tests cannot be fixed, please mention the reasons in the description.
 
 ### **5. Follow Coding Standards**
 Adhere to the project's [coding standards and style guidelines](https://github.com/ansible-collections/cloud-content-handbook/blob/main/GUIDELINES/coding_guidelines.md). Consistent code formatting makes reviews smoother.
@@ -72,7 +73,7 @@ Adhere to the project's branching strategies. Submit your PR against the appropr
 ### **9. Verify CI Status**
 Ensure that your changes pass the Continuous Integration (CI) checks. Address any CI failures promptly.
 
-### **10. Don't Squash Commits Once a PR is Under ReviewR**:
+### **10. Don't Squash Commits Once a PR is Under Review**:
 Avoid squashing commits during the review process to maintain a clear history of changes.
 
 ### **11. Respond to Feedback**
