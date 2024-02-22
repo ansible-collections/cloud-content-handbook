@@ -45,6 +45,8 @@ Encourage developers to seek early reviews during the development process provid
 - Verify that tests have been added or updated to cover all changes to the code.
 - Verify that any new or updated tests were executed and passed in the Continuous Integration (CI) environment.
 
+For additional guidelines on reviewing Ansible collection PRs, please consult the documentation available [here](https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_reviewing.html).
+
 # Pull Request Submission Guidelines
 
 Submitting a Pull Request (PR) is a collaborative process that benefits from clarity and adherence to best practices.
