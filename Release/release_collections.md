@@ -4,12 +4,15 @@
 - For major/breaking change release, increment x.
 - For bugfix/minor changes, increment y.
 - For patch/trivial changes, increment z.
-2. Prepare the collection for release by following the instructions provided [here](https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_releasing.html#preparing-to-release-a-collection).
-3. Ensure that the version references in the collection are updated to reflect the new version. Follow the steps outlined in [this ansible docuemnt](https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_release_with_branches.html#releasing-major-collection-versions).
-4. Create a new branch `stable-X`, where `X` denotes the major version number. If the branch exists check out the branch
+2. Incase of a major release , create a new branch `stable-X`, where `X` denotes the major version number.
 
 ```
 git branch stable-X
+```
+3. For a minor release, selectively backport bug fixes from the main branch to the `stable-X` branch, where X is the major version number, based on the severity of the bug. Avoid backporting new features. Ensure that pull requests intended for backporting are labeled with tags such as `backport-X`, where X refers to the target `stable-X` branch.
+4. Check out the `stable-X` branch and prepare the collection for release by following the instructions provided [here](https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_releasing.html#preparing-to-release-a-collection).
+
+```
 git checkout stable-X
 ```
 5. Update the CHANGELOG:
