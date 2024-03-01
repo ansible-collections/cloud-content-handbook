@@ -35,6 +35,7 @@ git checkout -b prep_release_x stable-X
 **6.** Verify `CHANGELOG.rst` for the presence of all the changelog fragments.
 
 **7.** Commit the changes and push the changes to the upstream repository. Make sure you choose `stable-X` as your base branch. This will be the preparation PR for the release. Ensure the CI passes. Once the `prep` PR is merged, update the local copy of `stable-X` branch with the latest changes from the `prep` PR.
+_Note : If the sanity tests fail locally or in the CI, the failures have to be addressed in a separate PR_
 
 **8.** Tag the version in Git and push to GitHub.
 

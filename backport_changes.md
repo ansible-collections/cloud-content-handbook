@@ -9,11 +9,11 @@ For the minor release (X.y.0) of the cloud collection, we utilize the patchback 
 
 ### Backport requirements:
 
-If `stable-7` is the latest release,
+If `stable-7` is the latest major release,
 
-* New features are not backported.
 * Bugfixes and trivial changes  are backported to the previous two active stable branches - `stable-6` and `stable-5`.
-* Feature updates are backported to previous one active branch - `stable-6`.
+* Feature updates (minor_changes) are backported to previous one active branch - `stable-6`.
+* Backward-compatible new features (minor_changes) that pose no maintenance risk are backported to the preceding active branch - `stable-6`.
 
 After the bot successfully creates the backport PRs, they can be merged to the respective branches upon receiving approvals.
 
