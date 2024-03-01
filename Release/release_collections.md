@@ -2,8 +2,8 @@
 
 **1.** Determine the collection version based on [Semantic Versioning](https://semver.org/). eg: x.y.z
 - For major/breaking change release, increment x. Resulting branch will be x+1.0.0.
-- For bugfix/minor changes, increment y. Resulting branch will be x.y+1.0.
-- For patch/trivial changes, increment z. Resulting branch will be x.y.z+1.
+- For minor changes, increment y. Resulting branch will be x.y+1.0.
+- For bugfixes/patch/trivial changes, increment z. Resulting branch will be x.y.z+1.
 
 **2.** In case of a major release, create a new branch `stable-X`, where `X` denotes the major version number. The new branch is based on the main branch.
 

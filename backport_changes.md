@@ -5,7 +5,13 @@ Backporting changes in a GitHub pull request (PR) involves applying specific cha
 
 ## Patchback Bot
 
-For the minor release (X.y.0) of the cloud collection, we utilize the patchback bot for backports. To enable the bot on selected PRs from the main branch, label the PRs with tags such as backport-X, where X refers to the target stable-X branch. These PRs typically contain bug fixes from the main branch. Note that new features are not backported. After the bot successfully creates the backport PRs, they can be merged upon receiving approvals.
+For the minor release (X.y.0) of the cloud collection, we utilize the patchback bot for backports. To enable the bot on selected PRs from the `main` branch, label the PRs with tags such as backport-X, where X refers to the target stable-X branch.
 
--   
+### Backport requirements:
 
+If `stable-7` is the latest release,
+
+* Bugfixes and trivial changes  are backported to the previous two active stable branches - `stable-6` and `stable-5`.
+* Feature updates are backported to previous one active branch - `stable-6`.
+
+After the bot successfully creates the backport PRs, they can be merged to the respective branches upon receiving approvals.
