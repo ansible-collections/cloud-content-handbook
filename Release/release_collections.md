@@ -5,7 +5,7 @@
 - For bugfix/minor changes, increment y. Resulting branch will be x.y+1.0.
 - For patch/trivial changes, increment z. Resulting branch will be x.y.z+1.
 
-**2.** In case of a major release , create a new branch `stable-X`, where `X` denotes the major version number. The new branch is based on the main branch.
+**2.** In case of a major release, create a new branch `stable-X`, where `X` denotes the major version number. The new branch is based on the main branch.
 
 ```
 git checkout main
@@ -21,11 +21,11 @@ git checkout -b prep_release_x stable-X
 ```
 
 **5.** Update the CHANGELOG:
-  **i.**   Add a changelog fragment `changelogs/fragments/<version>.yml` for the release summary as follows
+  **i.** Add a changelog fragment `changelogs/fragments/<version>.yml` for the release summary as follows
    ```
    release_summary: < release content >
    ```
-   **ii.**  Ensure you have `antsibull-changelog` is installed.
+   **ii.** Ensure you have `antsibull-changelog` is installed.
    **iii.** Confirm there are fragments for all known changes in changelogs/fragments.
    **iv.** Run antsibull-changelog release.
    ```
@@ -47,9 +47,23 @@ git push upstream <version>
 
 **10.** Check for the latest version of the collection on Galaxy and Automation Hub.
 
-**11.** To include an announcement of the release in Bullhorn, add a message in the [Ansible-Social Matrix Channel]( https://chat.ansible.im/#/room/#social:ansible.com).
+**11.** To include an announcement of the release in Bullhorn, tag the newsbot and add a message in the [Ansible-Social Matrix Channel]( https://chat.ansible.im/#/room/#social:ansible.com).
 
-**12.** Create a PR in the collection to merge the changes made in the release PR to the the main branch. Once the CI passes and the PR is approved, merge it to the main branch.
+```
+Sample message:
+@newsbot
+: amazon.aws 7.0.0 has been released with new bugfixes, features, plugins, and modules. Refer the <changelog> for details!
+```
+
+**12.** Create a PR in the collection to merge the changes made in the release PR to the the main branch. This can be done manually or using the `cherry-pick` command as given below.
+```
+_This example assumes that the released version is 3.0.0_
+git checkout main
+git pull
+git checkout -b cherry-pick/stable-3/release_sync
+git cherry-pick -x <commitSHA_from_Stable-3>
+```
+Push the branch to your fork. Once the CI passes and the PR is approved, merge it to the main branch.
 
 # Reference:
 https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_release_with_branches.html#releasing-major-collection-versions
