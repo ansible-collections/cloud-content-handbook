@@ -63,7 +63,11 @@ git pull
 git checkout -b cherry-pick/stable-3/release_sync
 git cherry-pick -x <commitSHA_from_Stable-3>
 ```
+You can also use [CPython’s cherry-picker tool](https://pypi.org/project/cherry_picker/#cherry-picking).
+
 Push the branch to your fork. Once the CI passes and the PR is approved, merge it to the main branch.
 
 # Reference:
 https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_release_with_branches.html#releasing-major-collection-versions
+
+https://docs.ansible.com/ansible/latest/community/development_process.html

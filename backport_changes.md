@@ -11,7 +11,11 @@ For the minor release (X.y.0) of the cloud collection, we utilize the patchback 
 
 If `stable-7` is the latest release,
 
+* New features are not backported.
 * Bugfixes and trivial changes  are backported to the previous two active stable branches - `stable-6` and `stable-5`.
 * Feature updates are backported to previous one active branch - `stable-6`.
 
 After the bot successfully creates the backport PRs, they can be merged to the respective branches upon receiving approvals.
+
+## References:
+https://docs.ansible.com/ansible/latest/community/development_process.html
