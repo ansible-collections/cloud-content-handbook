@@ -11,11 +11,11 @@ For the minor release (X.y.0) of the cloud collection, we utilize the patchback 
 
 If `stable-7` is the latest major release,
 
-* Bugfixes and trivial changes  are backported to the previous two active stable branches - `stable-6` and `stable-5`.
-* Feature updates (minor_changes) are backported to previous one active branch - `stable-6`.
-* Backward-compatible new features (minor_changes) that pose no maintenance risk are backported to the preceding active branch - `stable-6`.
+* Bugfixes and trivial changes from the main branch are backported to the previous two active stable branches - `stable-7` and `stable-6`.
+* Feature updates (minor_changes) from the main branch are backported to the latest release branch only - `stable-7`.
+* Backward-compatible new features (minor_changes) from the main branch, that pose no maintenance risk are backported to the preceding active branch - `stable-7`.
 
-After the bot successfully creates the backport PRs, they can be merged to the respective branches upon receiving approvals.
+After the bot successfully creates the backport PRs, they can be merged to the respective branches upon passing CI and receiving approvals.
 
 ## References:
 https://docs.ansible.com/ansible/latest/community/development_process.html
