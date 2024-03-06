@@ -57,8 +57,9 @@ _Note : If the sanity tests fail locally or in the CI, the failures have to be a
    ```
 
 * Create a PR in the collection to merge the changes made in the release PR to the the main branch. This can be done manually or using the `cherry-pick` command as given below.
-   ```
+
    _This example assumes that the released version is 3.0.0_
+   ```
    git checkout main
    git pull
    git checkout -b cherry-pick/stable-3/release_sync
