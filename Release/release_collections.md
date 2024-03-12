@@ -44,7 +44,7 @@ _Note : If the sanity tests fail locally or in the CI, the failures have to be a
    git push upstream <version>
    ```
 
-* Once the [CI for the release](https://ansible.softwarefactory-project.io/zuul/status) passes, notify the #ansible-partners slack channel about the release, for approval for the release on Automation Hub. To manually upload the collection to Automation Hub refer [here](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Release/release_automation_hub.md).
+* Once the [CI for the release](https://ansible.softwarefactory-project.io/zuul/status) passes, notify the #ansible-partners slack channel about the release, for approval for the release on Automation Hub. `Validated Content collections` and `redhat.openshift` collection are manually uploaded to Automation Hub. To manually upload a collection to Automation Hub, please refer to the instructions [here](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Release/release_automation_hub.md). Manual upload is performed in cases where automated upload to Automation Hub fails.
 
 * Check for the latest version of the collection on Galaxy and Automation Hub.
 
