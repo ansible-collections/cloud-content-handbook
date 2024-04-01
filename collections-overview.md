@@ -24,6 +24,15 @@ See the [collections release tracker](https://cloud-releases.jillr.dev/) for an 
 
 [^1]: While redhat.openshift is the supported collection for OpenShift, it is auto-generated from community.okd. As such, when changes are needed to the redhat.openshift collection they are first made in the community.okd repository and from that redhat.openshift is generated and uploaded to Ansible Automation Hub.
 
+## Terraform Providers
+
+The Cloud Content team supports/contributes to two Terraform providers for Ansible products.
+
+| **Repository Name** | **Support Level** | **Broad Use Case**|
+|---------------------|-------------------|-------------------|
+| [terraform-provider-aap](https://github.com/ansible/terraform-provider-aap) | Supported | Terraform provider for Ansible Automation Platform |
+| [terraform-provider-ansible](https://github.com/ansible/terraform-provider-ansible) | Community | Terraform provider for Ansible |
+
 ## Supporting Tools
 
 The Cloud Content team additionally maintains or contributes to several repositories for tooling that support our collections in various ways.
@@ -33,5 +42,3 @@ The Cloud Content team additionally maintains or contributes to several reposito
 | [ansible.content_builder](https://github.com/ansible-community/ansible.content_builder) | A collection to scaffold Ansible plugins |
 | [aws-terminator](https://github.com/mattclay/aws-terminator) | Deploys policies for AWS integration tests and cleans up AWS resources |
 | [el_grandiose_module_promoter](https://github.com/ansible-collections/el_grandiose_module_promoter) | Scripts handling module migration from one collection to another one |
-| [terraform-provider-aap](https://github.com/ansible/terraform-provider-aap) | Supported terraform provider for Ansible Automation Platform |
-| [terraform-provider-ansible](https://github.com/ansible/terraform-provider-ansible) | Community terraform provider for Ansible |
