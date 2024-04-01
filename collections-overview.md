@@ -33,5 +33,5 @@ The Cloud Content team additionally maintains or contributes to several reposito
 | [ansible.content_builder](https://github.com/ansible-community/ansible.content_builder) | A collection to scaffold Ansible plugins |
 | [aws-terminator](https://github.com/mattclay/aws-terminator) | Deploys policies for AWS integration tests and cleans up AWS resources |
 | [el_grandiose_module_promoter](https://github.com/ansible-collections/el_grandiose_module_promoter) | Scripts handling module migration from one collection to another one |
-| [terraform-provider-aap](https://github.com/ansible/terraform-provider-aap) | Community terraform provider for Ansible Automation Platform |
+| [terraform-provider-aap](https://github.com/ansible/terraform-provider-aap) | Supported terraform provider for Ansible Automation Platform |
 | [terraform-provider-ansible](https://github.com/ansible/terraform-provider-ansible) | Community terraform provider for Ansible |
