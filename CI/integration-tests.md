@@ -7,7 +7,7 @@ Integration test workflows in Github Actions have security risks not present in 
 
 ## Workflow file structure
 
-To mitigate these risks, integration tests must always be comprised of two separate workflow files as follows. There are also certain [repository settings](#required-repository-settings) that must be in place for all collection repos using these integration test workflows.
+To mitigate these risks, integration tests must always be comprised of two separate workflow files as follows. There are also certain [repository settings](#required-settings) that must be in place for all collection repos using these integration test workflows.
 
 ### integration-test-prep.yaml
 
