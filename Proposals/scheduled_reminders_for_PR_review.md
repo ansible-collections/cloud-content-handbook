@@ -2,7 +2,7 @@
 
 Scheduled reminders will aid the team in prioritizing review requests that demand attention. For pull requests, these reminders will dispatch a Slack message to the team channel, containing all open pull requests that the team need to review, at a designated time.
 
-For this process to function, the individual submitting the PR must either add additional team members individually or include the 'cloud-triage' team as reviewers.
+For this process to function, the individual submitting the PR must either add additional team members individually or include the 'ansible-collections/cloud' team as reviewers.
 
 ## Settings:
 
