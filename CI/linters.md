@@ -12,11 +12,11 @@ In our continuous integration (CI) pipeline, we utilize several linters to maint
 
 The use of linters is critical for several reasons. First, linters help ensure that our codebase follows coding standards, conventions, and best practices, improving readability and maintainability. By detecting potential problems such as syntax errors, style violations, unused variables, and type inconsistencies early on, linters help prevent bugs and improve codebase quality. In addition, linters promote consistency within the codebase, making it easier for developers to collaborate and understand each other's code.
 
-Although `black`, `isort`, `flake8`, `flynt` and `mypy` are popular and effective linters in their own right, they may have some pain points:
+Although `black`, `isort`, `flake8`, and `flynt` are popular and effective linters in their own right, they may have some pain points:
 
 - _Separate Tools_: these are separate tools, each focusing on specific aspects of linting, formatting, or code analysis which lead to a fragmented linting workflow, requiring developers to configure and use multiple tools separately.
 - _Complex Configuration_: Each of these linters has its own configuration format and options, leading to additional complexity in setting up and maintaining linting configurations.
-- _Inconsistent Behavior_: Since `black`, `isort`, `flake8`, `flynt` and `mypy` are separate tools, they may have different behavior, default settings, and interpretations of linting rules. This can lead to inconsistencies in linting results.
+- _Inconsistent Behavior_: Since `black`, `isort`, `flake8`, and `flynt` are separate tools, they may have different behavior, default settings, and interpretations of linting rules. This can lead to inconsistencies in linting results.
 - _Workflow Overhead_: Running multiple linters sequentially can introduce overhead into development workflows, particularly for large codebases, which can affect development iteration cycles and overall productivity.
 - _Maintenance Overhead_: Managing updates, dependencies, and compatibility issues for multiple linters can increase maintenance overhead.
 - _Limited Extensibility_: Although these linters offer customization options and plugins to extend their functionality, they may have limitations in terms of extensibility and flexibility.
@@ -41,10 +41,10 @@ It can be used to replace `flake8` (`ruff` has native support for about 50 `flak
 
 ### Transitioning Plan
 
-The following is an example of a transition plan for migrating from individual linters (`black`, `isort`, `flake8`, `flynt`, `mypy`) to `ruff`, enabling `ruff` in the CI pipeline for a period before making it the main linter:
+The following is an example of a transition plan for migrating from individual linters (`black`, `isort`, `flake8`, and `flynt`) to `ruff`, enabling `ruff` in the CI pipeline for a period before making it the main linter:
 
 1. Configuration Migration:
-    - Convert existing linting configurations for `black`, `isort`, `flake8`, `flynt`, `mypy` to the `ruff` configuration format.
+    - Convert existing linting configurations for `black`, `isort`, `flake8`, and `flynt` to the `ruff` configuration format.
     - Ensure that the `ruff` configuration aligns with the linting requirements and coding standards of the project.
 
 2. Gradual Rollout:
@@ -93,7 +93,7 @@ The following is an example of a transition plan for migrating from individual l
     - Decide whether to make `ruff` the primary linter in the CI pipeline based on its effectiveness, developer acceptance, and alignment with our goals.
 
 5. Full Migration:
-    - Once the decision is made to transition to `ruff`, update the CI pipeline configuration to make `ruff` the primary linter, replacing `black`, `isort`, `flake8`, `flynt`, `mypy`.
+    - Once the decision is made to transition to `ruff`, update the CI pipeline configuration to make `ruff` the primary linter, replacing `black`, `isort`, `flake8`, and `flynt`.
     - Ensure that `ruff` is configured to enforce linting rules and standards, and adjust the CI pipeline as needed to accommodate the change.
 
 This approach allows for a smooth and iterative migration process, minimizing disruptions to the development workflow while maximizing the benefits of adopting `ruff`.
