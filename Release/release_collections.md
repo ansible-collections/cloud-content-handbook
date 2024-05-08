@@ -45,6 +45,8 @@ The intent with this schedule is to recognize that there will be a brief window 
 
 * Verify `CHANGELOG.rst` for the presence of all the changelog fragments.
 
+* Update the version key in the galaxy.yml file, located in the root directory of the collection, with the appropriate value (x.y.z).
+
 * Commit the changes and create a pull request into the upstream repository. Make sure you choose `stable-X` as your base branch. This will be the preparation PR for the release. Ensure the CI passes. Once the `prep` PR is merged, update the local copy of `stable-X` branch with the latest changes from the `prep` PR.
 _Note : If the sanity tests fail locally or in the CI, the failures have to be addressed in a separate PR_
 
