@@ -70,7 +70,7 @@ The following is an example of a transition plan for migrating from individual l
         ```
 
     - Monitor `ruff`'s output and identify any discrepancies or issues compared to the existing linters. This phase should last for a trial period of 1 month.
-    - Validate `ruff`'s behavior and performance in the CI pipeline, ddress any discrepancies and fine-tune the `ruff` configuration as needed.
+    - Validate `ruff`'s behavior and performance in the CI pipeline, address any discrepancies and fine-tune the `ruff` configuration as needed.
 
 3. Gradual Transition to Additional Rules:
     - After the trial period, based on feedback and validation results, gradually enable additional rules in the `ruff` configuration. For example:
@@ -230,7 +230,3 @@ docstring-code-format = false
 # enabled.
 docstring-code-line-length = "dynamic"
 ```
-
-### Integrating Ruff with Pre-Commit Hooks
-
-By integrating `ruff` with pre-commit hooks, we can enforce code quality standards and ensure consistent linting practices across all code changes. This seamless integration automates the linting process, providing developers with immediate feedback on code quality issues before they are committed to the repository.
