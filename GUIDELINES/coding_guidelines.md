@@ -97,7 +97,7 @@ class Rectangle:
 - The good place to have comments is in tricky parts of the code. If you’re going to have to explain it at the next code review, you should comment it now, as inline comment.
 - A TODO comment begins with the word TODO in all caps, a following colon, and a link to a resource that contains the context, ideally a bug reference.
 - Document playbooks and roles extensively using comments and README files to provide context and usage instructions for future reference.
-- Module documentation guidelines can be referenced [here](https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_documenting.html#module-documenting).
+- Use semantic markup rather than macros or syntactic markup in module documentation. Module documentation guidelines can be referenced [here](https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_documenting.html#module-documenting).
 
 
 ### Security
