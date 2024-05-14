@@ -31,6 +31,8 @@ The intent with this schedule is to recognize that there will be a brief window 
    git checkout -b prep_release_x stable-X
    ```
 
+* Update the version key in the galaxy.yml file, located in the root directory of the collection, with the appropriate value (x.y.z).
+
 * Update the CHANGELOG:
    * Add a changelog fragment `changelogs/fragments/<version>.yml` for the release summary as follows
    ```
@@ -40,7 +42,7 @@ The intent with this schedule is to recognize that there will be a brief window 
    * Confirm there are fragments for all known changes in changelogs/fragments.
    * Run antsibull-changelog release.
    ```
-   antsibull-changelog release --version <version>
+   antsibull-changelog release
    ```
 
 * Verify `CHANGELOG.rst` for the presence of all the changelog fragments.
