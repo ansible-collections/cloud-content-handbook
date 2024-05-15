@@ -1,4 +1,0 @@
-# Cloud Content Handbook Repository
-
-
-
