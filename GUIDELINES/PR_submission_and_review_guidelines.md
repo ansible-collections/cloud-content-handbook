@@ -37,7 +37,7 @@ Encourage developers to seek early reviews during the development process provid
 ### 11. Checklist 
 - Confirm that the proposed changes in the pull request have been locally verified. If this is not feasible, ensure that reason is mentioned in the PR comments, explicitly.
 - Gain a thorough understanding of the feature or bug fix by reviewing related requirements and documentation mentioned in the PR. In case of ambiguity, request additional details through a comprehensive PR summary, changelog, or documentation.
-- Verify that the code addresses the specified requirements and functions as intended.
+- Verify that the code addresses the specified requirements and functions as intended. Evaluate the PR against the acceptance criteria/Definition of Done specified in the linked Jira ticket (if applicable).
 - Enforce adherence to [coding standards and style guidelines]((https://github.com/ansible-collections/cloud-content-handbook/blob/main/GUIDELINES/coding_guidelines.md). [Automated tools](https://github.com/ansible-collections/cloud-content-handbook/blob/main/CI/README.md#what-checks-are-run) are leveraged to catch common issues related to coding standards.
 - Identify and address any instances of code duplication. Encourage the use of shared functions or modules where applicable.
 - Confirm consistency with coding patterns and practices across the entire codebase.
@@ -55,7 +55,7 @@ Submitting a Pull Request (PR) is a collaborative process that benefits from cla
 Clearly articulate the purpose of your changes. Explain what problem your PR is solving or what enhancement it brings.
 
 ### **2. Provide Detailed Descriptions**
-Offer detailed descriptions for your changes. Explain the reasoning behind decisions and any potential trade-offs. Provide a code snippet in the description that demonstrates how to replicate or test the added/modified functionality in the pull request. 
+Offer detailed descriptions for your changes. Link the Github issues and/or the Jira tickets associated with the PR. Explain the reasoning behind decisions and any potential trade-offs. Provide a code snippet in the description that demonstrates how to replicate or test the added/modified functionality in the pull request. 
 
 ### **3. Small, Focused Changes**
 Keep your changes focused and avoid bundling unrelated updates. Ensure that each pull request (PR) addresses a single functionality or feature. Small, incremental changes are easier to review and merge.
