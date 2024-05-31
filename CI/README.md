@@ -24,12 +24,7 @@ The following checks are run on all repositories for all new and updated pull re
   - because this workflow requires authentication to the cloud service providers, it has special security requirements that must be followed, see [integration tests documentation](https://github.com/ansible-collections/cloud-content-handbook/blob/main/CI/integration-tests.md) for details
   - this workflow is run against the milestone version of Ansible and the latest supported version of python
 - `linters.yaml`
-  - runs the following linters to ensure the code complies with standard Ansible and python syntax/style/formatting conventions:
-    - [ansible-lint](https://ansible.readthedocs.io/projects/lint/), note: we do not run ansible-lint on integration tests
-    - [black](https://black.readthedocs.io/en/stable/)
-    - [flake8](https://flake8.pycqa.org/en/latest/)
-    - [isort](https://pycqa.github.io/isort/index.html)
-    - [mypy](https://mypy.readthedocs.io/en/stable/)
+  - runs the following linters (see [linters documentation](https://github.com/ansible-collections/cloud-content-handbook/blob/main/CI/linters.md)) to ensure the code complies with standard Ansible and python syntax/style/formatting conventions.
 - `sanity-tests.yaml`
   - runs [sanity tests](https://docs.ansible.com/ansible/latest/dev_guide/testing_sanity.html#testing-sanity) (static code analysis) on Ansible collections to ensure they meet Ansible coding standards and requirements
   - this workflow is run against the entire matrix of supported Ansible and python versions, although the `devel` Ansible version jobs may be marked as non-voting, meaning they can fail and the workflow run is still considered successful
