@@ -1,21 +1,21 @@
 # Asynchronous Story Pointing using [Kollabe](https://kollabe.com)
 
-**Introduction:** 
+## Introduction
 
 Story pointing is a crucial part of our agile development process, helping us estimate the effort required for various tasks. However, synchronous story pointing meetings can often be time-consuming and challenging to schedule, especially for distributed teams across different time zones. To address these challenges, I propose using [async planning poker from Kollabe](https://kollabe.com/posts/asynchronous-planning-poker).
 
-**Benefits of asynchronous story pointing:**
+## Benefits of asynchronous story pointing
 
 - **Flexibility:** Team members can log their story points at a time that suits them best, leading to better participation rates.
 - **Inclusivity:** By removing the need for everyone to be present at the same time, we can ensure that all team members, regardless of their location or time zone, can contribute equally.
 - **Efficiency:** Reducing the need for lengthy meetings can free up valuable time for development and other critical tasks.
 - **Improved Accuracy:** With more time to consider and provide estimates, team members can offer more thoughtful and accurate story points.
 
-**Agile Poker Plugin for Jira:**
+## Agile Poker Plugin for Jira
 
 An easier and more straightforward method is to use the Agile Poker plugin directly with Jira. This plugin seamlessly integrates with Jira, allowing for real-time and asynchronous story pointing without the need for manual data handling. Despite its benefits, the Jira stakeholders do not currently prioritize this solution, showing no interest in adding it to Jira.
 
-**Kollabe's Planning Poker:**
+## Kollabe's Planning Poker
 
 Kollabe’s Planning Poker is a powerful tool designed to facilitate asynchronous story pointing sessions, making it easier for distributed teams to collaborate effectively. Here’s how Kollabe’s Planning Poker enhances the estimation process:
 
@@ -41,9 +41,9 @@ Kollabe’s Planning Poker is a powerful tool designed to facilitate asynchronou
     
 6. **Integration with Jira:**
 
-	Kollabe enables direct import of Jira issues into Planning Poker sessions, ensuring all relevant tasks are available for estimation without manual entry. However, this requires the tool to have access to our Jira board. As a workaround, tasks can be manually exported as a CSV file from Jira and uploaded to Kollabe.
+	Kollabe enables direct import of Jira issues into Planning Poker sessions, ensuring all relevant tasks are available for estimation without manual entry. However, this requires the tool to have access to our Jira board. As a workaround, tasks can be manually exported as a CSV file from Jira and uploaded to Kollabe. As we progress, the CSV handling can be automated using Jira APIs, Kollabe's APIs, or browser automation tools.
     
-**How shall we use Kollabe's Asynchronous Planning Poker:**
+## How shall we use Kollabe's Asynchronous Planning Poker
 
 1. **Task Preparation:**
     
@@ -68,12 +68,51 @@ Kollabe’s Planning Poker is a powerful tool designed to facilitate asynchronou
     
     - After the discussion phase, team members submit their final estimates.
     - The tool aggregates the estimates, and a consensus is reached on the story points for each task.
-    - 
+    
 5. **Documentation and Review:**
     
     - The final estimates are documented into Jira, and any significant discussions or notes are recorded for future reference.
     - The Product Owner reviews the results and can follow up on any tasks that require further clarification. 
     
-**Conclusion:**
+## Time Frame for Asynchronous Story Pointing Process for 2-Week Work
+
+### Initial Estimation:
+
+1. **Preparation Phase (1-2 Days):**
+
+    - Product Owner filters backlog issues and exports them to a CSV file.
+    - Context and acceptance criteria for each task are provided.
+    - A room is created in Kollabe's Planning Poker tool, and team members are invited.
+    - CSV file is uploaded to Kollabe, and team members are notified to begin voting.
+
+2. **Voting Phase (2-3 Days):**
+
+    - Team members review the tasks and submit their estimates asynchronously.
+    - Regular reminders are sent to ensure timely participation.
+
+3. **Review and Finalization Phase (1-2 Days):**
+
+    - Once all votes are in, the results are reviewed.
+    - Tasks with significant estimate variances are discussed, and final consensus is reached.
+    - Final estimates are documented.
+
+Overall, the entire process can take about 1 week (5-7 days) to complete before the 2-week work period begins.
+
+### Mid-Cycle Story Pointing:
+
+1. **Identifying New Tasks:**
+
+    - If new tickets are added after the initial estimation is done, they should be identified and prioritized by the Product Owner.
+
+2.  **Urgency Assessment:**
+    
+    - Assess the urgency of new tasks. If they are critical, initiate immediate ad-hoc estimation.
+    - For less urgent tasks, defer estimation to the next planning session.
+    
+3. **Communication:**
+    
+    - Keep the team informed about any new tasks and the need for quick estimates.
+    
+## Conclusion ##
 
 Implementing an asynchronous story pointing tool can significantly enhance our agile process by making it more flexible, inclusive, and efficient. This change will lead to better participation, more accurate estimates, and ultimately, more successful project outcomes.
