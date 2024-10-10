@@ -4,8 +4,9 @@ Supported collections must have an up to date `requires_ansible` version in thei
 
 1. Note the release cycle for the upcoming [ansible-core release](https://docs.ansible.com/ansible/latest/roadmap/ansible_core_roadmap_index.html) and the upcoming [ansible community release](https://docs.ansible.com/ansible/latest/roadmap/ansible_roadmap_index.html).
 2. After the latest ansible-core release candidate (RC) has been released, verify with the core team if another RC is planned.
-3. Once the last planned RC has been made, increase the `requires_ansible` version by one version.
-4. Prep and perform a release within two weeks of the next ansible-core release.
+3. Once the last planned RC has been made, confirm with the PE team (#ansible-partners), if we can discontinue the support for the current ansible-core version mentioned in the README and meta/runtime.yml.
+4. If the PE team agrees, increase the `requires_ansible` version by one version and update the README.
+5. Prep and perform a release within two weeks of the next ansible-core release.
 
 The intent with this schedule is to recognize that there will be a brief window where the latest version of the collection does not support the oldest supported version of ansible-core, but to ensure that this window is as short as reasonably possible. Note that this procedure only needs to be followed for supported collections with new major versions that need to go out in the next ansible community package. For all other collections, new major releases can be made shortly after the latest ansible-core release.
 
