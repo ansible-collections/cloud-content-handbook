@@ -48,9 +48,6 @@ We will be following the Scrum-Ban (Scrum + Kanban) methodology. We will integra
 - **Thursday to the Following Wednesday (Two Weeks)**: 
   - Complete sprint B tasks.
 
-#### After Sprint A
-- **Playback and Retrospective**: 
-  - Conduct the sprint A playback and retrospective on the final Wednesday of sprint A or at a designated time.
 
 
 
