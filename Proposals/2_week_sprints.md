@@ -1,6 +1,6 @@
 ## Sprint Process Documentation
 
-The organization follows a two-week sprint cycle, running from Thursday to the second Wednesday of the following week. The first day of the sprint typically involves securing approval on all items added to the sprint, along with their assigned story points.
+The organization follows a two-week sprint cycle, running from Thursday to the second Wednesday of the following week. The first day of the sprint typically involves reviewing the backlog and committing to work based on our sprint goal and previous velocity, as a team.
 
 At the start of each sprint, the team determines the sprint goal, which guides the selection of user stories from the backlog to be added to the scrum board.
 
