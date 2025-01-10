@@ -106,4 +106,4 @@ If the resource does not have a user-defined name or identifier, you must provid
 
 ---
 
-This policy ensures better management and accountability of resources, helping to reduce unnecessary costs and improve the efficiency of our AWS infrastructure. Please ensure all resources are tagged accordingly to comply with this policy. For any guidance or clarification, feel free to reach out in the **#ansible-content-eng** Slack channel.
+This policy ensures better management and accountability of resources, helping to reduce unnecessary costs and improve the efficiency of our AWS infrastructure. Please ensure all resources are tagged accordingly to comply with this policy. For any guidance or clarification, feel free to reach out in the **ansible-cloud-team** or **#ansible-content-eng** Slack channel.
