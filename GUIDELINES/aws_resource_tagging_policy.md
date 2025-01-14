@@ -1,1 +1,1 @@
-Follow the documentation in [The Ansible Engineering Handbook](https://github.com/ansible/handbook/tree/main/The%20Ansible%20Engineering%20Handbook): [AWS Resource Tagging Policy](https://github.com/ansible/handbook/blob/main/The%20Ansible%20Engineering%20Handbook/docs/Content/AWS_Resource_Tagging_Policy.md)
+Follow the documentation in [The Ansible Engineering Handbook](https://handbook.eng.ansible.com/): [AWS Resource Tagging Policy](https://handbook.eng.ansible.com/docs/Content/AWS_Resource_Tagging_Policy)
