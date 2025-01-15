@@ -10,11 +10,11 @@ Our collections all use [semantic versioning](https://semver.org/), summarized a
 * MINOR version when adding functionality in a backward compatible manner or when deprecating (but not removing) functionality.
 * PATCH version when making backward compatible bug fixes.
 
-We only support the latest two major releases of our collections. The latest major release receives minor new features, security and bug fixes, and deprecations. The previous major release generally only receives security and bug fixes. [Changelog fragments](https://docs.ansible.com/ansible/latest/community/development_process.html#creating-changelog-fragments) are our guide to which PRs get backported where, which means it's very important that each PR has a changelog fragment that accurate reflects the type of change contained in the PR.
+Only the two latest major versions of our collections receive backports. The latest major release receives minor new features, security and bug fixes, and deprecations. The previous major release generally only receives security and bug fixes. [Changelog fragments](https://docs.ansible.com/ansible/latest/community/development_process.html#creating-changelog-fragments) are our guide to which PRs get backported where, which means it's very important that each PR has a changelog fragment that accurately reflects the type of change contained in the PR.
 
 To illustrate this, let's imagine a scenario where our latest major release branch is `stable-7` with latest release `7.1.0`, and our previous major release branch is `stable-6` with latest release `6.5.0`:
 
-* We *never* backport PRs that have the following changelog fragment sections. Because these changes break the existing collection API, they will be released in version `8.0.0` via a new `stable-8` branch created from the main branch.
+* We *never* backport PRs that have the following changelog fragment sections. Because these changes break the existing collection's user-facing functionality, they will be released in version `8.0.0` via a new `stable-8` branch created from the main branch.
   * `breaking_changes`
   * `major_changes`
   * `removed_features`
@@ -39,7 +39,7 @@ OR one or both of:
 * `backport-X`: indicates that the PR should be backported to the latest major release branch. Example: if latest major release branch is `stable-7`, these changes will be backported to the `stable-7` branch and released in the next minor or patch release for version 7.
 * `backport-(X-1)`: indicates that the PR should be backported to the previous major release branch. Example: if latest major release branch is `stable-7`, these changes will be backported to the `stable-6` (7 - 1) branch and released in the next patch release for version 6.
 
-NOTE: Sometimes the patchback bot fails to autogenerate a PR, usually due to a conflict between the PR code and the branch code. When this happens, you must follow the instructions in the originally PR comment from patchback bot to create a manual backport PR.
+NOTE: Sometimes the patchback bot fails to autogenerate a PR, usually due to a conflict between the PR code and the branch code. When this happens, you must follow the instructions in the original PR's comment from patchback bot to create a manual backport PR.
 
 ## Who is responsible for backports
 
