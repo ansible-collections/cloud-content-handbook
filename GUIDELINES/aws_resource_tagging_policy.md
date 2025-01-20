@@ -1,0 +1,1 @@
+Follow the documentation in [The Ansible Engineering Handbook](https://handbook.eng.ansible.com/): [AWS Resource Tagging Policy](https://handbook.eng.ansible.com/docs/Content/AWS_Resource_Tagging_Policy)
