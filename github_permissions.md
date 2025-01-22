@@ -54,6 +54,8 @@ This table outlines the permissions that each team member should have. If there 
 | [https://github.com/ansible-collections/cloud-content-handbook](https://github.com/ansible-collections/cloud-content-handbook)             | Mike, Michael, Gomathi                                                                                  | team: [cloud](https://github.com/orgs/ansible-collections/teams/cloud)     | team:  [cloud_triage](https://github.com/orgs/ansible-collections/teams/cloud_triage)                 |                                                                                      |
 
 
+## Additional Information
 
+Any questions or requests regarding repositories under the [ansible](https://github.com/ansible) org should be directed to #ansible-github-admins. For access-related requests for repositories under the [redhat-cop](https://github.com/redhat-cop) org, the [config file](https://github.com/redhat-cop/org/blob/main/config.yaml) must be updated, and a PR should be submitted.
 
 
