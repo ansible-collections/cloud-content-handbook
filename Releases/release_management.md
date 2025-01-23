@@ -11,13 +11,13 @@ Everyone! But not all at the same time. The release manager role rotates through
 1. We share the burden -- no one person on the team burns out from managing all of the releases each cycle.
 2. It is clear each cycle who is accountable for making sure the releases happen.
 3. Everyone on the team understands what is involved in release management.
-4. Our documentation is clear and accurate -- each team member should be able to follow it and perform the responsibilities of the role; if not the docs need to be updated.
+4. Our documentation is clear and accurate -- each team member should be able to follow it and perform the responsibilities of the role; if not, the docs need to be updated.
 
 ### What does the release manager do?
 
 The release manager is *not* responsible for doing all the work involved in releasing all of our collections! Rather, the release manager is *accountable* for ensuring that the work required to release our collections is in Jira, assigned, and gets completed on schedule. Unclear on the difference between responsible and accountable? Check out [these RACI definitions](https://www.teamgantt.com/blog/raci-chart-definition-tips-and-example#raci-definitions-explained).
 
-Because our releases are performed every six weeks, it's important that the release manager for a given cycle does the tasks below *before* the release sprint, otherwise the related Jira tickets may not get created and added to the sprint until too late.
+It's important that the release manager for a given cycle does the tasks below *before* the release sprint, otherwise the related Jira tickets may not get created and added to the sprint until too late.
 
 The specific things a release manager needs to do during their release cycle are as follows:
 
@@ -30,9 +30,9 @@ The specific things a release manager needs to do during their release cycle are
 * Follow steps 1-3 outlined [here](./release_cycles.md#major-releases) to confirm that it's ok to go ahead with major releases for our collections.
 * Assuming the major release is approved by partner engineering, do the following for each of our supported collections/providers and validated content collections:
   * Create a Jira ticket for the major release. Example ticket name: `Release version 10.0.0 of amazon.aws collection`. We use Jira automations to ensure that the ticket contains the right information for the release type.
-  * Check whether a minor, patch, or no release is needed for the current latest major release branch. If there are backported PRs to the latest stable branch that have `minor_changes` or `deprecated_features`, then a minor release is needed. If there are `security_fixes` or `bugfixes` only, then a patch release is needed. Otherwise no additional release is needed.
-  * If needed, create a Jira ticket for the minor or patch release.
-  * Note: if a minor release is needed, link the minor release ticket to the major release ticket and mark the major release ticket as blocked by the minor release ticket. This is important because we will want to include the changelog entry from the minor release in the changelog for the new major release, which will only happen if the minor release is completed and the release updates cherry-picked to the main branch *before* the new stable release branch is created from main. Also add an acceptance criterion that the minor release summary should state that this is the last planned minor release for the major version.
+  * Check whether a minor, patch, or no release is needed for the current latest major release branch. If there are backported PRs to the latest stable branch that have `minor_changes` or `deprecated_features`, then a minor release is needed. If there are `security_fixes` or `bugfixes` only, then a patch release is needed. Otherwise no additional release is needed. Note that we do not do a release if there only `trivial` changes.
+  * Create a Jira ticket for the minor or patch release.
+  * Note: if a minor release is necessary, link the minor release ticket to the major release ticket and mark the major release ticket as blocked by the minor release ticket. This is important because we will want to include the changelog entry from the minor release in the changelog for the new major release, which will only happen if the minor release is completed and the release updates cherry-picked to the main branch *before* the new stable release branch is created from main. Also add an acceptance criterion that the minor release summary should state that this is the last planned minor release for the major version.
 
 ### 2. Minor and patch releases
 

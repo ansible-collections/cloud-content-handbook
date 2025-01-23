@@ -1,6 +1,6 @@
 # Releases
 
-Cloud Content creates regular releases for our Ansible collections and other supported code (such as the Terraform AAP provider) to ensure that stable, deployable versions are published for users to consume. All of our releases adhere to the the [Semantic Versioning Specification](https://semver.org/). For more detail about when and how our code is released, see the following pages:
+Cloud Content creates regular releases for our Ansible collections and other supported code (such as the Terraform AAP provider) to ensure that stable, deployable versions are published for users to consume. All of our releases adhere to the [Semantic Versioning Specification](https://semver.org/). For more detail about when and how our code is released, see the following pages:
 
 * [Release cycles for cloud content](./release_cycles.md) - When we release major, minor, and patch versions of our collections and how our major releases align with the ansible-core and ansible community package release cycles.
 * [Release management](./release_management.md) - How the team tracks and manages regular releases across multiple collections, including what's involved and who is responsible.

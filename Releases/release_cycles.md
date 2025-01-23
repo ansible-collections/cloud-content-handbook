@@ -22,6 +22,6 @@ Note that this procedure only needs to be followed for supported collections wit
 
 ### Minor and patch releases
 
-New minor or patch versions of our collections are released **every six weeks** to align with the [Ansible Automation Platform release cycle](https://github.com/ansible/handbook/pull/284), during the third sprint of the AAP cycle. Whether a given collection version needs a minor or patch release depends on what types of changes have been committed since the previous release. If a scheduled release date arrives and a given collection has had no updates since its last release, that cycle's release can be skipped for that collection.
+New minor or patch versions of our collections are released **once a month, on the first Tuesday of the month**. Whether a given collection version needs a minor or patch release depends on what types of changes have been committed since the previous release. If a scheduled release date arrives and a given collection has had no updates since its last release, that cycle's release can be skipped for that collection.
 
 Note that security fixes will likely require an immediate, out-of-cycle release. If unsure, ask in our team Slack channel.
