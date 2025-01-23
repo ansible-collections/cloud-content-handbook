@@ -1,6 +1,6 @@
 # How to Create a New User in the Content AWS Account
 
-Important preamble: We should only create news users in the Content AWS Account when a new team member joins the Cloud Content team, or when another individual needs access to the Content AWS Account for approved development reasons. Approval *must* be received from the team manager and/or team lead before creating a new user.
+Important preamble: We should only create new users in the Content AWS Account when a new team member joins the Cloud Content team, or when another individual needs access to the Content AWS Account for approved development reasons. Approval *must* be received from the team manager and/or team lead before creating a new user. Before giving a new team member AWS Account access, please verify with them that they have installed and configured the [Red Hat pre-commit hook](https://source.redhat.com/departments/operations/it-information-security/leaktk/leaktk_components/rh_pre_commit) (restricted link) to ensure AWS credentials are not accidentally committed to our public repositories.
 
 To create a new user:
 
