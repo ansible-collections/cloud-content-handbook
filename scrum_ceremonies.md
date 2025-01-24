@@ -22,7 +22,7 @@ This document provides an overview of the key Scrum ceremonies, detailing what t
 - **What**: The Daily Standup is a brief meeting where team members share their progress, discuss obstacles, and plan their work for the day.
 - **When**: Every workday, typically in the morning, and should last no longer than 15 minutes. The Cloud Content Team provides this update asynchronously via Slack.
 - **How**:
-    - In our team, the Daily Standup is held asynchronously on Slack. Since it's asynchronous, it's important that each team member reads all standup messages, asks and answers questions as necessary, and provides assistance with blockers whenever possible.
+    - In our team, the Daily Standup is held asynchronously on Slack. Since it's asynchronous, it's important that each team member reads all standup messages, asks and answers questions as necessary, and plans to review PRs if there are any, and provides assistance with blockers whenever possible
     - Each team member posts their updates in the designated Slack channel, answering four key questions:
         - What did I work on yesterday?
         - What will I work on today?
@@ -34,18 +34,17 @@ This document provides an overview of the key Scrum ceremonies, detailing what t
 **3. Backlog Prioritization**
 
 - **What**: Backlog prioritization is the process of determining the order in which product backlog items should be worked on, ensuring the team focuses on the most valuable and urgent tasks first. The prioritization process involves ranking user stories or tasks based on business value, urgency, or other relevant factors.
-- **When**:
-    - **Ongoing Activity**: Prioritization is an ongoing process, occurring as new information, stakeholder feedback, or business needs emerge. The 3-in-the-box team will regularly review and adjust the backlog based on shifting business priorities or evolving customer feedback. This meeting takes place once a week.
+- **When**: The team 3-in-the-box holds a weekly prioritization meeting, inviting feature leads as needed. The 3-in-the-box may adjust priorities in between these meetings as new information, stakeholder feedback, or business needs emerge.
 - **How**:
     - The ‘3-in-the-box’ typically drives the prioritization process, working closely with stakeholders, customers, and the team.
-    - The team or the team leader (representing the team) provides input on feasibility, effort, and technical dependencies, helping the PM make well-informed prioritization decisions.
+    - The team leader and feature leads provide input on feasibility, effort, and technical dependencies, helping the PM make well-informed prioritization decisions.
 
 ---
 
 **4. Backlog Refinement (Grooming)**
 
 - **What**: Backlog Refinement is an ongoing process where the Delivery Team reviews and revises the Product Backlog to ensure that items are clearly defined, properly prioritized, and have enough detail and understanding for the team to confidently estimate and commit to them during Sprint Planning.
-- **When**: Throughout the sprint, usually once a week or as needed. The Cloud Team conducts this biweekly.
+- **When**: The Cloud Team conducts this biweekly, mid-sprint.
 - **How**:
     - The Delivery Team reviews the items in the Product Backlog.
     - The team clarifies any requirements, splits large items into smaller ones, and re-prioritizes tasks if necessary.
