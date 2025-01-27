@@ -34,9 +34,9 @@ This document provides an overview of the key Scrum ceremonies, detailing what t
 **3. Backlog Prioritization**
 
 - **What**: Backlog prioritization is the process of determining the order in which product backlog items should be worked on, ensuring the team focuses on the most valuable and urgent tasks first. The prioritization process involves ranking user stories or tasks based on business value, urgency, or other relevant factors.
-- **When**: The team 3-in-the-box holds a weekly prioritization meeting, inviting feature leads as needed. The 3-in-the-box may adjust priorities in between these meetings as new information, stakeholder feedback, or business needs emerge.
+- **When**: The Delivery Team’s 3-in-the-box holds a weekly prioritization meeting, inviting feature leads as needed. This team may adjust priorities in between these meetings as new information, stakeholder feedback, or business needs emerge.
 - **How**:
-    - The ‘3-in-the-box’ typically drives the prioritization process, working closely with stakeholders, customers, and the team.
+    - The  Delivery Team’s 3-in-the-box typically drives the prioritization process, working closely with stakeholders, customers, and the team.
     - The team leader and feature leads provide input on feasibility, effort, and technical dependencies, helping the PM make well-informed prioritization decisions.
 
 ---
@@ -58,7 +58,7 @@ This document provides an overview of the key Scrum ceremonies, detailing what t
 - **What**: The Sprint Review is held at the end of the sprint, where the Delivery Team demonstrates the work done to the stakeholders and gathers feedback.
 - **When**: At the end of each sprint or completion of an epic. Currently, this ceremony is held as part of the Cloud Team’s weekly meeting.
 - **How**:
-    - The Product Owner (3-in-the-box) presents the updated Product Backlog and explains what was completed.
+    - The Product Owner (Delivery Team’s 3-in-the-box) presents the updated Product Backlog and explains what was completed.
     - The Delivery Team demonstrates the work completed during the sprint.
     - A decision is made about the direction of future work based on the feedback gathered.
 
@@ -74,4 +74,6 @@ This document provides an overview of the key Scrum ceremonies, detailing what t
     - Actionable items are identified to improve the process in the next sprint, which may involve adjusting the workflow, improving communication, or addressing obstacles.
     - The team commits to the improvements and agrees on how to implement them in the next sprint.
 
-
+---
+**References:**
+1. [Delivery Team Roles](https://docs.google.com/presentation/d/1r8tgHoTdy0TIgHh44rioWLqRDrETVXdekawsVyjuePc/edit#slide=id.g202a89820f8_1_728)
