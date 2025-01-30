@@ -16,14 +16,14 @@
 
 ### GitHub Permission Structure for Cloud Team
 
-| Group Name                                                                         | Organization            | Members                                                                                                        |
-| ---------------------------------------------------------------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------- |
-| [**cloud-content**](https://github.com/orgs/ansible/teams/cloud-content)           | Ansible Org             | Senior Engineers and above                                                                                     |
-| [**cloud-admin**](https://github.com/orgs/ansible/teams/cloud-admin)               | Ansible Org             | Team Manager, Team Lead, Staff Eng/Architect                                                                   |
-| [**cloud-triage**](https://github.com/orgs/ansible/teams/cloud_triage)             | Ansible Org             | Associates who have joined the team and have not completed 90 days yet; Associates below Senior Engineer level |
-| [**cloud**](https://github.com/orgs/ansible-collections/teams/cloud)               | ansible-collections Org | Senior Engineers and above                                                                                     |
-| [**cloud-admin**](https://github.com/orgs/ansible-collections/teams/cloud-admin)   | ansible-collections Org | Team Manager, Team Lead, Staff Eng/Architect                                                                   |
-| [**cloud-triage**](https://github.com/orgs/ansible-collections/teams/cloud_triage) | ansible-collections Org | Associates who have joined the team and have not completed 90 days yet; Associates below Senior Engineer level |
+| Group Name                                                                         | Organization            | Members                                                                                           |
+| ---------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------- |
+| [**cloud-admin**](https://github.com/orgs/ansible/teams/cloud-admin)               | Ansible Org             | Team Manager, Team Lead, Staff Eng/Architect                                                      |
+| [**cloud-content**](https://github.com/orgs/ansible/teams/cloud-content)           | Ansible Org             | Senior Engineers and above                                                                        |
+| [**cloud-triage**](https://github.com/orgs/ansible/teams/cloud_triage)             | Ansible Org             | Associates who have been on the team for less than 90 days or are below the Senior Engineer level |
+| [**cloud-admin**](https://github.com/orgs/ansible-collections/teams/cloud-admin)   | ansible-collections Org | Team Manager, Team Lead, Staff Eng/Architect                                                      |
+| [**cloud**](https://github.com/orgs/ansible-collections/teams/cloud)               | ansible-collections Org | Senior Engineers and above                                                                        |
+| [**cloud-triage**](https://github.com/orgs/ansible-collections/teams/cloud_triage) | ansible-collections Org | Associates who have been on the team for less than 90 days or are below the Senior Engineer level |
 
 ### Cloud Content repository-specific permissions 
 
