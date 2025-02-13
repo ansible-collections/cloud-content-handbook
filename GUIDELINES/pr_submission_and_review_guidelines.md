@@ -29,7 +29,7 @@ Changelog files help code reviewers understand the changes in each PR; additiona
 For details on how to create a changelog entry, please refer to the ["Creating changelog fragments"](https://docs.ansible.com/ansible/latest/community/development_process.html#creating-changelog-fragments) section of the Ansible developer documentation.
 
 ### **9. Respect Branching Strategies**
-Adhere to the project's branching strategies. Submit your PR against the appropriate branch, and understand the project's release cycle.
+Adhere to the project's branching strategies. Submit your PR against the appropriate branch, and understand the project's [release cycle](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_cycles.md).
 
 ### **10. Verify CI Status**
 Ensure that your changes pass the Continuous Integration (CI) checks. Address any CI failures promptly. If you discover issues unrelated to your PR, please open a separate issue to address them. This practice ensures that PRs remain concise and focused on specific changes.
