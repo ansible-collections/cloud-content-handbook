@@ -43,6 +43,9 @@ Be responsive to feedback from reviewers. Address comments, make necessary adjus
 ### **13. Be Patient**
 Understand that code reviews take time. Be patient and responsive during the review process.
 
+### **14. Merging**
+Once a PR has addressed all reviewer feedback and has at least two approvals, the submitter of the PR may apply the `mergeit` label to merge their changes into the codebase.
+
 
 # Code Review Guidelines
 
