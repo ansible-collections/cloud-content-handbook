@@ -14,10 +14,10 @@
 
 * For a minor release, make sure the backport of the PRs from the main branch to the release branch is successful. For backporting of PRs refer to [the backporting documentation](https://github.com/ansible-collections/cloud-content-handbook/blob/main/backport_changes.md).
 
-* Create and check out a new branch and prepare the collection for release by following the instructions provided [here](https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_releasing.html#preparing-to-release-a-collection).
+* Create and check out a new branch (an ideal branch name is something like `prep_release_x_y_z`, where `x_y_z` are the version numbers, e.g., `prep_release_3_1_0`) and prepare the collection for release by following the instructions provided [here](https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_releasing.html#preparing-to-release-a-collection).
 
    ```
-   git checkout -b prep_release_x stable-X
+   git checkout -b prep_release_x_y_z stable-X
    ```
 
 * Update the version key in the galaxy.yml file, located in the root directory of the collection, with the appropriate value (x.y.z).
@@ -36,7 +36,11 @@
 
 * Verify `CHANGELOG.rst` for the presence of all the changelog fragments.
 
-* Commit the changes and create a pull request into the upstream repository. Make sure you choose `stable-X` as your base branch. This will be the preparation PR for the release. Ensure the CI passes. Once the `prep` PR is merged, update the local copy of `stable-X` branch with the latest changes from the `prep` PR.
+* Commit the changes and create a pull request into the upstream repository. Make sure you choose `stable-X` as your base branch. This will be the preparation PR for the release.
+
+* Ensure the CI passes before merging. Ideally it is best to wait until the release date (or the day before it) to merge the release prep PR.
+
+* Once the `prep` PR is merged, update the local copy of `stable-X` branch with the latest changes from the `prep` PR.
 _Note : If the sanity tests fail locally or in the CI, the failures have to be addressed in a separate PR_
 
 * Tag the version in Git and push to GitHub.
