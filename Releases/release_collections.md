@@ -80,6 +80,8 @@ _Note : If the sanity tests fail locally or in the CI, the failures have to be a
 
 * **In the case of a major release**, create a separate, standalone PR that increments the development version in the `galaxy.yml` file, located in the root directory of the collection, with the appropriate value (e.g., `version: 9.0.0-dev0` would be changed to `version: 10.0.0-dev0`).
 
+   **NOTE:** For the [`amazon.aws` collection](https://github.com/ansible-collections/amazon.aws) _only_, an additional version value that needs to be incrememented in the case of a major release is `AMAZON_AWS_COLLECTION_VERSION` in [`plugins/module_utils/common.py`](https://github.com/ansible-collections/amazon.aws/blob/5100ca0d861fec6a9ef88d55c98c656fe345c149/plugins/module_utils/common.py#L7).
+
 
 # Reference:
 https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_release_with_branches.html#releasing-major-collection-versions
