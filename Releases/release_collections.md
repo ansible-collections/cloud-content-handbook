@@ -31,7 +31,7 @@
    * Confirm there are fragments for all known changes in changelogs/fragments.
    * Run `antsibull-changelog release`:
    ```
-   $ antsibull-changelog release
+   antsibull-changelog release
    ```
 
 * Verify `CHANGELOG.rst` for the presence of all the changelog fragments.
