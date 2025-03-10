@@ -50,7 +50,7 @@ Please note that the following repositories do *not* support the use of this lab
 * Any repository in the [`redhat-cop` (Red Hat Communities of Practice)](https://github.com/redhat-cop) GitHub org
 * [`terraform-provider-aap`](https://github.com/ansible/terraform-provider-aap)
 
-PRs in the following repository can only be merged by prow, which is triggered when someone listed as an approver in the [`community.okd/OWNERS_ALIASES`](https://github.com/openshift/community.okd/blob/main/OWNERS_ALIASES) file (anyone listed in that file must also be a member of the [OpenShift GH org](https://github.com/openshift)) approves the PR:
+PRs in the following repository can only be merged by [Prow](https://github.com/kubernetes-sigs/prow). The merge process is triggered when someone listed as an approver in the [`community.okd/OWNERS_ALIASES`](https://github.com/openshift/community.okd/blob/main/OWNERS_ALIASES) file (anyone listed in that file must also be a member of the [OpenShift GH org](https://github.com/openshift)) approves the PR:
 * [`community.okd`](https://github.com/openshift/community.okd)
 
 # Code Review Guidelines
