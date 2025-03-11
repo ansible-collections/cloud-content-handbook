@@ -43,6 +43,15 @@ Be responsive to feedback from reviewers. Address comments, make necessary adjus
 ### **13. Be Patient**
 Understand that code reviews take time. Be patient and responsive during the review process.
 
+### **14. Merging**
+Once a PR has addressed all reviewer feedback and has at least two approvals, the submitter of the PR may apply the `mergeit` label to merge their changes into the codebase.
+
+Please note that the following repositories do *not* support the use of this label and will thus require a manual "squash + merge":
+* Any repository in the [`redhat-cop` (Red Hat Communities of Practice)](https://github.com/redhat-cop) GitHub org
+* [`terraform-provider-aap`](https://github.com/ansible/terraform-provider-aap)
+
+PRs in the following repository can only be merged by [Prow](https://github.com/kubernetes-sigs/prow). The merge process is triggered when someone listed as an approver in the [`community.okd/OWNERS_ALIASES`](https://github.com/openshift/community.okd/blob/main/OWNERS_ALIASES) file (anyone listed in that file must also be a member of the [OpenShift GH org](https://github.com/openshift)) approves the PR:
+* [`community.okd`](https://github.com/openshift/community.okd)
 
 # Code Review Guidelines
 
