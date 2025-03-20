@@ -5,27 +5,14 @@ This document defines the rotation for the Release Manager role within the Cloud
 More information on release manager role can be found [here](./release_management.md#release-manager-role)
 
 
-## Release Manager Rotation - 2025
+## Release Manager Rotation
 
-| Month       | Release Manager          | Notes                    |
-|-------------|--------------------------|--------------------------|
-| January     | [Name]                   |                          |
-| February    | @GomathiselviS           |                          |
-| March       | @alinabuzachis           |                          |
-| April       | @GomathiselviS           |                          |
-| May         | [Sign-up-here]           |                          |
-| June        | [Sign-up-here]           |                          |
-| July        | [Sign-up-here]           |                          |
-| August      | [Sign-up-here]           |                          |
-| September   | [Sign-up-here]           |                          |
-| October     | [Sign-up-here]           |                          |
-| November    | [Sign-up-here]           |                          |
-| December    | [Sign-up-here]           |                          |
-
+Release Manager Rotation for 2025 is tracked in the spreadsheet
+[Release Manager Rotation sheet - 2025](https://docs.google.com/spreadsheets/d/1ek26bZYFxOLPVfVqbQ34FSb0ZSIsWbUug16TPe9YYy4/edit?usp=sharing)
 
 ## Release Manager Role Rotation Process
-- A team member can volunteer to be a [release manager](./release_management.md#release-manager-role) for the cycle.
-- To volunteer, please add yourself in the release cycle above.
+- A team member can volunteer or assigned to be a [release manager](./release_management.md#release-manager-role) for the cycle.
+- To volunteer, please add yourself in the [Release Manager Rotation sheet - 2025](https://docs.google.com/spreadsheets/d/1ek26bZYFxOLPVfVqbQ34FSb0ZSIsWbUug16TPe9YYy4/edit?usp=sharing).
 - This includes the coordination of major, minor, and patch releases as outlined in the [Release Cycles for Cloud Content](./release_management.md#what-does-the-release-manager-do).
 
 
