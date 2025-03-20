@@ -17,7 +17,7 @@ These are the guidelines and expectations we agreed upon for how we will foster 
 - We proactively share information 
 - We are principled stewards of our communities and promote a welcoming attitude towards other associates, non Red Hat employees, and all contributors of code or ideas 
 - We help each other grow 
-- All our meetings will have an agenda that is shared in advanced, preferably by a minimum of 24 hours 
+- All our meetings will have an agenda that is shared in advance, preferably by a minimum of 24 hours 
 - We incorporate continuous improvement into all facets of our work 
 - We priortize public, asynchronous communication 
 - We own issues in our domain, driving them to completion and asking for help when needed
