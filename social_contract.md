@@ -13,7 +13,7 @@ These are the guidelines and expectations we agreed upon for how we will foster 
 - We incorporate fun into how we work
 - We default to Open in everything we do 
 - We assist each other, both proactively and in response to direct or indirect requests 
-- We prioritize collaboraton to complete all work in a sprint over pulling in new work 
+- We prioritize collaboration to complete all work in a sprint over pulling in new work 
 - We proactively share information 
 - We are principled stewards of our communities and promote a welcoming attitude towards other associates, non Red Hat employees, and all contributors of code or ideas 
 - We help each other grow 
