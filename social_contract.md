@@ -19,7 +19,7 @@ These are the guidelines and expectations we agreed upon for how we will foster 
 - We help each other grow 
 - All our meetings will have an agenda that is shared in advance, preferably by a minimum of 24 hours 
 - We incorporate continuous improvement into all facets of our work 
-- We priortize public, asynchronous communication 
+- We prioritize public, asynchronous communication 
 - We own issues in our domain, driving them to completion and asking for help when needed
 - We collaborate earnestly in all our Scrum Ceremonies
 - We schedule meetings that respect associates' calendars. This includes scheduling alternating calls that don't structurally disadvantage one timezone or region for recurring calls 
