@@ -25,7 +25,8 @@ More information on release manager role can be found [here](./release_managemen
 
 ## Release Manager Role Rotation Process
 - A team member can volunteer to be a [release manager](./release_management.md#release-manager-role) for the cycle.
-- Thich includes the coordination of major, minor, and patch releases as outlined in the [Release Cycles for Cloud Content](./release_management.md#what-does-the-release-manager-do).
+- To volunteer, please add yourself in the release cycle above.
+- This includes the coordination of major, minor, and patch releases as outlined in the [Release Cycles for Cloud Content](./release_management.md#what-does-the-release-manager-do).
 
 
 ## Release Cycles
