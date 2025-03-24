@@ -1,0 +1,187 @@
+{
+  "main": {
+    "id": "c9b40dd28403efb9",
+    "type": "split",
+    "children": [
+      {
+        "id": "b55daf18e728d14a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0d3ba1b1c2816ad1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "github_permissions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "github_permissions"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "95e9bae446fb1a4b",
+    "type": "split",
+    "children": [
+      {
+        "id": "6db2320c64a6ea29",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "99c7cad5b3235bc7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "86c1b466ea134811",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9ddd725732b9e75b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c76dc9da8c42c13d",
+    "type": "split",
+    "children": [
+      {
+        "id": "056b5a67c6fe333a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d9021e492da18b13",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Proposals/2_week_sprints.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2_week_sprints"
+            }
+          },
+          {
+            "id": "e04f9c74a3106819",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Proposals/2_week_sprints.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2_week_sprints"
+            }
+          },
+          {
+            "id": "364a92d01f34d237",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "02989b4b0328ee1e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Proposals/2_week_sprints.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2_week_sprints"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "0d3ba1b1c2816ad1",
+  "lastOpenFiles": [
+    "github_permissions.md",
+    "scrum_ceremonies.md",
+    "GUIDELINES/aws_account_creation.md",
+    "scrum_ceremonies.md~",
+    "roles_arguments_validation.md",
+    "module_promotion.md",
+    "collections_overview.md",
+    "GUIDELINES/pr_submission_and_review_guidelines.md",
+    "GUIDELINES/aws_resource_tagging_policy.md",
+    "CI/integration_tests.md",
+    "Proposals/asynchronous_story_pointing.md",
+    "Proposals/2_week_sprints.md",
+    "asynchronous_story_pointing.md",
+    "Proposals/ruff_transition.md",
+    "Proposals",
+    "proposals/ruff_transition.md",
+    "proposals",
+    "README.md",
+    "CI/linters.md"
+  ]
+}
