@@ -1,7 +1,8 @@
 # Modify the values as needed in your local copy.
 RELEASE_DATE: "yyyy-mm-dd"
+RELEASE_MONTH: "April"
 # Release manager needs to be the person's Jira username
-RELEASE_MANAGER: <jira username>
+RELEASE_MANAGER: "<jira username>"
 RELEASES:
   - collection: amazon.aws
     release_type: major
