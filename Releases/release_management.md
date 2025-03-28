@@ -21,7 +21,7 @@ It's important that the release manager for a given cycle does the tasks below *
 
 The specific things a release manager needs to do during their release cycle are as follows:
 
-* Create a Jira epic for the release cycle, under which all release-related tickets should be created.
+* Create a Jira epic for the release cycle, under which all release-related tickets should be created. Follow the steps outlined in the [document](generate_release_tickets.md) to generate the Jira tickets.
 * Determine whether the cycle requires a major release following the guidelines [here](./release_cycles.md#major-releases).
 * If the current month is not a major release month, proceed to the [Minor and patch releases](#2-minor-and-patch-releases) section below. Otherwise...
 
