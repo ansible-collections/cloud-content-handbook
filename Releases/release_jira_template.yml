@@ -1,17 +1,10 @@
 # Modify the values as needed in your local copy.
 RELEASE_DATE: "yyyy-mm-dd"
-RELEASE_MONTH: "April"
-# Release manager needs to be the person's Jira username
-RELEASE_MANAGER: "<jira username>"
+RELEASE_MONTH: "<month>"  # e.g., April
+# Release manager needs to be the cloud content bot's Jira username
+RELEASE_MANAGER: "<bot's jira username>"
 RELEASES:
-  - collection: amazon.aws
-    release_type: major
-    release_version: "10.0.0"
-  - collection: amazon.aws
-    release_type: minor
-    release_version: "9.3.0"
-    stable_branch: stable-9
-  - collection: cloud.aws_ops
-    release_type: patch
-    release_version: "8.2.4"
-    stable_branch: stable-8
+  - collection: <collection name>  # e.g., amazon.aws
+    release_type: <type>  # choices: major, minor, or patch
+    release_version: "<X.Y.Z>"  # e.g., "9.3.0"
+    stable_branch: stable-X  # e.g., stable-9; only include this for minor and patch 
