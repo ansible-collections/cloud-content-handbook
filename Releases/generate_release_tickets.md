@@ -12,12 +12,14 @@ Modify the [release template variables](release_jira_template.yml) as per your r
 
 Use the following command to generate Jira tickets:
 
-_note: Ensure authentication is done using the Jira service account. **Do not use PATs for production Jira**._
+_note: Ensure authentication (prompted during command execution) is done using the Jira service account. Do not use **Personal Access Tokens (PATs)** for production Jira._
 
 ```sh
  aap-jira-cli create-issues-from-template production cloud-content-release.yml \
  --template-vars-file <path to var file>/release_jira_template.yml \
  --jira-config-env "aca"
+
+ $ Jira auth token: <provide the Jira service account token>
 ```
 
 ### **Command Breakdown:**
