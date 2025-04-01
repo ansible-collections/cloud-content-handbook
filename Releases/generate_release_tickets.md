@@ -12,6 +12,8 @@ Modify the [release template variables](release_jira_template.yml) as per your r
 
 Use the following command to generate Jira tickets:
 
+_note: Ensure authentication is done using the Jira service account. **Do not use PATs for production Jira**._
+
 ```sh
  aap-jira-cli create-issues-from-template production cloud-content-release.yml \
  --template-vars-file <path to var file>/release_jira_template.yml \
@@ -37,7 +39,7 @@ This command will:
 
 - Create **one Epic**.
     
-- Generate **multiple User Stories** under that Epic based on the releases specified in the vars file.
+- Generate **multiple Tasks** under that Epic based on the releases specified in the vars file.
     
 
 Make sure to review the generated Jira tickets and adjust as needed before finalizing the release workflow.
