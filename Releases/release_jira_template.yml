@@ -1,8 +1,8 @@
 # Modify the values as needed in your local copy.
 RELEASE_DATE: "yyyy-mm-dd"
 RELEASE_MONTH: "<month>"  # e.g., April
-# Release manager needs to be the cloud content bot's Jira username
-RELEASE_MANAGER: "<bot's jira username>"
+# Release manager is the cloud content bot's Jira username
+RELEASE_MANAGER: "ansible-cloud-content-team@redhat.com"
 RELEASES:
   - collection: <collection name>  # e.g., amazon.aws
     release_type: <type>  # choices: major, minor, or patch
