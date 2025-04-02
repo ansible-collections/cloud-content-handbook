@@ -4,13 +4,13 @@
 
 ## Summary
 
-For repositories maintained by the Cloud Content team, adding the `jira` label to a GitHub issue will trigger an automation that creates a corresponding Jira ticket in the **ACA** project backlog.
+For repositories maintained by the Cloud Content team, GitHub issues tagged with the `jira` label will be picked up by an automation process that creates corresponding Jira tickets in the **ACA** project backlog.
 
 ## Automation Workflow
 
 1. A user adds the `jira` label to a GitHub issue.
-2. An AWS Lambda function (running in the team AWS account) is triggered.
-3. A new Jira issue is created and placed in the **ACA backlog**.
+2. An AWS Lambda function, running on a schedule like a cron job, periodically checks for new issues with the `jira` label.
+3. When a new labeled issue is found, a corresponding Jira issue is created and placed in the **ACA backlog**.
 
 ## Details
 
