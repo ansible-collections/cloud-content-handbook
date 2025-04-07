@@ -36,24 +36,24 @@ Managing dependencies between ansible-core and Collections is critical for maint
         
     - Weekly scheduled tests should cover a broader range of supported ansible-core versions to catch regressions.
 
-     **Testing Matrix Strategy**
+**Testing Matrix**
 
-	  Different types of tests may target different subsets of the Ansible Core versions based on their purpose and cost:
+  Different types of tests may target different subsets of the Ansible Core versions based on their purpose and cost:
 
-| Test Type   | When Run         | Ansible-Core Versions                                 | Purpose                                                |
-| ----------- | ---------------- | ----------------------------------------------------- | ------------------------------------------------------ |
-| Sanity      | PRs, Scheduled   | All supported versions in `requires_ansible`          | Validate metadata, docs, and structure across versions |
-| Unit        | PRs              | Latest stable, devel                                  | Test internal logic against current APIs               |
-| Integration | PRs, Weekly Jobs | Latest stable, devel (on PR); broader set on schedule | Validate functional compatibility                      |
+| Test Type   | When Run         | Ansible-Core Versions                                 |
+| ----------- | ---------------- | ----------------------------------------------------- |
+| Sanity      | PRs, Scheduled   | All supported versions in `requires_ansible`          |
+| Unit        | PRs              | Latest stable, devel                                  |
+| Integration | PRs, Weekly Jobs | Latest stable, devel (on PR); broader set on schedule |
 
-    Recommendations:
+
+**Recommendations:**
        
-  
-    - Sanity tests: Broadest range; run on all supported versions.
+   - Sanity tests: Broadest range; run on all supported versions.
 
-    -  Unit tests: Focus on latest stable and devel.
+   -  Unit tests: Focus on latest stable and devel.
 
-    -  Integration tests:
+   -  Integration tests:
 
         -  Run on **latest + devel** on PRs.
 
