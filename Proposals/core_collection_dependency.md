@@ -46,6 +46,20 @@ Managing dependencies between ansible-core and Collections is critical for maint
 | Unit        | PRs              | Latest stable, devel                                  |
 | Integration | PRs, Weekly Jobs | Latest stable, devel (on PR); broader set on schedule |
 
+**Downstream Integration Testing Matrix**
+
+  Downstream Integration tests will run against ansible-core that is supported by the AAP version.
+  - Nightly downstream integration tests will target the latest AAP version(Devel) with the latest stable collection version(main).
+  - Weekly scheduled tests will target the current AAP unrealeased_next version with the second stable collection version.
+  - Downstream integration tests can be triggered manually by the collection on-demand jenkins pipeline with a selected collection stable branch and AAP version. 
+  
+
+| Test Type   | When Run         | AAP versions(supprted Ansible-Core)       | Collection Versions  |
+| ----------- | ---------------- | ---------------- | ----------------------------------------------------- |
+| Downstream Integration      | Nightly   | Latest AAP (Devel)  | Latest stable
+| Downstream Integration      | Weekly    | Current AAP unrealeased_next   | Second stable     |
+| Downstream Integration | On-Demand | Selected AAP | Selected Collection
+
 
 **Recommendations:**
        
