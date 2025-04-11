@@ -9,26 +9,25 @@ Managing dependencies between ansible-core and Collections is critical for maint
 
 1. **Version Compatibility:**
     
-    - Each collection must define a supported range of ansible-core versions using the `requires_ansible` field in `meta/runtime.yml`
+    - Each collection must define a minimum supported ansible-core version using the `requires_ansible` field in `meta/runtime.yml`
         
-    - Major releases of collections should align with officially released and actively supported versions of ansible-core. 
-       _(Alignment means that the collection is fully compatible with a specific version or range of ansible-core.)_
+    - Major releases of collections should align with officially released and actively supported versions of ansible-core. These supported versions can be determined by referencing [Red Hat’s Ansible Automation Platform life cycle policy](https://access.redhat.com/support/policy/updates/ansible-automation-platform#dates). Specifically, the “Maintenance Support 2” end date indicates the end of life (EOL). The ansible-core versions supported in the corresponding AAP releases should be considered when defining the minimum `requires_ansible` value.
 
         
-2.  **Guidelines for Choosing the Supported Range of Ansible-Core Versions:**
+2.  **Guidelines for Choosing the Supported  of ansible-core Versions:**
     
            
     - Support at least the **latest two stable versions** of ansible-core in the **latest major version** of the collection.
         
-    - Maintain **separate branches** to support older ansible-core versions that are part of the **ELS (Extended Lifecycle Support)** program.
+    - Maintain **separate branches** (such as stable-8, stable-7) to support older ansible-core versions that are part of the **ELS (Extended Lifecycle Support)** program.
         
-    - Drop older ansible-core versions when they reach EOL or impose significant maintenance overhead.
+    - Drop older ansible-core versions when they reach EOL.
         
-    - Ensure `requires_ansible` is updated in `meta/runtime.yml` during major releases when dropping older support.
+    - Ensure `requires_ansible` is updated in `meta/runtime.yml` during a new major release when older ansible-core versions are no longer supported.
         
-    - Prioritize versions used in downstream products (e.g., AAP) when planning long-term support (separate branches or separate periodic CI pipelines for testing).
+    - When planning long-term support, **plan for** ansible-core versions used in downstream products (e.g., AAP). This may involve maintaining separate major version branches for compatibility (e.g., `stable-8` for AAP 2.4), running periodic CI jobs to validate against those versions, and ensuring fixes are backported as needed to branches that align with supported AAP releases.
     
-3. **Testing Strategy:**
+3. **Upstream testing Strategy:**
     
     - Collections should maintain CI pipelines that test against multiple versions of ansible-core.
         
@@ -36,15 +35,16 @@ Managing dependencies between ansible-core and Collections is critical for maint
         
     - Weekly scheduled tests should cover a broader range of supported ansible-core versions to catch regressions.
 
-**Testing Matrix**
+**Upstream testing Matrix**
 
   Different types of tests may target different subsets of the Ansible Core versions based on their purpose and cost:
 
-| Test Type   | When Run         | Ansible-Core Versions                                 |
-| ----------- | ---------------- | ----------------------------------------------------- |
-| Sanity      | PRs, Scheduled   | All supported versions in `requires_ansible`          |
-| Unit        | PRs              | Latest stable, devel                                  |
-| Integration | PRs, Weekly Jobs | Latest stable, devel (on PR); broader set on schedule |
+| Test Type               | When Run                      | Collection Branch                                                         | ansible-core Versions                                           |
+| ----------------------- | ----------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Sanity                  | PRs, nightly or periodic jobs | All active branches                                                       | All supported versions in `requires_ansible`                    |
+| Unit                    | PRs, Weekly Jobs              | Branch on which the PR is submitted ; All active branches for Weekly jobs | Latest version, devel (on PR); All supported versions on weekly |
+| Integration             | PRs, Weekly Jobs              | Branch on which the PR is submitted ; All active branches for Weekly jobs | Latest version, devel (on PR); All supported versions on weekly |
+| ELS Testing (all tests) | PRs                           | ELS support branches (e.g., `stable-8`)                                   | Specific older versions supported under ELS                     |
 
 **Downstream Integration Testing Matrix**
 
