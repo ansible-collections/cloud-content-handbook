@@ -78,4 +78,4 @@ If a customer with an active ELS subscription raises a support case involving a 
 ---
 
 References:
-1. [Supported Collection Certification Policy](https://docs.google.com/document/d/1zE7CTlnPr_aFOK-60iZT9PzCgYCZuOmyojH2JpJgIMo/edit?tab=t.0)
+1. [Supported Collection Certification Policy](https://docs.google.com/document/d/1zE7CTlnPr_aFOK-60iZT9PzCgYCZuOmyojH2JpJgIMo/edit?tab=t.0) (This is a draft proposal, not reviewed by the BU and PE yet.)
