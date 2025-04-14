@@ -12,7 +12,7 @@ Modify the [release template variables](release_jira_template.yml) as per your r
 
 Use the following command to generate Jira tickets:
 
-_note: Ensure authentication (prompted during command execution) is done using the Jira service account `ansible-cloud-content-team@redhat.com`, credentials and **Personal Access Tokens (PATs)** for this account can be found in the team's bitwarden. Do not use your own **Personal Access Tokens (PATs)** for production Jira._
+_note: Ensure authentication (prompted during command execution) is done using the Jira service account. `ansible-cloud-content-team@redhat.com` credentials and **Personal Access Tokens (PATs)** for this account can be found in the team's bitwarden. Do not use your own **Personal Access Tokens (PATs)** for production Jira._
 
 ```sh
  aap-jira-cli create-issues-from-template production cloud-content-release.yml \
