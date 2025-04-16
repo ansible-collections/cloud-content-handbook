@@ -10,11 +10,7 @@ Managing dependencies between ansible-core and Collections is critical for maint
 1. **Version Compatibility:**
 
 	- Each collection must define a minimum supported ansible-core version using the `requires_ansible` field in `meta/runtime.yml`.
-    
-	- Major releases of collections should align with officially released and actively supported versions of ansible-core. These supported versions can be determined by referencing [Red Hat’s Ansible Automation Platform life cycle policy](https://access.redhat.com/support/policy/updates/ansible-automation-platform#dates). Specifically, the “Maintenance Support 2” end date indicates the end of life (EOL). The ansible-core versions supported in the corresponding AAP releases should be considered when defining the minimum `requires_ansible` value.
-    
-	- From the AAP lifecycle document, we can identify the **minimum supported ansible-core version** for each AAP release. Collections should support ansible-core versions starting from that minimum up to the latest available version.
-    
+     
 	- The **latest major version** of a collection should support at least the **latest two stable versions** of ansible-core.
     
 	- Support for the other ansible-core versions (needed by AAP) can be maintained in **separate stable branches** of the collection (e.g., `stable-8`, `stable-9`), depending on usage, product needs, and team capacity.
@@ -27,14 +23,11 @@ Managing dependencies between ansible-core and Collections is critical for maint
            
     - Support at least the **latest two stable versions** of ansible-core in the **latest major version** of the collection.
         
-    - Maintain **separate branches** (such as stable-8, stable-7) to support older ansible-core versions that are part of the **ELS (Extended Lifecycle Support)** program.
-        
-    - Drop older ansible-core versions when they reach EOL.
-        
+    - Maintain **separate branches** (such as stable-8, stable-7) to support older ansible-core versions that are part of the **ELS (Extended Lifecycle Support)** program.     
             
     - Follow the steps mentioned in the [release_cycle document](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_cycles.md#major-releases) to determine the  requires_ansible value in meta/runtime.yml.
         
-    - When planning long-term support, **plan for** ansible-core versions used in downstream products (e.g., AAP). This may involve maintaining separate major version branches for compatibility (e.g., `stable-8` for AAP 2.4), running periodic CI jobs to validate against those versions, and ensuring fixes are backported as needed to branches that align with supported AAP releases.
+    - When planning long-term support, **plan for** ansible-core versions used in downstream products (e.g., AAP). This may involve maintaining separate major version branches for compatibility (e.g., `stable-9 for AAP 2.5), running periodic CI jobs to validate against those versions, and ensuring fixes are backported as needed to branches that align with supported AAP releases.
     
 3. **Upstream testing Strategy:**
     
@@ -46,28 +39,28 @@ Managing dependencies between ansible-core and Collections is critical for maint
 
 **Upstream testing Matrix**
 
-  Different types of tests may target different subsets of the Ansible Core versions based on their purpose and cost:
+  Different types of tests may target different subsets of the ansible-core versions based on their purpose and cost:
 
 | Test Type   | When Run                      | Collection Branch                                                                                        | ansible-core Versions                                                                 |
 | ----------- | ----------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| Sanity      | PRs, nightly or periodic jobs | Branch on which the PR is submitted ; All supported stable branches$^1$ for nightly or periodic jobs$^1$ | All supported versions in `requires_ansible`                                          |
+| Sanity      | PRs, nightly or periodic jobs | Branch on which the PR is submitted ; All supported stable branches$^1$ for nightly or periodic jobs$^1$ | `devel` and all supported versions in `requires_ansible`                              |
 | Unit        | PRs, Weekly Jobs              | Branch on which the PR is submitted ; All supported stable branches$^1$ for Weekly jobs                  | Latest version, devel (on PR); Weekly on all supported versions in `requires_ansible` |
 | Integration | PRs, Weekly Jobs              | Branch on which the PR is submitted ; All supported stable branches$^1$ for Weekly jobs                  | Latest version, devel (on PR); Weekly on all supported versions in `requires_ansible` |
 _$^1$ latest major release of the collection and two prior versions_
 
-**Example Scenario:**
+**Example Scenario :**
 
-Consider a collection where `stable-10` has `requires_ansible >= 2.17`, `stable-9` has `requires_ansible >= 2.16`, and `stable-8` has `requires_ansible >= 2.15`. In this case, the testing matrix should ensure the following:
+Consider amazon.aws collection where `stable-10` has `requires_ansible >= 2.18`, `stable-9` has `requires_ansible >= 2.16`, and `stable-8` has `requires_ansible >= 2.15`. In this case, the testing matrix should ensure the following:
 
-- PR and nightly/weekly sanity, unit, and integration tests are run on all three stable ansible-core version.
+- Nightly/weekly sanity, unit, and integration tests are run on all three stable ansible-core version.
     
-- Each collection branch should be tested only against ansible-core versions compatible with its declared `requires_ansible`. For example, `stable-10` CI should test against ansible-core 2.17+, while `stable-8` should include 2.15.
+- Each collection branch should be tested only against ansible-core versions compatible with its declared `requires_ansible`. For example, `stable-10` CI should test against ansible-core 2.18+, `stable-9` CI should test against ansible-core 2.16 and 2.17, while `stable-8` should include only 2.15.
     
 - ELS branches (if any) should run tests primarily on-demand or in response to specific issues.
     
 **Handling Version Overlap in the Testing Matrix**
 
-When managing multiple stable branches of a collection, care should be taken to avoid redundant or unnecessary testing across ansible-core versions. For example, if `stable-10` has `requires_ansible >= 2.17`, `stable-9` has `requires_ansible >= 2.16`, and `stable-8` has `requires_ansible >= 2.15`, each branch should focus testing only on its relevant minimum version and forward. `Stable-8` does not need to test on ansible-core 2.16 through 2.19, as these versions exceed its compatibility range and may introduce changes that are incompatible or irrelevant. Instead, its test matrix can be restricted to run only against ansible-core 2.15. This approach keeps CI efficient and scoped while maintaining coverage for declared compatibility ranges.
+When managing multiple stable branches of a collection, care should be taken to avoid redundant or unnecessary testing across ansible-core versions. For example, if `stable-10` has `requires_ansible >= 2.18`, `stable-9` has `requires_ansible >= 2.16`, and `stable-8` has `requires_ansible >= 2.15`, each branch should focus testing only on its relevant minimum version and forward. `Stable-8` does not need to test on ansible-core 2.16 through 2.19, as these versions exceed its compatibility range and may introduce changes that are incompatible or irrelevant. Instead, its test matrix can be restricted to run only against ansible-core 2.15. This approach keeps CI efficient and scoped while maintaining coverage for declared compatibility ranges.
 
 **Maintainer Responsibilities:**
 
