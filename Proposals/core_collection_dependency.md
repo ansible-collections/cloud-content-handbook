@@ -48,12 +48,38 @@ Managing dependencies between ansible-core and Collections is critical for maint
 
   Different types of tests may target different subsets of the Ansible Core versions based on their purpose and cost:
 
-| Test Type               | When Run                      | Collection Branch                                                                       | ansible-core Versions                                           |
-| ----------------------- | ----------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| Sanity                  | PRs, nightly or periodic jobs | All supported stable branches$^1$                                                       | All supported versions in `requires_ansible`                    |
-| Unit                    | PRs, Weekly Jobs              | Branch on which the PR is submitted ; All supported stable branches$^1$ for Weekly jobs | Latest version, devel (on PR); All supported versions on weekly |
-| Integration             | PRs, Weekly Jobs              | Branch on which the PR is submitted ; All supported stable branches$^1$ for Weekly jobs | Latest version, devel (on PR); All supported versions on weekly |
+| Test Type   | When Run                      | Collection Branch                                                                                        | ansible-core Versions                                                                 |
+| ----------- | ----------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Sanity      | PRs, nightly or periodic jobs | Branch on which the PR is submitted ; All supported stable branches$^1$ for nightly or periodic jobs$^1$ | All supported versions in `requires_ansible`                                          |
+| Unit        | PRs, Weekly Jobs              | Branch on which the PR is submitted ; All supported stable branches$^1$ for Weekly jobs                  | Latest version, devel (on PR); Weekly on all supported versions in `requires_ansible` |
+| Integration | PRs, Weekly Jobs              | Branch on which the PR is submitted ; All supported stable branches$^1$ for Weekly jobs                  | Latest version, devel (on PR); Weekly on all supported versions in `requires_ansible` |
 _$^1$ latest major release of the collection and two prior versions_
+
+**Example Scenario:**
+
+Consider a collection where `stable-10` has `requires_ansible >= 2.17`, `stable-9` has `requires_ansible >= 2.16`, and `stable-8` has `requires_ansible >= 2.15`. In this case, the testing matrix should ensure the following:
+
+- PR and nightly/weekly sanity, unit, and integration tests are run on all three stable ansible-core version.
+    
+- Each collection branch should be tested only against ansible-core versions compatible with its declared `requires_ansible`. For example, `stable-10` CI should test against ansible-core 2.17+, while `stable-8` should include 2.15.
+    
+- ELS branches (if any) should run tests primarily on-demand or in response to specific issues.
+    
+**Handling Version Overlap in the Testing Matrix**
+
+When managing multiple stable branches of a collection, care should be taken to avoid redundant or unnecessary testing across ansible-core versions. For example, if `stable-10` has `requires_ansible >= 2.17`, `stable-9` has `requires_ansible >= 2.16`, and `stable-8` has `requires_ansible >= 2.15`, each branch should focus testing only on its relevant minimum version and forward. `Stable-8` does not need to test on ansible-core 2.16 through 2.19, as these versions exceed its compatibility range and may introduce changes that are incompatible or irrelevant. Instead, its test matrix can be restricted to run only against ansible-core 2.15. This approach keeps CI efficient and scoped while maintaining coverage for declared compatibility ranges.
+
+**Maintainer Responsibilities:**
+
+Collection maintainers are expected to:
+
+- Define and update `requires_ansible` accurately in `meta/runtime.yml` for each release.
+    
+- Implement and maintain CI coverage across declared versions of ansible-core.
+    
+- Monitor PRs and nightly/weekly job results to identify regressions or breaking changes.
+    
+- Address issues through timely bug fixes, enhancements, or backports to stable branches.
 
 **Downstream Integration Testing Matrix**
 
