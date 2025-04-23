@@ -17,5 +17,5 @@ For repositories maintained by the Cloud Content team, GitHub issues tagged with
 - Uses a dedicated **Jira bot/service account**.
 - The script authenticates with **Jira** and **GitHub** using the team account’s **Personal Access Tokens (PATs)**.
 - The PATs and Jira service account credentials are:
-  - Stored securely in the team’s **Bitwarden vault**
-  - Also added to **AWS Secrets Manager** for use by the Lambda
+  - Stored securely in the team’s **Bitwarden vault**.
+  - Also added to **AWS Secrets Manager** for use by the Lambda function.
