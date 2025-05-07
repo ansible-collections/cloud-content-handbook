@@ -77,7 +77,7 @@ Collection maintainers are expected to:
 **Downstream Integration Testing Matrix**
 
   Downstream Integration tests will run against ansible-core that is supported by the AAP version.
-  - Nightly downstream integration tests will target the latest AAP `unreleased` version(`devel`) with the latest stable collection version(`main`).
+  - Nightly downstream integration tests will target the latest AAP `unreleased` version(`devel`) with the latest collection development branch(`main`).
   - Weekly scheduled tests will target the `released` AAP version (`unrealeased_next`) with the second stable collection version.
   - Downstream integration tests can be triggered manually by the collection on-demand jenkins pipeline with a selected collection stable branch and AAP version. 
   
