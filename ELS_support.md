@@ -12,8 +12,6 @@ ELS branches usually target older versions of `ansible-core`. While these versio
 #### **Key Considerations:**
 
 1. **Support for Older Ansible-Core Versions**
-    
-    - ELS branches should clearly define the minimum supported `ansible-core` version using the `requires_ansible` field in `meta/runtime.yml`.
         
     - These branches may not support the latest core versions and are not expected to keep up with upstream developments.
         
