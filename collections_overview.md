@@ -1,8 +1,7 @@
 # Collections Overview
 
-These are the collections that generally fall under the Cloud Content team's purview. We maintain/contribute to three types of collections: supported collections, community collections, and [validated content](validated.md).
+These are the collections that generally fall under the Cloud Content team's purview. We maintain/contribute to three types of collections: supported collections, community collections, and [validated content](https://github.com/ansible-collections/cloud-content-handbook/blob/main/validated_content.md).
 
-See the [collections release tracker](https://cloud-releases.jillr.dev/) for an overview of the current collection releases.
 
 | **Collection Name** | **Collection Type** | **Broad Use case** |
 |---------------------|---------------------|--------------------|
@@ -12,8 +11,6 @@ See the [collections release tracker](https://cloud-releases.jillr.dev/) for an 
 | [cloud.aws_troubleshooting](https://github.com/redhat-cop/cloud.aws_troubleshooting) | Validated content | Roles to help troubleshoot AWS resources |
 | [cloud.common](https://github.com/ansible-collections/cloud.common) | Supported | Helper collection for cloud |
 | [cloud.gcp_ops](https://github.com/redhat-cop/cloud.gcp_ops) | Validated content | Roles and playbooks for managing GCP resources |
-| [cloud.terraform](https://github.com/ansible-collections/cloud.terraform) | Supported | Automate the management and provisioning of infrastructure as code using Terraform CLI tool within Ansible playbooks and Execution Environment runtimes |
-| [cloud.terraform_ops](https://github.com/redhat-cop/cloud.terraform_ops) | Validated content | Roles to help automate Terraform integration with Red Hat Ansible Automation Platform |
 | [community.aws](https://github.com/ansible-collections/community.aws) | Community | Automate AWS services |
 | [community.okd](https://github.com/ansible-collections/community.okd) | Community | Automate OKD (Openshift Upstream) |
 | [kubernetes.core](https://github.com/ansible-collections/kubernetes.core) | Supported | Automate Kubernetes |
