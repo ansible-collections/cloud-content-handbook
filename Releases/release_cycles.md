@@ -25,3 +25,12 @@ Note that this procedure only needs to be followed for supported collections wit
 New minor or patch versions of our collections are released **once a month, on the first Tuesday of the month**. Whether a given collection version needs a minor or patch release depends on what types of changes have been committed since the previous release. If a scheduled release date arrives and a given collection has had no updates since its last release, that cycle's release can be skipped for that collection.
 
 Note that security fixes will likely require an immediate, out-of-cycle release. If unsure, ask in our team Slack channel.
+
+### Code freeze
+To enhance the stability of our deployments, we implement a code freeze period for all releases. During this time, no new features or breaking changes will be merged; only critical, pre-approved bug fixes are permitted.
+
+* The major release code freeze begins at 5:00 PM EST on the second to last Tuesday of each month.
+
+* The minor release code freeze begins at 5:00 PM EST on the last Tuesday of each month.
+
+Any Pull Requests merged after these deadlines, including backports, will not be part of the upcoming release and will be deferred to the next release cycle.
