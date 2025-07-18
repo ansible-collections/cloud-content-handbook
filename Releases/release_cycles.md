@@ -27,10 +27,31 @@ New minor or patch versions of our collections are released **once a month, on t
 Note that security fixes will likely require an immediate, out-of-cycle release. If unsure, ask in our team Slack channel.
 
 ### Code freeze
-To enhance the stability of our deployments, we implement a code freeze period for all releases. During this time, no new features or breaking changes will be merged; only critical, pre-approved bug fixes are permitted.
 
-* The major release code freeze begins at 5:00 PM EST on the second to last Tuesday of each month.
+#### What is a Code Freeze?
+A code freeze is a period before a collection release where we stop merging new PRs to the collection. The goal is to enhance the stability of our deployments, and test everything thoroughly without new changes causing unexpected problems during the release. During this time, no new features or breaking changes will be merged; only critical, pre-approved bug fixes are permitted.
+
+#### Our Code Freeze Deadlines
+
+* The major release code freeze begins at 5:00 PM EST on the second to last Tuesday of the month prior to the release.
 
 * The minor release code freeze begins at 5:00 PM EST on the last Tuesday of each month.
 
 Any Pull Requests merged after these deadlines, including backports, will not be part of the upcoming release and will be deferred to the next release cycle.
+
+#### Examples of the Code Freeze Policy in Action
+
+Let's assume the code freeze deadline for the Aug 2025 Minor Release is Tuesday, July 29, 2025, at 5:00 PM EST.
+
+* Example 1: New Feature PR Merged Before Deadline
+  The PR is reviewed, tested, and merged on Tuesday, July 29th, at 2:15 PM EST.
+  Since it was merged before the deadline, the new feature will be available in the August release.
+
+* Example 2: Refactor PR Merged After Deadline
+  The review takes longer than expected, and the PR is finally merged on Wednesday, July 30th, at 7:30 PM EST.
+  This PR missed the code freeze cutoff. The code improvement is valuable but not critical for the August release, so it will be deferred to the September release cycle.
+
+* Example 3: Critical Bug Fix PR During the Freeze
+  On Thursday, July 31st (during the freeze), a bug is found where the amazon.aws.ec2_instance module incorrectly reports a running machine as "off," breaking many users' playbooks. This PR fixes that critical issue. The fix is marked as a "release blocker" and gets special approval from the collection maintainers to be merged during the freeze.
+  This critical fix will be included in the August release to ensure users' automation works correctly.
+
