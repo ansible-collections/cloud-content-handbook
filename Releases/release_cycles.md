@@ -29,7 +29,7 @@ Note that security fixes will likely require an immediate, out-of-cycle release.
 ### Code freeze
 
 #### What is a Code Freeze?
-A code freeze is a period before a collection release where we stop merging new PRs to the collection. The goal is to enhance the stability of our deployments, and test everything thoroughly without new changes causing unexpected problems during the release. During this time, no new features or breaking changes will be merged; only critical, pre-approved bug fixes are permitted.
+A code freeze is a period before a collection release where we stop merging the backported PRs to the collection's upcoming release branch. The goal is to lock down the upcoming release branch, allowing for thorough testing without the risk of new changes introducing bugs. During this time, no new features or breaking changes will be merged; only critical, pre-approved bug fixes are permitted.
 
 #### Our Code Freeze Deadlines
 
