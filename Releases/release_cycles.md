@@ -47,9 +47,11 @@ A code freeze is a period before a release where we finalize the code that will 
 
 * The code freeze begins at 5:00 PM EST on the second to last Tuesday of the month prior to the release.
 
-* This freeze is a stabilization period for the main branch in preparation for cutting the new major version branch (e.g., stable-11).
+* At this time, the new major version branch (e.g., stable-11) is created directly from the main branch.
 
-* During this period, we stop merging new features and breaking changes into main. Only approved bug fixes and critical changes are merged during this period.
+* Immediately after the branch is created, development on main continues without interruption.
+
+* All subsequent testing and critical bug fixes required for the major release are managed on the newly created stable branch. During this period, we stop merging new features and breaking changes into the stable branch.
 
 #### Examples of the Code Freeze Policy in Action (Minor Release)
 
