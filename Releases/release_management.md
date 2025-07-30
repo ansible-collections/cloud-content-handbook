@@ -21,6 +21,7 @@ It's important that the release manager for a given cycle does the tasks below *
 
 The specific things a release manager needs to do during their release cycle are as follows:
 
+* Identify which collections need a release for the upcoming release cycle and enforce the code freeze by applying the `on-hold` label to any late PRs, according to the [code freeze guideline](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_cycles.md#our-code-freeze-process-and-deadlines).
 * Create a Jira epic for the release cycle, under which all release-related tickets should be created. Follow the steps outlined in the [document](generate_release_tickets.md) to generate the Jira tickets.
 * Determine whether the cycle requires a major release following the guidelines [here](./release_cycles.md#major-releases).
 * If the current month is not a major release month, proceed to the [Minor and patch releases](#2-minor-and-patch-releases) section below. Otherwise...
