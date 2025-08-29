@@ -5,7 +5,7 @@
    * For minor changes, increment y. Resulting branch will be x.y+1.0.
    * For bugfixes/patch/trivial changes, increment z. Resulting branch will be x.y.z+1.
 
-* For a **major release**, switch to the new branch stable-X, where X represents the major version number. This branch is typically created during the code freeze. If it doesn’t already exist, create it from the main branch at the time of release.
+* For a **major release**, switch to the new branch `stable-X`, where `X` represents the major version number. This branch is typically created during the code freeze. If it doesn’t already exist, create it from the `main` branch at the time of release.
 
    ```
    git checkout main
