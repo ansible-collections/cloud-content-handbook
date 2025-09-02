@@ -5,14 +5,17 @@
    * For minor changes, increment y. Resulting branch will be x.y+1.0.
    * For bugfixes/patch/trivial changes, increment z. Resulting branch will be x.y.z+1.
 
-* **In case of a major release**, create a new branch `stable-X`, where `X` denotes the major version number. The new branch is based on the `main` branch.
+* For a **major release**, switch to the new branch `stable-X`, where `X` represents the major version number. This branch is typically created during the code freeze. If it doesn’t already exist, create it from the `main` branch at the time of release.
 
    ```
    git checkout main
-   git branch stable-X main
+   git branch stable-X main  --> If a new branch is needed
+   git checkout stable-X
    ```
 
-* For a minor release, make sure the backport of the PRs from the `main` branch to the release branch is successful. For backporting of PRs refer to [the backporting documentation](https://github.com/ansible-collections/cloud-content-handbook/blob/main/backport_changes.md).
+* For a **major release**, if an ansible-core version (`requires_ansible`) update is not already included, please verify whether an update is needed. If it is, create a separate PR for the version update and ensure it is merged to the `stable-X` branch before starting the release preparation PR. If you're unsure whether an update is required, please consult the team in the team Slack channel.
+
+* For a **minor release**, make sure the backport of the PRs from the `main` branch to the release branch is successful. For more information on backporting PRs, refer to [the backporting page](https://github.com/ansible-collections/cloud-content-handbook/blob/main/backport_changes.md) of the team handbook.
 
 * Create and check out a new branch (an ideal branch name is something like `prep_release_x_y_z`, where `x_y_z` are the version numbers, e.g., `prep_release_3_1_0`) and prepare the collection for release by following the instructions provided [here](https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_releasing.html#preparing-to-release-a-collection).
 
