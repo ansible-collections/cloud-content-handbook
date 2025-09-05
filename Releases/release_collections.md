@@ -55,7 +55,7 @@ _Note : If the sanity tests fail locally or in the CI, the failures have to be a
 
 * Once the [CI for the release](https://ansible.softwarefactory-project.io/zuul/status) passes, post a message on the `#ansible-partners` Slack channel requesting an approval for any supported content collections (e.g., `amazon.aws`) for Automation Hub.
 
-* `redhat.openshift` collection is manually uploaded to Automation Hub. To manually upload a collection to Automation Hub, please refer to the instructions [here](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_automation_hub.md). Manual upload is performed in cases where automated upload to Automation Hub fails.
+* Manual upload is performed in cases where automated upload to Automation Hub fails. To do this, please refer to the instructions [here](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_automation_hub.md).
 
 * Check for the latest version of the collection on [Galaxy](https://galaxy.ansible.com) and, if applicable, Automation Hub.
 
