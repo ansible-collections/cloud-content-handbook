@@ -67,6 +67,8 @@ _Note : If the sanity tests fail locally or in the CI, the failures have to be a
    : amazon.aws 7.0.0 has been released with new bugfixes, features, plugins, and modules. Refer the <changelog> for details!
    ```
 
+* For `amazon.aws` and `community.aws` collection releases, please announce the release in the [Ansible Forum, under the `News & Announcements` category](https://forum.ansible.com/c/news/5). You can either follow the template in [this post](https://forum.ansible.com/t/amazon-aws-10-1-2-and-9-5-2-bugfix-releases-are-live/44653), or create your own post.
+
 * Create a PR in the collection to merge the changes made in the release prep PR to the the `main` branch. This can be done manually or using the `cherry-pick` command as shown below:
 
    _This example assumes that the released version is 3.0.0_
