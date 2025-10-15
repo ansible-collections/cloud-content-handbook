@@ -10,22 +10,14 @@ These are the collections that generally fall under the Cloud Content team's pur
 | [cloud.aws_ops](https://github.com/redhat-cop/cloud.aws_ops) | Validated content | Roles and playbooks for managing AWS resources |
 | [cloud.aws_troubleshooting](https://github.com/redhat-cop/cloud.aws_troubleshooting) | Validated content | Roles to help troubleshoot AWS resources |
 | [cloud.common](https://github.com/ansible-collections/cloud.common) | Supported | Helper collection for cloud |
-| [cloud.gcp_ops](https://github.com/redhat-cop/cloud.gcp_ops) | Validated content | Roles and playbooks for managing GCP resources |
 | [community.aws](https://github.com/ansible-collections/community.aws) | Community | Automate AWS services |
 | [community.okd](https://github.com/ansible-collections/community.okd) | Community | Automate OKD (Openshift Upstream) |
 | [kubernetes.core](https://github.com/ansible-collections/kubernetes.core) | Supported | Automate Kubernetes |
 | redhat.openshift | Supported[^1] | Automate Openshift |
+| [hashicorp.vault](https://github.com/ansible-automation-platform/hashicorp.vault) | Certified | Automate Hashicorp Vault |
+| [ansible.mcp](https://github.com/ansible-collections/ansible.mcp) | Supported | Ansible Plugin for MCP Servers |
 
 [^1]: While redhat.openshift is the supported collection for OpenShift, it is auto-generated from community.okd. As such, when changes are needed to the redhat.openshift collection they are first made in the community.okd repository and from that redhat.openshift is generated and uploaded to Ansible Automation Hub.
-
-## Terraform Providers
-
-The Cloud Content team supports/contributes to two Terraform providers for Ansible products.
-
-| **Repository Name** | **Support Level** | **Broad Use Case**|
-|---------------------|-------------------|-------------------|
-| [terraform-provider-aap](https://github.com/ansible/terraform-provider-aap) | Supported | Terraform provider for Ansible Automation Platform |
-| [terraform-provider-ansible](https://github.com/ansible/terraform-provider-ansible) | Community | Terraform provider for Ansible |
 
 ## Supporting Tools
 
