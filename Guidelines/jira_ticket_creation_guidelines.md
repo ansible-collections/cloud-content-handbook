@@ -1,0 +1,163 @@
+# Cloud Content Team – Jira Ticket Creation Guide
+
+This document provides a standard template and best practices for creating Jira tickets for the Cloud Content team, applicable to epics, user stories, spikes, and tasks.
+The template serves as a reference and can be adjusted to fit the specific feature or goal being worked on.
+
+---
+
+## 1. General Guidelines
+
+- **Component:** `cloud-content`  
+- **Workstream:** `"Cloud Content"`  
+- **Priority & Due Date:** Use your judgment or check with the BU/team.  
+- **Description & Acceptance Criteria:** Spend a few minutes making these clear and detailed so that whoever picks up the ticket or reviews it has all necessary information.  
+- **Labels:** Use meaningful and consistent labels.  
+- **Support:** If you are in doubt, check with `#ansible-jira-support` or `#ansible-cloud-team`.  
+
+---
+
+## 2. Epic Template
+
+**Title:**  
+Epic Name
+
+**Summary:**  
+Brief description of the epic’s purpose.
+
+**Description:**  
+- Goal of the epic  
+- Why it matters  
+- Scope and key areas covered  
+
+**Acceptance Criteria:**  
+- High-level outcomes expected  
+- Measurable and actionable goals  
+
+**Definition of Done:**  
+- All associated user stories and tasks are completed 
+- Outcomes meet the acceptance criteria  
+- Documentation or handoff notes are complete
+
+**Labels:**
+Relevant labels for tracking and reporting
+
+**Due Date:** appropriate milestone  
+
+---
+
+## 3. User Story Template
+
+**Title:**  
+[Name] – [Goal/Activity]
+
+**User Story:**  
+As a [role], I want [goal] so that [benefit].  
+
+**Supporting Documentation:**
+Any relevant materials or references that can help complete the user story
+
+**Acceptance Criteria:**  
+- Clear, measurable outcomes  
+- Checklist for steps or sub-tasks  
+
+**Definition of Done:**  
+- Task has been completed and tested (if applicable)  
+- Key takeaways or outcomes are documented, demoed or shared  
+
+**Labels:**  
+Relevant labels
+
+---
+
+## 4. Task Template
+
+**Title:**  
+[Name] – [Specific Activity]
+
+**Description:**  
+Short, actionable description of the task and expected outcome.
+
+**Supporting Documentation:**
+Any relevant materials or references that can help complete the task.
+
+
+**Checklist / Subtasks (optional):**  
+- [ ]
+- [ ]
+
+**Acceptance Criteria:**  
+- Goal identified and documented  
+- Progress tracked  
+- Optional: insights shared with team  
+
+**Definition of Done:**  
+- Task is completed and meets all acceptance criteria  
+- Progress is updated 
+- Optional outcomes or insights are shared with the team  
+
+**Labels:**  
+Relevant labels
+
+---
+
+## 5. Spike Template
+
+**Title:**  
+[Spike] – [Brief Description of Research/Investigation Topic]
+
+**Component:**  
+`cloud-content`  
+
+**Workstream:**  
+`Cloud Content`  
+
+**Priority & Due Date:**  
+Set based on urgency or in consultation with the BU/team  
+
+**Description / Goal:**  
+Provide a brief summary of the research or investigation to be done. Include:  
+- The problem or question you are trying to answer  
+- Why this spike is needed  
+- Any assumptions or context  
+
+**Supporting Documentation:**
+Any relevant materials or references that can help complete the task.
+
+**Acceptance Criteria:**  
+- Specific outcomes or insights expected from the spike  
+- List of questions to answer or decisions to inform  
+- Any preliminary results or recommendations to be delivered  
+
+**Definition of Done:**  
+- Spike investigation is complete and documented  
+- Findings, recommendations, or decisions are clearly shared  
+- Any next steps or follow-up actions are identified  
+
+**Checklist / Tasks (optional):**  
+- [ ] Gather information and data  
+- [ ] Test possible approaches or solutions (if applicable)  
+- [ ] Document findings and insights  
+- [ ] Share outcomes with team or stakeholders  
+
+**Labels:**  
+Relevant labels
+
+---
+
+## 6. Best Practices
+
+1. Keep titles and descriptions clear and concise.  
+2. Use standard components, workstreams, and labels.  
+3. Ensure progress is trackable.  
+4. Encourage sharing of outcomes.  
+5. Use checklists for multi-step tasks for easier tracking.  
+6. If unsure about any details, check with `#ansible-jira-support` or `#ansible-cloud-team`.  
+
+---
+
+## 6. References
+
+- [Ansible: Jira Issue Use Guide](https://docs.google.com/document/d/1gl0cj4RyMuQ7TSd8hIqXFrHXsvMt10nd-fTg30CQncA/edit?usp=sharing)
+- [Ansible Collaborative Delivery 3.0](https://docs.google.com/presentation/d/1r8tgHoTdy0TIgHh44rioWLqRDrETVXdekawsVyjuePc/edit?usp=sharing)
+- [Ansible Knowledge Base](https://spaces.redhat.com/spaces/AAP/pages/407320866/Ansible+Knowledge+Base)
+
