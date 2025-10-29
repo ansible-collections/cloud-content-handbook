@@ -14,12 +14,17 @@ The template serves as a reference and can be adjusted to fit the specific featu
 - **Labels:** Use meaningful and consistent labels.  
 - **Support:** If you are in doubt, check with `#ansible-jira-support` or `#ansible-cloud-team`.  
 
+> **Note:**  
+> - *Acceptance Criteria* are **specific to each ticket** — they define what success looks like for that particular epic, story, task, or spike.  
+> - The *Definition of Done (DoD)* should remain **consistent across tickets** and reflect the team’s shared understanding of completion (for example: code reviewed, tested, documented, and handed off).  
+
 ---
 
 ## 2. Epic Template
 
 **Title:**  
-Epic Name
+`Epic Name` — A short, descriptive name for the epic.
+**Example:** `AWS S3 Resource Counting`  
 
 **Summary:**  
 Brief description of the epic’s purpose.
@@ -30,8 +35,7 @@ Brief description of the epic’s purpose.
 - Scope and key areas covered  
 
 **Acceptance Criteria:**  
-- High-level outcomes expected  
-- Measurable and actionable goals  
+> **Note:** These are specific to this epic and define what success looks like.
 
 **Definition of Done:**  
 - All associated user stories and tasks are completed 
@@ -49,6 +53,7 @@ Relevant labels for tracking and reporting
 
 **Title:**  
 [Name] – [Goal/Activity]
+**Example:** `S3 Bucket Listing – View Bucket Usage Summary`
 
 **User Story:**  
 As a [role], I want [goal] so that [benefit].  
@@ -57,12 +62,12 @@ As a [role], I want [goal] so that [benefit].
 Any relevant materials or references that can help complete the user story
 
 **Acceptance Criteria:**  
-- Clear, measurable outcomes  
-- Checklist for steps or sub-tasks  
+- > **Note:** These are specific to this user story and describe what needs to be achieved.
 
 **Definition of Done:**  
 - Task has been completed and tested (if applicable)  
 - Key takeaways or outcomes are documented, demoed or shared  
+> **Note:** DoD should remain consistent across all user stories.
 
 **Labels:**  
 Relevant labels
@@ -73,6 +78,7 @@ Relevant labels
 
 **Title:**  
 [Name] – [Specific Activity]
+**Example:** `S3 Bucket Listing – Write a Module to Fetch Bucket Details`
 
 **Description:**  
 Short, actionable description of the task and expected outcome.
@@ -80,20 +86,18 @@ Short, actionable description of the task and expected outcome.
 **Supporting Documentation:**
 Any relevant materials or references that can help complete the task.
 
-
 **Checklist / Subtasks (optional):**  
 - [ ]
 - [ ]
 
 **Acceptance Criteria:**  
-- Goal identified and documented  
-- Progress tracked  
-- Optional: insights shared with team  
+> **Note:** These are specific to this task and define what completion looks like.
 
 **Definition of Done:**  
 - Task is completed and meets all acceptance criteria  
 - Progress is updated 
 - Optional outcomes or insights are shared with the team  
+> **Note:** DoD should follow the team-wide standard for completed tasks.
 
 **Labels:**  
 Relevant labels
@@ -104,6 +108,7 @@ Relevant labels
 
 **Title:**  
 [Spike] – [Brief Description of Research/Investigation Topic]
+**Example:** `Spike – Evaluate Methods for Counting AWS S3 Buckets Efficiently`
 
 **Component:**  
 `cloud-content`  
@@ -124,14 +129,13 @@ Provide a brief summary of the research or investigation to be done. Include:
 Any relevant materials or references that can help complete the task.
 
 **Acceptance Criteria:**  
-- Specific outcomes or insights expected from the spike  
-- List of questions to answer or decisions to inform  
-- Any preliminary results or recommendations to be delivered  
+> **Note:** These are specific to this spike and define what it should achieve.
 
 **Definition of Done:**  
 - Spike investigation is complete and documented  
 - Findings, recommendations, or decisions are clearly shared  
 - Any next steps or follow-up actions are identified  
+> **Note:** DoD should follow the team-wide standard for completed spikes.
 
 **Checklist / Tasks (optional):**  
 - [ ] Gather information and data  
@@ -155,7 +159,7 @@ Relevant labels
 
 ---
 
-## 6. References
+## 7. References
 
 - [Ansible: Jira Issue Use Guide](https://docs.google.com/document/d/1gl0cj4RyMuQ7TSd8hIqXFrHXsvMt10nd-fTg30CQncA/edit?usp=sharing)
 - [Ansible Collaborative Delivery 3.0](https://docs.google.com/presentation/d/1r8tgHoTdy0TIgHh44rioWLqRDrETVXdekawsVyjuePc/edit?usp=sharing)
