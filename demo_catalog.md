@@ -22,10 +22,8 @@ Demos aimed at helping new team members get up to speed with the Cloud Content t
 
 ## 2. Cloud Team Development Work
 
-Demos focused on **internal Cloud Content development**, including new modules, updates, bug fixes, releases, and CI/CD processes.  
-
-| Demo Title | Description | Link |
-|-----------|-------------|------|
+Demos focused on **internal Cloud Content development**, including new modules, releases, and CI/CD processes.  
+Add the demo links to **[Cloud Content development work](https://docs.google.com/spreadsheets/d/1s2VlqJZseptg-zQQCPCqVVO8UGrpa8orbqmTvR41gM0/edit?usp=sharing)**.
 
 ---
 
