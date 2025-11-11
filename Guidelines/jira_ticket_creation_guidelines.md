@@ -1,4 +1,4 @@
-# Cloud Content Team – Jira Ticket Creation Guide
+# Jira Ticket Creation Guide
 
 This document provides a standard template and best practices for creating Jira tickets for the Cloud Content team, applicable to epics, user stories, spikes, and tasks.
 The template serves as a reference and can be adjusted to fit the specific feature or goal being worked on.
@@ -23,7 +23,7 @@ The template serves as a reference and can be adjusted to fit the specific featu
 ## 2. Epic Template
 
 **Title:**  
-`Epic Name` — A short, descriptive name for the epic.
+[Epic Name] - Provide a short, descriptive name for the epic.
 **Example:** `AWS S3 Resource Counting`  
 
 **Summary:**  
@@ -43,23 +43,23 @@ Brief description of the epic’s purpose.
 - Documentation or handoff notes are complete
 
 **Labels:**
-Relevant labels for tracking and reporting
+Provide relevant labels for tracking and reporting purposes.
 
-**Due Date:** appropriate milestone  
+**Due Date:** Specify an appropriate milestone as the due date.
 
 ---
 
 ## 3. User Story Template
 
 **Title:**  
-[Name] – [Goal/Activity]
+[Name] – [Goal/Activity] - Provide a short, descriptive name and goal or activity.
 **Example:** `S3 Bucket Listing – View Bucket Usage Summary`
 
 **User Story:**  
 As a [role], I want [goal] so that [benefit].  
 
 **Supporting Documentation:**
-Any relevant materials or references that can help complete the user story
+Provide any relevant materials or references that can help complete the user story
 
 **Acceptance Criteria:**  
 - > **Note:** These are specific to this user story and describe what needs to be achieved.
@@ -70,21 +70,21 @@ Any relevant materials or references that can help complete the user story
 > **Note:** DoD should remain consistent across all user stories.
 
 **Labels:**  
-Relevant labels
+Provide relevant labels for the user story.
 
 ---
 
 ## 4. Task Template
 
 **Title:**  
-[Name] – [Specific Activity]
+[Name] – [Specific Activity] - Provide a clear and descriptive name for the task.
 **Example:** `S3 Bucket Listing – Write a Module to Fetch Bucket Details`
 
 **Description:**  
-Short, actionable description of the task and expected outcome.
+Write a short, actionable description of the task and the expected outcome.
 
 **Supporting Documentation:**
-Any relevant materials or references that can help complete the task.
+Provide any relevant materials or references that can help complete the task.
 
 **Checklist / Subtasks (optional):**  
 - [ ]
@@ -100,14 +100,14 @@ Any relevant materials or references that can help complete the task.
 > **Note:** DoD should follow the team-wide standard for completed tasks.
 
 **Labels:**  
-Relevant labels
+Provide relevant labels for the task.
 
 ---
 
 ## 5. Spike Template
 
 **Title:**  
-[Spike] – [Brief Description of Research/Investigation Topic]
+[Spike] – [Brief Description of Research/Investigation Topic] - Provide a brief description of the research or investigation topic.
 **Example:** `Spike – Evaluate Methods for Counting AWS S3 Buckets Efficiently`
 
 **Component:**  
@@ -117,7 +117,7 @@ Relevant labels
 `Cloud Content`  
 
 **Priority & Due Date:**  
-Set based on urgency or in consultation with the BU/team  
+Set the priority and due date based on urgency or in consultation with the BU/team.
 
 **Description / Goal:**  
 Provide a brief summary of the research or investigation to be done. Include:  
@@ -126,7 +126,7 @@ Provide a brief summary of the research or investigation to be done. Include:
 - Any assumptions or context  
 
 **Supporting Documentation:**
-Any relevant materials or references that can help complete the task.
+Provide any relevant materials or references that can help complete the task.
 
 **Acceptance Criteria:**  
 > **Note:** These are specific to this spike and define what it should achieve.
@@ -144,7 +144,7 @@ Any relevant materials or references that can help complete the task.
 - [ ] Share outcomes with team or stakeholders  
 
 **Labels:**  
-Relevant labels
+Provide relevant labels for the spike.
 
 ---
 
