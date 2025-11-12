@@ -15,7 +15,7 @@ The template serves as a reference and can be adjusted to fit the specific featu
 - **Support:** If you are in doubt, check with `#ansible-jira-support` or `#ansible-cloud-team`.  
 
 > **Note:**  
-> - *Acceptance Criteria* are **specific to each ticket** — they define what success looks like for that particular epic, story, task, or spike.  
+> - *Acceptance Criteria* are **specific to each ticket** — they define what success looks like for that particular epic, story, task, or spike. Make demos a part of the delivery whenever relevant.
 > - The *Definition of Done (DoD)* should remain **consistent across tickets** and reflect the team’s shared understanding of completion (for example: code reviewed, tested, documented, and handed off).  
 
 ---
