@@ -34,6 +34,14 @@
 
 ### Preparing the Collection
 * Create and check out a new branch (an ideal branch name is something like `prep_release_x_y_z`, where `x_y_z` are the version numbers, e.g., `prep_release_10_0_0`) and prepare the collection for release by following the instructions provided [here](https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_releasing.html#preparing-to-release-a-collection).
+   > ** HashiCorp Vault Collection (`hashicorp.vault`)**: Before starting the release preparation, pull the latest changes from `main` to `stable-X`:
+   > ```
+   > git checkout stable-X
+   > git pull upstream main
+   > git push upstream stable-X
+   > ```
+
+* Create and check out a new branch (an ideal branch name is something like `prep_release_x_y_z`, where `x_y_z` are the version numbers, e.g., `prep_release_3_1_0`) and prepare the collection for release by following the instructions provided [here](https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_releasing.html#preparing-to-release-a-collection).
 
    ```
    git checkout -b prep_release_x_y_z stable-X
@@ -57,20 +65,20 @@
 
 * Verify `CHANGELOG.rst` for the presence of all the changelog fragments.
 
-* Verify that `CHANGELOG.rst` does not have any additional changes outside of your new release. If it does, correct the changes in `changelogs/changelog.yml` and run `antsibull-changelog generate`. `CHANGELOG.rst` should not be manually changed. 
+* Verify that `CHANGELOG.rst` does not have any additional changes outside of your new release. If it does, correct the changes in `changelogs/changelog.yml` and run `antsibull-changelog generate`. `CHANGELOG.rst` should not be manually changed.
 
 * Commit the changes and create a pull request into the upstream repository. Make sure you choose `stable-X` as your base branch. This will be the preparation PR for the release.
 
 * Ensure the CI passes before merging. Ideally it is best to wait until the release date (or the day before it) to merge the release prep PR.
-   **NOTE:**  It is recommended to also run the sanity and integration tests locally to ensure all tests are passing. 
+   **NOTE:**  It is recommended to also run the sanity and integration tests locally to ensure all tests are passing.
 
-## Release 
+## Release
 
 ### Git Tagging
 * Once the `prep` PR is merged, update the local copy of `stable-X` branch with the latest changes from the `prep` PR.
    **NOTE:**  If the sanity tests fail locally or in the CI, the failures have to be addressed in a separate PR.
 
-* Tag the version in Git and push to GitHub.
+* **Tag the version in Git and push to GitHub** (standard collections):
 
    ```
    git tag -m "Release <version>" <version>
@@ -79,6 +87,19 @@
 
 ### Validating Automation Hub / Galaxy Upload
 * Once the [CI for the release](https://ansible.softwarefactory-project.io/zuul/status) passes, post a message on the `#ansible-partners` Slack channel requesting an approval for any supported content collections (e.g., `amazon.aws`) for Automation Hub.
+   > ** HashiCorp Vault Collection (`hashicorp.vault`)**: Instead of tagging directly, create a GitHub Release:
+   > 1. Navigate to the [Releases page](https://github.com/ansible-automation-platform/hashicorp.vault/releases) and select `Draft a new release`
+   > 2. Use `stable-X` as the target branch
+   > 3. Create a new tag with the version number (e.g., `1.1.0`)
+   > 4. **IMPORTANT**: Do NOT use the 'v' prefix in the tag (use `1.1.0`, not `v1.1.0`). Partner Engineering for Automation Hub only accepts semantic versioning format `x.y.z`
+   > 5. Add release notes (typically copied from the CHANGELOG)
+   > 6. Publish the release
+   >
+   > Once published, the [`release_ah` workflow](https://github.com/ansible-automation-platform/hashicorp.vault/actions/workflows/release_ah.yml) will automatically trigger to build and publish to Automation Hub. Monitor the workflow to ensure it completes successfully.
+
+* **Once the [CI for the release](https://ansible.softwarefactory-project.io/zuul/status) passes** (standard collections), post a message on the `#ansible-partners` Slack channel requesting an approval for any supported content collections (e.g., `amazon.aws`) for Automation Hub.
+
+   > ** HashiCorp Vault Collection (`hashicorp.vault`)**: Skip the Zuul CI step - the GitHub Actions workflow handles publishing automatically. You may still need to inform the Partner Engineering team on the `#ansible-partners` channel after the workflow completes successfully.
 
 * Manual upload is performed in cases where automated upload to Automation Hub fails. To do this, please refer to the instructions [here](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_automation_hub.md).
 
@@ -94,7 +115,7 @@
    ```
 
 * For `amazon.aws` and `community.aws` collection releases, please also announce the release in the [Ansible Forum, under the `News & Announcements > Ecosystem Releases` category](https://forum.ansible.com/c/news/5). You can either follow the template in [this post](https://forum.ansible.com/t/amazon-aws-10-1-2-and-9-5-2-bugfix-releases-are-live/44653), or create your own post.
-   
+
    **NOTE:** Please note that posts to the News & Announcements category undergo a standard moderator review before appearing publicly. Any questions can be directed to [#ansible-community](https://redhat.enterprise.slack.com/archives/C7CTDTP2R).
 
 ### Synchronizing main
@@ -114,36 +135,12 @@
 
 * Push the branch to your fork and create a PR into the `main` branch of the upstream repository. Once the CI passes and the PR is approved by the required number of maintainers (typically at least 4), merge it to the `main` branch.
 
-# HashiCorp Vault Collection Release Process
+## Collection-Specific Notes
 
-The HashiCorp Vault collection follows the same general release process outlined above, with **one key difference**: the collection uses a GitHub Actions pipeline that automatically publishes to Automation Hub when a GitHub release is created.
-
-## Key Steps
-
-1. Follow all the standard steps above (version bump, changelog update, prep PR, etc.)
-
-2. **Pull changes from `main` to `stable-X`**: Before starting the release process, ensure that the `stable-X` branch has the latest changes from `main`:
-
-   ```
-   git checkout stable-X
-   git pull upstream main
-   git push upstream stable-X
-   ```
-
-3. **Create a GitHub Release**: Navigate to the [Releases page](https://github.com/ansible-automation-platform/hashicorp.vault/releases) in the repository and select `Draft a new release`:
-   * Use `stable-X` as the target branch
-   * Create a new tag with the version number (e.g., `1.1.0`)
-   * **IMPORTANT**: Do NOT use the 'v' prefix in the tag (use `1.1.0`, not `v1.1.0`). Partner Engineering for Automation Hub only accepts semantic versioning format `x.y.z`
-   * Add release notes (typically copy from the CHANGELOG)
-   * Publish the release
-
-4. **GitHub Actions Pipeline**: Once the GitHub release is created, the [`release_ah` workflow](https://github.com/ansible-automation-platform/hashicorp.vault/actions/workflows/release_ah.yml) will automatically trigger and:
-   * Build the collection artifact
-   * Publish to Automation Hub
-
-5. Monitor the GitHub Actions workflow to ensure it completes successfully. If the automated upload fails, you can perform a manual upload following the instructions [here](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_automation_hub.md).
-
-6. Continue with the remaining standard steps (informing partner engineering on #ansible-partners channel, verify on Automation Hub, announce in Bullhorn, sync main after release, etc.)
+* **HashiCorp Vault Collection (`hashicorp.vault`)**: This collection uses GitHub Actions instead of Zuul CI for automated publishing. Look for the  HashiCorp Vault Collection callouts throughout the steps above for specific instructions. The key differences are:
+  * Pull changes from `main` to `stable-X` before starting release preparation
+  * Create a GitHub Release instead of tagging directly (do NOT use 'v' prefix in tags)
+  * The [`release_ah` workflow](https://github.com/ansible-automation-platform/hashicorp.vault/actions/workflows/release_ah.yml) automatically publishes to Automation Hub when a GitHub release is created
 
 # Reference:
 https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_release_with_branches.html#releasing-major-collection-versions
