@@ -114,6 +114,37 @@
 
 * Push the branch to your fork and create a PR into the `main` branch of the upstream repository. Once the CI passes and the PR is approved by the required number of maintainers (typically at least 4), merge it to the `main` branch.
 
+# HashiCorp Vault Collection Release Process
+
+The HashiCorp Vault collection follows the same general release process outlined above, with **one key difference**: the collection uses a GitHub Actions pipeline that automatically publishes to Automation Hub when a GitHub release is created.
+
+## Key Steps
+
+1. Follow all the standard steps above (version bump, changelog update, prep PR, etc.)
+
+2. **Pull changes from `main` to `stable-X`**: Before starting the release process, ensure that the `stable-X` branch has the latest changes from `main`:
+
+   ```
+   git checkout stable-X
+   git pull upstream main
+   git push upstream stable-X
+   ```
+
+3. **Create a GitHub Release**: Navigate to the [Releases page](https://github.com/ansible-automation-platform/hashicorp.vault/releases) in the repository and select `Draft a new release`:
+   * Use `stable-X` as the target branch
+   * Create a new tag with the version number (e.g., `1.1.0`)
+   * **IMPORTANT**: Do NOT use the 'v' prefix in the tag (use `1.1.0`, not `v1.1.0`). Partner Engineering for Automation Hub only accepts semantic versioning format `x.y.z`
+   * Add release notes (typically copy from the CHANGELOG)
+   * Publish the release
+
+4. **GitHub Actions Pipeline**: Once the GitHub release is created, the [`release_ah` workflow](https://github.com/ansible-automation-platform/hashicorp.vault/actions/workflows/release_ah.yml) will automatically trigger and:
+   * Build the collection artifact
+   * Publish to Automation Hub
+
+5. Monitor the GitHub Actions workflow to ensure it completes successfully. If the automated upload fails, you can perform a manual upload following the instructions [here](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_automation_hub.md).
+
+6. Continue with the remaining standard steps (informing partner engineering on #ansible-partners channel, verify on Automation Hub, announce in Bullhorn, sync main after release, etc.)
+
 # Reference:
 https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_release_with_branches.html#releasing-major-collection-versions
 
