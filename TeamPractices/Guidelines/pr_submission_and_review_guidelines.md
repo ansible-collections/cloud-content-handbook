@@ -15,7 +15,7 @@ Keep your changes focused and avoid bundling unrelated updates. Ensure that each
 Run linters and static code analysis tools to check for code quality issues. Address any identified problems before submitting. Do not request for review until all the sanity and linters tests pass. If these tests cannot be fixed, please mention the reasons in the description.
 
 ### **5. Follow Coding Standards**
-Adhere to the project's [coding standards and style guidelines](https://github.com/ansible-collections/cloud-content-handbook/blob/main/GUIDELINES/coding_guidelines.md). Consistent code formatting makes reviews smoother.
+Adhere to the project's [coding standards and style guidelines](https://github.com/ansible-collections/cloud-content-handbook/blob/main/TeamPractices/Guidelines/coding_guidelines.md). Consistent code formatting makes reviews smoother.
 
 ### **6. Include Tests**
 If applicable, include tests that cover your changes. Ensure existing tests pass and add new ones to validate your modifications.
@@ -75,7 +75,7 @@ Example:
 When a large codebase undergoes a significant refactoring, instead of reviewing the entire refactoring in one go, the review process can be broken down into manageable segments - Module A Refactoring, Class B Improvements, New Functionality in Module C, Code Duplication Elimination etc
 
 ### 6. Navigating Stalemates
-Effectively navigate stalemates in code reviews through timely identification of the same, open communication, seeking common ground, involving additional perspectives, defining actionable steps, establishing a decision-making process, and documenting agreements in the [coding guidelines](https://github.com/ansible-collections/cloud-content-handbook/blob/main/GUIDELINES/coding_guidelines.md). 
+Effectively navigate stalemates in code reviews through timely identification of the same, open communication, seeking common ground, involving additional perspectives, defining actionable steps, establishing a decision-making process, and documenting agreements in the [coding guidelines](https://github.com/ansible-collections/cloud-content-handbook/blob/main/TeamPractices/Guidelines/coding_guidelines.md). 
 
 ### 7. Collaboration and Communication
 Foster a positive and collaborative atmosphere during code reviews. Provide constructive feedback that promotes improvement and encourages knowledge sharing within the team.
@@ -93,7 +93,7 @@ Encourage developers to seek early reviews during the development process provid
 - Confirm that the proposed changes in the pull request have been locally verified. If this is not feasible, ensure that reason is mentioned in the PR comments, explicitly.
 - Gain a thorough understanding of the feature or bug fix by reviewing related requirements and documentation mentioned in the PR. In case of ambiguity, request additional details through a comprehensive PR summary, [changelog](https://docs.ansible.com/ansible/latest/community/development_process.html#creating-changelog-fragments), or documentation.
 - Verify that the code addresses the specified requirements and functions as intended. Evaluate the PR against the acceptance criteria/Definition of Done specified in the linked Jira ticket (if applicable).
-- Enforce adherence to [coding standards and style guidelines](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Guidelines/coding_guidelines.md). [Automated tools](https://github.com/ansible-collections/cloud-content-handbook/blob/main/CI/README.md#what-checks-are-run) are leveraged to catch common issues related to coding standards.
+- Enforce adherence to [coding standards and style guidelines](https://github.com/ansible-collections/cloud-content-handbook/blob/main/TeamPractices/Guidelines/coding_guidelines.md). [Automated tools](https://github.com/ansible-collections/cloud-content-handbook/blob/main/CI/README.md#what-checks-are-run) are leveraged to catch common issues related to coding standards.
 - Identify and address any instances of code duplication. Encourage the use of shared functions or modules where applicable.
 - Confirm consistency with coding patterns and practices across the entire codebase.
 - Verify that the code adheres to licensing requirements and complies with legal standards. Refer [the note](https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_in_groups.html) for more information on licensing requirements. For licensing questions reach our to Ansible leadership or Red Hat legal.

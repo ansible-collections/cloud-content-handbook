@@ -1,6 +1,6 @@
 # Argument Validation for Validated Content Roles
 
-The Validated Content Roles for cloud platforms comprise a collection of pre-built YAML content, which includes playbooks and roles. These resources are specifically crafted to address the most common automation scenarios related to cloud operations. For more information on these roles and playbook refer [here](https://github.com/ansible-collections/cloud-content-handbook/blob/main/validated_content.md)
+The Validated Content Roles for cloud platforms comprise a collection of pre-built YAML content, which includes playbooks and roles. These resources are specifically crafted to address the most common automation scenarios related to cloud operations. For more information on these roles and playbook refer [here](https://github.com/ansible-collections/cloud-content-handbook/blob/main/ContentManagement/validated_content.md)
 
 Starting from ansible version 2.11, an option is available to activate argument validation for roles by utilizing an argument specification.  When this specification is established, a task is introduced at the onset of role execution to validate the parameters provided for the role according to the defined specification. If the parameters do not pass the validation, the role execution will terminate. Thus making the playbook using the role fail fast instead of failing later when an incorrect variable is utilized.
 

@@ -101,7 +101,7 @@ Collection maintainers are expected to:
 
         -  Run on **older supported versions** (e.g., latest 2-3) in scheduled CI (nightly/weekly).
 
-        -  ELS-branch-supported versions tested when issues arise. Refer: [ELS Support](../ELS_support.md)
+        -  ELS-branch-supported versions tested when issues arise. Refer: [ELS Support](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/ELS_support.md)
             
 
 ### **Process for Managing Compatibility Issues**
