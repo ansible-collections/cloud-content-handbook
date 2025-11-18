@@ -1,6 +1,6 @@
 # Collections Overview
 
-These are the collections that generally fall under the Cloud Content team's purview. We maintain/contribute to three types of collections: supported collections, community collections, and [validated content](https://github.com/ansible-collections/cloud-content-handbook/blob/main/validated_content.md).
+These are the collections that generally fall under the Cloud Content team's purview. We maintain/contribute to three types of collections: supported collections, community collections, and [validated content](https://github.com/ansible-collections/cloud-content-handbook/blob/main/ContentManagement/validated_content.md).
 
 
 | **Collection Name** | **Collection Type** | **Broad Use case** |

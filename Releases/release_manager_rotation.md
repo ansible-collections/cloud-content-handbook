@@ -28,4 +28,4 @@ Release Manager Rotation for 2025 is tracked in the spreadsheet
 - [Release Cycles](./release_cycles.md)
 - [Releasing a Collection](./release_collections.md)
 - [Releasing to Automation Hub (for validated content)](release_automation_hub.md)
-- [List of Collections](../collections_overview.md)
+- [List of Collections](https://github.com/ansible-collections/cloud-content-handbook/blob/main/ContentManagement/collections_overview.md)
