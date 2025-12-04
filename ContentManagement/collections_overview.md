@@ -7,6 +7,7 @@ These are the collections that generally fall under the Cloud Content team's pur
 |---------------------|---------------------|--------------------|
 | [amazon.aws](https://github.com/ansible-collections/amazon.aws) | Supported | Automate AWS services |
 | [amazon.cloud](https://github.com/ansible-collections/amazon.cloud) | Community | Generated modules for AWS using the Cloud Control API |
+| [amazon.ai](https://github.com/ansible-collections/amazon.ai) | Certified | Ansible Collection for Amazon AI/ML Resources |
 | [cloud.aws_ops](https://github.com/redhat-cop/cloud.aws_ops) | Validated content | Roles and playbooks for managing AWS resources |
 | [cloud.aws_troubleshooting](https://github.com/redhat-cop/cloud.aws_troubleshooting) | Validated content | Roles to help troubleshoot AWS resources |
 | [cloud.common](https://github.com/ansible-collections/cloud.common) | Supported | Helper collection for cloud |
