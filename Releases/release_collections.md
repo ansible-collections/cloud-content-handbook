@@ -1,5 +1,7 @@
 # Steps to release a collection to Automation hub and Galaxy
 
+**Note:** If you are releasing a brand new collection for the first time, please follow the [steps to release a new collection](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_new_collection.md) before proceeding with the steps below.
+
 * Determine the collection version based on [Semantic Versioning](https://semver.org/). eg: x.y.z
    * For major/breaking change release, increment x. Resulting branch will be x+1.0.0.
    * For minor changes, increment y. Resulting branch will be x.y+1.0.
