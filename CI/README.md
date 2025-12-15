@@ -41,6 +41,11 @@ Additional automations using Github Actions:
   - runs when an issue is opened or re-opened in a repository
   - adds a `needs_triage` label to the issue
   - should run on all of our supported and validated content repositories
+- `label-new-prs.yaml`
+  - runs when a new pull request is created, or when an existing pull request's status is changed (reopened, marked as Draft, or marked as Ready for Review) in a repository
+  - adds a `needs_triage` label to the pull request if the pull request is not a draft
+  - removes the `needs_triage` label on the pull request if the pull request is a draft
+  - should run on all of our supported and validated content repositories
 - `generate-release.yaml`
   - runs when a new tag is pushed and can also be run manually in the UI
   - generates a release log, creates and publishes a Github release
