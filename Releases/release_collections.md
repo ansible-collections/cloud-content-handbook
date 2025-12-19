@@ -53,7 +53,7 @@
 * Once the `prep` PR is merged, update the local copy of `stable-X` branch with the latest changes from the `prep` PR.
 _Note : If the sanity tests fail locally or in the CI, the failures have to be addressed in a separate PR_
 
-* **Tag the version in Git and push to GitHub** (standard collections):
+* Tag the version in Git and push to GitHub.
 
    ```
    git tag -m "Release <version>" <version>
