@@ -94,6 +94,8 @@
 ### Validating Automation Hub / Galaxy Upload
 * Once the [CI for the release](https://ansible.softwarefactory-project.io/zuul/status) passes, post a message on the `#ansible-partners` Slack channel requesting an approval for any supported content collections (e.g., `amazon.aws`) for Automation Hub.
    > ** HashiCorp Vault Collection (`hashicorp.vault`)**: Instead of tagging directly, create a GitHub Release:
+   > **HashiCorp Vault Collection (`hashicorp.vault`)**:
+   > Instead of tagging directly, create a GitHub Release:
    > 1. Navigate to the [Releases page](https://github.com/ansible-automation-platform/hashicorp.vault/releases) and select `Draft a new release`
    > 2. Use `stable-X` as the target branch
    > 3. Create a new tag with the version number (e.g., `1.1.0`)
