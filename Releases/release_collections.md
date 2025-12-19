@@ -19,13 +19,10 @@
 
 * For a **minor release**, make sure the backport of the PRs from the `main` branch to the release branch is successful. For more information on backporting PRs, refer to [the backporting page](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/backport_changes.md) of the team handbook.
 
-* Before starting the release preparation, make sure that latest `main` changes are present in `stable-x`.
-  This should be handled by backport once workflow is up and running, but if required it can be done manually by pulling the latest changes from `main` to `stable-X` with below:
-   ```
-   git checkout stable-X
-   git pull upstream main
-   git push upstream stable-X
-   ```
+* **Before starting the release preparation**, verify that the `stable-X` branch has all necessary changes from `main`. Since the backport workflow may not be running automatically, you should:
+  * Review PRs merged to `main` since the `stable-X` branch was created (or since the last release)
+  * Ensure that all appropriate backports have been completed manually (see [backporting guidelines](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/backport_changes.md))
+  * **Important**: Do NOT merge `main` directly into `stable-X`, as this would bring breaking changes that should not be included in the stable release. Only selective backports of appropriate changes (bugfixes, security fixes, minor features, etc.) should be included.
 
 * Create and check out a new branch (an ideal branch name is something like `prep_release_x_y_z`, where `x_y_z` are the version numbers, e.g., `prep_release_3_1_0`) and prepare the collection for release by following the instructions provided [here](https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_releasing.html#preparing-to-release-a-collection).
 
