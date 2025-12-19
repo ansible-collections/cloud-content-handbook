@@ -19,7 +19,8 @@
 
 * For a **minor release**, make sure the backport of the PRs from the `main` branch to the release branch is successful. For more information on backporting PRs, refer to [the backporting page](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/backport_changes.md) of the team handbook.
 
-* Before starting the release preparation, pull the latest changes from `main` to `stable-X`:
+* Before starting the release preparation, make sure that latest `main` changes are present in `stable-x`.
+  This should be handled by backport once workflow is up and running, but if required it can be done manually by pulling the latest changes from `main` to `stable-X` with below:
    ```
    git checkout stable-X
    git pull upstream main
