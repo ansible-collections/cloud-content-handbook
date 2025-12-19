@@ -19,10 +19,10 @@
 
 * For a **minor release**, make sure the backport of the PRs from the `main` branch to the release branch is successful. For more information on backporting PRs, refer to [the backporting page](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/backport_changes.md) of the team handbook.
 
-* **Before starting the release preparation**, verify that the `stable-X` branch has all necessary changes from `main`. Since the backport workflow may not be running automatically, you should:
-  * Review PRs merged to `main` since the `stable-X` branch was created (or since the last release)
-  * Ensure that all appropriate backports have been completed manually (see [backporting guidelines](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/backport_changes.md))
-  * **Important**: Do NOT merge `main` directly into `stable-X`, as this would bring breaking changes that should not be included in the stable release. Only selective backports of appropriate changes (bugfixes, security fixes, minor features, etc.) should be included.
+   > **HashiCorp Vault Collection (`hashicorp.vault`)**: Since the backport workflow is not currently [as of December 2025] running for this collection, **before starting the release preparation**, verify that the `stable-X` branch has all necessary changes from `main`:
+   > * Review PRs merged to `main` since the `stable-X` branch was created (or since the last release)
+   > * Ensure that all appropriate backports have been completed manually (see [backporting guidelines](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/backport_changes.md))
+   > * **Important**: Do NOT merge `main` directly into `stable-X`, as this would bring breaking changes that should not be included in the stable release. Only selective backports of appropriate changes (bugfixes, security fixes, minor features, etc.) should be included.
 
 * Create and check out a new branch (an ideal branch name is something like `prep_release_x_y_z`, where `x_y_z` are the version numbers, e.g., `prep_release_3_1_0`) and prepare the collection for release by following the instructions provided [here](https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_releasing.html#preparing-to-release-a-collection).
 
