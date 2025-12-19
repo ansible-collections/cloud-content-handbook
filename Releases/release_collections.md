@@ -62,7 +62,8 @@ _Note : If the sanity tests fail locally or in the CI, the failures have to be a
    git push upstream <version>
    ```
 
-   > ** HashiCorp Vault Collection (`hashicorp.vault`)**: Instead of tagging directly, create a GitHub Release:
+   > **HashiCorp Vault Collection (`hashicorp.vault`)**:
+   > Instead of tagging directly, create a GitHub Release:
    > 1. Navigate to the [Releases page](https://github.com/ansible-automation-platform/hashicorp.vault/releases) and select `Draft a new release`
    > 2. Use `stable-X` as the target branch
    > 3. Create a new tag with the version number (e.g., `1.1.0`)
