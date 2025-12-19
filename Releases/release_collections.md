@@ -41,6 +41,8 @@
    > git push upstream stable-X
    > ```
 * Before starting the release preparation, pull the latest changes from `main` to `stable-X`:
+* Before starting the release preparation, make sure that latest `main` changes are present in `stable-x`.
+  This should be handled by backport once workflow is up and running, but if required it can be done manually by pulling the latest changes from `main` to `stable-X` with below:
    ```
    git checkout stable-X
    git pull upstream main
