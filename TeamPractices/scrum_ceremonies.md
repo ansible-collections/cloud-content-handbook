@@ -6,7 +6,7 @@ This document provides an overview of the key Scrum ceremonies, detailing what t
 
 **1. Sprint Planning**
 
-- **What**: Sprint Planning is the ceremony where the Scrum Team discusses and plans the work for the upcoming sprint. The goal is to define the Sprint Goal, decide which backlog items will be worked on, and how the team will accomplish the work.
+- **What**: Sprint Planning is the ceremony where the Scrum Team discusses and plans the work for the upcoming sprint. New sprints are named after the year and the week (e.g. `Cloud Content Sprint 2026-02` was started in the second week of 2026). The goal is to define the Sprint Goal, decide which backlog items will be worked on, and how the team will accomplish the work.
 - **When**: At the beginning of each sprint, typically on the first day of the sprint.
 - **How**:
     - The Delivery Team’s 3-in-the-box (Product Owner) presents the prioritized Product Backlog.
