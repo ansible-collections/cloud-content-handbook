@@ -32,7 +32,7 @@ For details on how to create a changelog entry, please refer to the ["Creating c
 Adhere to the project's branching strategies. Submit your PR against the appropriate branch, and understand the project's [release cycle](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_cycles.md).
 
 ### **10. Verify CI Status**
-Ensure that your changes pass the Continuous Integration (CI) checks. Address any CI failures promptly. To rerun the CI checks, you may comment `recheck` on the PR. 
+Ensure that your changes pass the Continuous Integration (CI) checks. Address any CI failures promptly. To rerun the Zuul checks specifically, you may comment `recheck` on the PR. Note that this command only triggers Zuul; other CI checks must be rerun using the standard GitHub interface (e.g., clicking the "Re-run" button next to the specific check). 
 
 If you discover issues unrelated to your PR, please open a separate issue to address them. This practice ensures that PRs remain concise and focused on specific changes.
 
@@ -46,7 +46,7 @@ Be responsive to feedback from reviewers. Address comments, make necessary adjus
 Understand that code reviews take time. Be patient and responsive during the review process.
 
 ### **14. Merging**
-Once a PR has addressed all reviewer feedback and has at least two approvals, the submitter of the PR may apply the `mergeit` label to merge their changes into the codebase. Applying the `mergeit` label will trigger the CI to rerun. Please note that the automation will still merge the PR even if any of the CI checks fail. 
+Once a PR has addressed all reviewer feedback and has at least two approvals, the submitter of the PR may apply the `mergeit` label to merge their changes into the codebase. Applying the `mergeit` label will trigger the CI to rerun. Please note that only a failure in the Zuul checks will block this PR from merging; the automation is configured to merge even if other CI checks fail.
 
 Exceptions:
 - This label does not work on PRs that contain changes to the `.github/` folder and will thus require a manual "squash + merge". 
