@@ -46,7 +46,9 @@ Be responsive to feedback from reviewers. Address comments, make necessary adjus
 Understand that code reviews take time. Be patient and responsive during the review process.
 
 ### **14. Merging**
-Once a PR has addressed all reviewer feedback and has at least two approvals, the submitter of the PR may apply the `mergeit` label to merge their changes into the codebase. Applying the `mergeit` label will trigger the CI to rerun. Please note that only a failure in the Zuul checks will block this PR from merging; the automation is configured to merge even if other CI checks fail.
+Once a PR has addressed all reviewer feedback and has at least two approvals, the submitter of the PR may apply the `mergeit` label to merge their changes into the codebase. 
+
+Applying the `mergeit` label will trigger the CI to rerun. Please note that only a failure in the Zuul checks will block the PR from merging. Therefore, you must manually verify the status of all other CI checks and ensure they have passed before applying the `mergeit` label.
 
 Exceptions:
 - This label does not work on PRs that contain changes to the `.github/` folder and will thus require a manual "squash + merge". 
