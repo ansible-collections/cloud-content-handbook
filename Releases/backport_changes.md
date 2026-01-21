@@ -10,7 +10,7 @@ Our collections all use [semantic versioning](https://semver.org/), summarized a
 * MINOR version when adding functionality in a backward compatible manner or when deprecating (but not removing) functionality.
 * PATCH version when making backward compatible bug fixes.
 
-Only the two latest major versions of our collections receive backports. If you are contributing a PR to a new collection that does not have at least two major versions, you can skip backporting. 
+Only the two latest major versions of our collections receive backports. 
 
 The latest major release receives minor new features, security and bug fixes, and deprecations. The previous major release generally only receives security and bug fixes. [Changelog fragments](https://docs.ansible.com/ansible/latest/community/development_process.html#creating-changelog-fragments) are our guide to which PRs get backported where, which means it's very important that each PR has a changelog fragment that accurately reflects the type of change contained in the PR.
 
