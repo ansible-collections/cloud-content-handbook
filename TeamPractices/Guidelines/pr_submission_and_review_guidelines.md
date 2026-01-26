@@ -32,7 +32,9 @@ For details on how to create a changelog entry, please refer to the ["Creating c
 Adhere to the project's branching strategies. Submit your PR against the appropriate branch, and understand the project's [release cycle](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_cycles.md).
 
 ### **10. Verify CI Status**
-Ensure that your changes pass the Continuous Integration (CI) checks. Address any CI failures promptly. If you discover issues unrelated to your PR, please open a separate issue to address them. This practice ensures that PRs remain concise and focused on specific changes.
+Ensure that your changes pass the Continuous Integration (CI) checks. Address any CI failures promptly. To rerun the Zuul checks specifically, you may comment `recheck` on the PR. Note that this command only triggers Zuul; other CI checks must be rerun using the standard GitHub interface (e.g., clicking the "Re-run" button next to the specific check). 
+
+If you discover issues unrelated to your PR, please open a separate issue to address them. This practice ensures that PRs remain concise and focused on specific changes.
 
 ### **11. Don't Squash Commits Once a PR is Under Review**
 Refrain from squashing commits during the review process to preserve a transparent history of changes. However, once the review process is concluded, and the PR has obtained the required approvals, you may use squash and commit, with the exception of PRs associated with module promotion.
@@ -44,14 +46,19 @@ Be responsive to feedback from reviewers. Address comments, make necessary adjus
 Understand that code reviews take time. Be patient and responsive during the review process.
 
 ### **14. Merging**
-Once a PR has addressed all reviewer feedback and has at least two approvals, the submitter of the PR may apply the `mergeit` label to merge their changes into the codebase.
+Once a PR has addressed all reviewer feedback and has at least two approvals, the submitter of the PR may apply the `mergeit` label to merge their changes into the codebase. 
 
-Please note that the following repositories do *not* support the use of this label and will thus require a manual "squash + merge":
-* Any repository in the [`redhat-cop` (Red Hat Communities of Practice)](https://github.com/redhat-cop) GitHub org
-* [`terraform-provider-aap`](https://github.com/ansible/terraform-provider-aap)
+Applying the `mergeit` label will trigger the CI to rerun. Please note that only a failure in the Zuul checks will block the PR from merging. Therefore, you must manually verify the status of all other CI checks and ensure they have passed before applying the `mergeit` label.
 
-PRs in the following repository can only be merged by [Prow](https://github.com/kubernetes-sigs/prow). The merge process is triggered when someone listed as an approver in the [`community.okd/OWNERS_ALIASES`](https://github.com/openshift/community.okd/blob/main/OWNERS_ALIASES) file (anyone listed in that file must also be a member of the [OpenShift GH org](https://github.com/openshift)) approves the PR:
-* [`community.okd`](https://github.com/openshift/community.okd)
+Exceptions:
+- This label does not work on PRs that contain changes to the `.github/` folder and will thus require a manual "squash + merge". 
+
+- Please note that the following repositories do *not* support the use of this label and will thus require a manual "squash + merge":
+    * Any repository in the [`redhat-cop` (Red Hat Communities of Practice)](https://github.com/redhat-cop) GitHub org
+    * [`terraform-provider-aap`](https://github.com/ansible/terraform-provider-aap)
+
+- PRs in the following repository can only be merged by [Prow](https://github.com/kubernetes-sigs/prow). The merge process is triggered when someone listed as an approver in the [`community.okd/OWNERS_ALIASES`](https://github.com/openshift/community.okd/blob/main/OWNERS_ALIASES) file (anyone listed in that file must also be a member of the [OpenShift GH org](https://github.com/openshift)) approves the PR:
+    * [`community.okd`](https://github.com/openshift/community.okd)
 
 # Code Review Guidelines
 
