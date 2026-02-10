@@ -2,7 +2,7 @@
 
  There are currently two distinct GitHub -> Jira integrations outlined here:
  1. [Automatic Jira Ticket Creation](#automatic-jira-ticket-creation)
- 2. [Populating Jira Tickets from GitHub PRs/Branch/Commits](#populating-jira-tickets-from-github-prsbranchcommits)
+ 2. [Populating Jira Tickets from GitHub PRs/Branch/Commits via the DVCS (Distributed Version Control System) Connector](#populating-jira-tickets-from-github-prsbranchcommits-via-the-dvcs-distributed-version-control-system-connector)
 
 ## Automatic Jira Ticket Creation
 
