@@ -52,7 +52,7 @@ $ python github_jira.py
 
 ## Populating Jira Tickets from GitHub PRs/Branch/Commits via the DVCS (Distributed Version Control System) Connector
 
-A separate integration allows developers to automatically populate a Jira ticket with **associated pull requests**, **source branch information**, and **commits**. This keeps tickets up to date with development activity without manual updates.
+The DVCS connector allows developers to automatically populate Jira tickets with **associated pull requests**, **source branch information**, and **commits**. This keeps tickets up to date with development activity without manual updates.
 
 ### How it works
 
