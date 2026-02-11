@@ -8,11 +8,13 @@
 | Permission Level     | Description                                                                                             | Examples                                                                                                                         |
 | -------------------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | Read                 | Allows users to view and clone code, create issues, review pull requests, and create new pull requests. | View code; Create and review pull requests; Create issues                                                                        |
-| Write                | Grants access to commit changes in addition to Read access.                                             | Push changes to the repository; Push branches and tags; View code and create issues; Create and review pull requests             |
+| Write                | Grants access to commit changes in addition to Read access.                                             | Push changes to the repository; Push branches and tags; View code and create issues; Create and review pull requests. Create, edit, run, re-run, and cancel GitHub Actions workflows.              |
 | Admin                | Full access to all features, including destructive actions like deleting repositories.                  | Manage repository settings and team permissions; Delete repositories; Change repository visibility; Assign roles and permissions |
 | Triage               | Offers more access than Read but less than Write, such as applying or dismissing labels.                | Apply or dismiss labels; Close or reopen issues; View code and pull requests; Cannot edit or delete labels                       |
 | Maintain             | Between Write and Admin, ideal for project managers, allowing editing repository metadata.              | Edit repository description; Manage issues and pull requests; Can’t delete issues (restricted to Admin); Manage branches         |
 | Owner (Organization) | Full access to the organization, including settings and billing information.                            | Manage account settings; Set up billing and permissions; Assign roles to members                                                 |
+
+You can see the full list of permissions in more detail in the [GitHub Role Permissions documentation](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization#permissions-for-each-role).
 
 ### GitHub Permission Structure for Cloud Team
 
