@@ -18,18 +18,18 @@ Managing dependencies between ansible-core and Collections is critical for maint
 	This approach allows us to balance compatibility with upstream/downstream needs while keeping maintenance manageable.
 
         
-2.  **Guidelines for Choosing the Supported  of ansible-core Versions:**
+2.  **Guidelines for Choosing Supported ansible-core Versions:**
     
            
     - Support at least the **latest two stable versions** of ansible-core in the **latest major version** of the collection.
         
     - Maintain **separate branches** (such as stable-8, stable-7) to support older ansible-core versions that are part of the **ELS (Extended Lifecycle Support)** program.     
             
-    - Follow the steps mentioned in the [release_cycle document](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_cycles.md#major-releases) to determine the  requires_ansible value in meta/runtime.yml.
+    - Follow the steps mentioned in the [release_cycle document](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_cycles.md#major-releases) to determine the `requires_ansible` value in meta/runtime.yml.
         
-    - When planning long-term support, **plan for** ansible-core versions used in downstream products (e.g., AAP). This may involve maintaining separate major version branches for compatibility (e.g., `stable-9 for AAP 2.5), running periodic CI jobs to validate against those versions, and ensuring fixes are backported as needed to branches that align with supported AAP releases.
+    - When planning long-term support, **plan for** ansible-core versions used in downstream products (e.g., AAP). This may involve maintaining separate major version branches for compatibility (e.g., `stable-9` for AAP 2.5), running periodic CI jobs to validate against those versions, and ensuring fixes are backported as needed to branches that align with supported AAP releases.
     
-3. **Upstream testing Strategy:**
+3. **Upstream Testing Strategy:**
     
     - Collections should maintain CI pipelines that test against multiple versions of ansible-core.
         
@@ -37,22 +37,23 @@ Managing dependencies between ansible-core and Collections is critical for maint
         
     - Weekly scheduled tests should cover a broader range of supported ansible-core versions to catch regressions.
 
-**Upstream testing Matrix**
+**Upstream Testing Matrix**
 
   Different types of tests may target different subsets of the ansible-core versions based on their purpose and cost:
 
 | Test Type   | When Run                      | Collection Branch                                                                                        | ansible-core Versions                                                                 |
 | ----------- | ----------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| Sanity      | PRs, nightly or periodic jobs | Branch on which the PR is submitted ; All supported stable branches$^1$ for nightly or periodic jobs$^1$ | `devel` and all supported versions in `requires_ansible`                              |
-| Unit        | PRs, Weekly Jobs              | Branch on which the PR is submitted ; All supported stable branches$^1$ for Weekly jobs                  | Latest version, devel (on PR); Weekly on all supported versions in `requires_ansible` |
-| Integration | PRs, Weekly Jobs              | Branch on which the PR is submitted ; All supported stable branches$^1$ for Weekly jobs                  | Latest version, devel (on PR); Weekly on all supported versions in `requires_ansible` |
-_$^1$ latest major release of the collection and two prior versions_
+| Sanity      | PRs, nightly or periodic jobs | Branch on which the PR is submitted; all supported stable branches<span style="font-size: smaller;"><sup>1</sup></span> for nightly or periodic jobs<span style="font-size: smaller;"><sup>1</sup></span> | `devel` and all supported versions in `requires_ansible`                              |
+| Unit        | PRs, Weekly Jobs              | Branch on which the PR is submitted; all supported stable branches<span style="font-size: smaller;"><sup>1</sup></span> for Weekly jobs                  | Latest version, devel (on PR); Weekly on all supported versions in `requires_ansible` |
+| Integration | PRs, Weekly Jobs              | Branch on which the PR is submitted; all supported stable branches<span style="font-size: smaller;"><sup>1</sup></span> for Weekly jobs                  | Latest version, devel (on PR); Weekly on all supported versions in `requires_ansible` |
 
-**Example Scenario :**
+_<span style="font-size: smaller;"><sup>1</sup></span> latest major release of the collection and two prior versions_
+
+**Example Scenario:**
 
 Consider amazon.aws collection where `stable-10` has `requires_ansible >= 2.18`, `stable-9` has `requires_ansible >= 2.16`, and `stable-8` has `requires_ansible >= 2.15`. In this case, the testing matrix should ensure the following:
 
-- Nightly/weekly sanity, unit, and integration tests are run on all three stable ansible-core version.
+- Nightly/weekly sanity, unit, and integration tests are run on all three stable ansible-core versions.
     
 - Each collection branch should be tested only against ansible-core versions compatible with its declared `requires_ansible`. For example, `stable-10` CI should test against ansible-core 2.18+, `stable-9` CI should test against ansible-core 2.16 and 2.17, while `stable-8` should include only 2.15.
     
@@ -60,7 +61,7 @@ Consider amazon.aws collection where `stable-10` has `requires_ansible >= 2.18`,
     
 **Handling Version Overlap in the Testing Matrix**
 
-When managing multiple stable branches of a collection, care should be taken to avoid redundant or unnecessary testing across ansible-core versions. For example, if `stable-10` has `requires_ansible >= 2.18`, `stable-9` has `requires_ansible >= 2.16`, and `stable-8` has `requires_ansible >= 2.15`, each branch should focus testing only on its relevant minimum version and forward. `Stable-8` does not need to test on ansible-core 2.16 through 2.19, as these versions exceed its compatibility range and may introduce changes that are incompatible or irrelevant. Instead, its test matrix can be restricted to run only against ansible-core 2.15. This approach keeps CI efficient and scoped while maintaining coverage for declared compatibility ranges.
+When managing multiple stable branches of a collection, care should be taken to avoid redundant or unnecessary testing across ansible-core versions. For example, if `stable-10` has `requires_ansible >= 2.18`, `stable-9` has `requires_ansible >= 2.16`, and `stable-8` has `requires_ansible >= 2.15`, each branch should focus testing only on its relevant minimum version and forward. `stable-8` does not need to test on ansible-core 2.16 through 2.19, as these versions exceed its compatibility range and may introduce changes that are incompatible or irrelevant. Instead, its test matrix can be restricted to run only against ansible-core 2.15. This approach keeps CI efficient and scoped while maintaining coverage for declared compatibility ranges.
 
 **Maintainer Responsibilities:**
 
@@ -77,15 +78,15 @@ Collection maintainers are expected to:
 **Downstream Integration Testing Matrix**
 
   Downstream Integration tests will run against ansible-core that is supported by the AAP version.
-  - Nightly downstream integration tests will target the latest AAP `unreleased` version(`devel`) with the latest collection development branch(`main`).
-  - Weekly scheduled tests will target the `released` AAP version (`unrealeased_next`) with the second stable collection version.
-  - Downstream integration tests can be triggered manually by the collection on-demand jenkins pipeline with a selected collection stable branch and AAP version. 
+  - Nightly downstream integration tests will target the latest AAP `unreleased` version (`devel`) with the latest collection development branch (`main`).
+  - Weekly scheduled tests will target the `released` AAP version (`unreleased_next`) with the second stable collection version.
+  - Downstream integration tests can be triggered manually by the collection on-demand Jenkins pipeline with a selected collection stable branch and AAP version. 
   
 
-| Test Type   | When Run         | AAP versions(supprted Ansible-Core)       | Collection Versions  |
+| Test Type   | When Run         | AAP version(s) (supported ansible-core)   | Collection Versions  |
 | ----------- | ---------------- | ---------------- | ----------------------------------------------------- |
-| Downstream Integration      | Nightly   | Latest unreleased AAP (Devel)  | Latest stable
-| Downstream Integration      | Weekly    | Released AAP (unrealeased_next)   | Second stable     |
+| Downstream Integration      | Nightly   | Latest unreleased AAP (Devel)  | Latest stable |
+| Downstream Integration      | Weekly    | Released AAP (unreleased_next)   | Second stable     |
 | Downstream Integration | On-Demand | Selected AAP | Selected Collection
 
 
@@ -101,7 +102,7 @@ Collection maintainers are expected to:
 
         -  Run on **older supported versions** (e.g., latest 2-3) in scheduled CI (nightly/weekly).
 
-        -  ELS-branch-supported versions tested when issues arise. Refer: [ELS Support](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/ELS_support.md)
+        -  ELS-branch-supported versions tested when issues arise. See: [ELS Support](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/ELS_support.md)
             
 
 ### **Process for Managing Compatibility Issues**
