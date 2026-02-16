@@ -1,54 +1,67 @@
 # GitHub to Jira Automation
 
  There are currently two distinct GitHub -> Jira integrations outlined here:
- 1. [Automatic Jira Ticket Creation](#automatic-jira-ticket-creation)
- 2. [Populating Jira Tickets from GitHub PRs/Branch/Commits via the DVCS (Distributed Version Control System) Connector](#populating-jira-tickets-from-github-prsbranchcommits-via-the-dvcs-distributed-version-control-system-connector)
+- [GitHub to Jira Automation](#github-to-jira-automation)
+  - [Automatic Jira Ticket Creation](#automatic-jira-ticket-creation)
+  - [Automation Workflow](#automation-workflow)
+    - [Details](#details)
+  - [Manual Instructions](#manual-instructions)
+  - [Populating Jira Tickets from GitHub PRs/Branch/Commits via the DVCS (Distributed Version Control System) Connector](#populating-jira-tickets-from-github-prsbranchcommits-via-the-dvcs-distributed-version-control-system-connector)
+    - [How it works](#how-it-works)
+    - [Benefits](#benefits)
+    - [Usage notes](#usage-notes)
+    - [Currently Configured Collection Repositories](#currently-configured-collection-repositories)
 
 ## Automatic Jira Ticket Creation
 
-**Note:** This functionality is a work in progress and not yet live. This document will be updated once the automation is fully operational. In the meantime, the script can be manually run. Please see the `Manual Instructions` section for details. 
+For repositories maintained by the Cloud Content team, GitHub issues tagged with the `jira` label are picked up by the **github-to-jira-utility**, which creates corresponding Jira tickets in the **ACA** project backlog.
 
-For repositories maintained by the Cloud Content team, GitHub issues tagged with the `jira` label will be picked up by an automation process that creates corresponding Jira tickets in the **ACA** project backlog.
+The automation lives in the **cloud-content-ci-automation** repository under `tools/github-to-jira-utility`. See the [utility README](https://github.com/ansible-collections/cloud-content-ci-automation/blob/main/tools/github-to-jira-utility/README.md) for full details.
 
 ## Automation Workflow
 
 1. A user adds the `jira` label to a GitHub issue.
-2. An AWS Lambda function, running on a schedule like a cron job, periodically checks for new issues with the `jira` label.
-3. When a new labeled issue is found, a corresponding Jira issue is created and placed in the **ACA backlog**.
+2. An **AWS Lambda function** (github-to-jira-utility), triggered on a schedule via **EventBridge**, scans the configured cloud-content repositories for issues with the `jira` label.
+3. For each labeled issue that does not yet have a corresponding ACA issue, the Lambda creates an ACA Bug with summary, description, labels, components, and a link back to the GitHub issue, then transitions it to **Backlog**.
 
 ### Details
 
-- Uses a dedicated **Jira bot/service account**.
-- The script authenticates with **Jira** and **GitHub** using the team account’s **Personal Access Tokens (PATs)**.
-- The PATs and Jira service account credentials are:
-  - Stored securely in the team’s **Bitwarden vault**.
-  - Also added to **AWS Secrets Manager** for use by the Lambda function.
+- Uses a dedicated **Jira bot/service account** and the team’s **GitHub Personal Access Token (PAT)** with `repo` scope.
+- Credentials are stored in the team’s **Bitwarden vault** and in **AWS Secrets Manager** (secret `cloud_team_jira_login`) for the Lambda. The secret must contain: `cloud_team_jira_bot_token`, `cloud_team_jira_server`, and `cloud_team_gh_token`.
+- The Lambda scans a fixed set of cloud-content repositories (defined in the utility’s `lambda/handler.py`).
 
 ## Manual Instructions
 
-1. Clone the utilities [repo](https://github.com/jillr/utilities) 
+To run the sync manually or to deploy/update the automation, use the **github-to-jira-utility** in the **cloud-content-ci-automation** repo.
 
-```
-$ git clone git@github.com:jillr/utilities.git
-$ cd utilities/jira
-```
+1. **Clone the repo** and go to the utility directory (replace `<repo-url>` with your team’s clone URL for the cloud-content-ci-automation repository):
 
-2. Create a config file 
-
-```
-$ cat config
-jira_token: personal access token
-jira_user: yournamehere
-jira_pw: foobarbaz
-jira_server: https://jira.example.com
-gh_token: ghp_1234567890abcdefghijklmnop
+```bash
+git clone <repo-url>
+cd cloud-content-ci-automation/tools/github-to-jira-utility
 ```
 
-3. Run the [script](https://github.com/jillr/utilities/blob/main/jira/github_jira.py)
+2. **Deploy and run (recommended: Ansible)**
 
-```
-$ python github_jira.py
-```
+   - See [ansible/README.md](https://github.com/ansible-collections/cloud-content-ci-automation/blob/main/tools/github-to-jira-utility/ansible/README.md) in the utility for the full Ansible deployment guide.
+   - Prerequisites: Ansible ≥ 2.15, AWS CLI configured, and an AWS Secrets Manager secret (e.g. `cloud_team_jira_login`) with the Jira and GitHub credentials.
+   - One-command deploy:
+
+   ```bash
+   cd ansible
+   ansible-galaxy collection install -r requirements.yml
+   ansible-playbook deploy.yml -e secret_name=cloud_team_jira_login
+   ```
+
+   - To trigger a one-off sync, invoke the Lambda using AWS CLI below or manually through AWS Dashboard
+
+   ```bash
+   aws lambda invoke --function-name github-to-jira-utility --region us-east-2 --payload '{}' response.json && cat response.json
+   ```
+
+3. **Manual Lambda deployment**
+
+   - For building and deploying the Lambda without Ansible, see [lambda/README.md](https://github.com/ansible-collections/cloud-content-ci-automation/blob/main/tools/github-to-jira-utility/lambda/README.md) in the utility. You will build the package from `lambda/`, deploy to AWS, and invoke the function as above.
 
 ## Populating Jira Tickets from GitHub PRs/Branch/Commits via the DVCS (Distributed Version Control System) Connector
 
