@@ -1,5 +1,15 @@
 # GitHub to Jira Automation
 
+- [Automatic Jira Ticket Creation](#automatic-jira-ticket-creation)
+  - [Automation Workflow](#automation-workflow)
+    - [Details](#details)
+  - [Manual Instructions](#manual-instructions)
+- [Populating Jira Tickets from GitHub PRs/Branch/Commits via the DVCS (Distributed Version Control System) Connector](#populating-jira-tickets-from-github-prsbranchcommits-via-the-dvcs-distributed-version-control-system-connector)
+  - [How it works](#how-it-works)
+  - [Benefits](#benefits)
+  - [Usage notes](#usage-notes)
+  - [Currently Configured Collection Repositories](#currently-configured-collection-repositories)
+
 ## Automatic Jira Ticket Creation
 
 For repositories maintained by the Cloud Content team, GitHub issues tagged with the `jira` label are picked up by the **github-to-jira-utility**, which creates corresponding Jira tickets in the **ACA** project backlog.
