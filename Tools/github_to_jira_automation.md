@@ -1,14 +1,15 @@
 # GitHub to Jira Automation
 
-- [Automatic Jira Ticket Creation](#automatic-jira-ticket-creation)
-  - [Automation Workflow](#automation-workflow)
-    - [Details](#details)
-  - [Manual Instructions](#manual-instructions)
-- [Populating Jira Tickets from GitHub PRs/Branch/Commits via the DVCS (Distributed Version Control System) Connector](#populating-jira-tickets-from-github-prsbranchcommits-via-the-dvcs-distributed-version-control-system-connector)
-  - [How it works](#how-it-works)
-  - [Benefits](#benefits)
-  - [Usage notes](#usage-notes)
-  - [Currently Configured Collection Repositories](#currently-configured-collection-repositories)
+- [GitHub to Jira Automation](#github-to-jira-automation)
+  - [Automatic Jira Ticket Creation](#automatic-jira-ticket-creation)
+    - [Automation Workflow](#automation-workflow)
+      - [Details](#details)
+    - [Manual Instructions](#manual-instructions)
+  - [Populating Jira Tickets from GitHub PRs/Branch/Commits via the DVCS (Distributed Version Control System) Connector](#populating-jira-tickets-from-github-prsbranchcommits-via-the-dvcs-distributed-version-control-system-connector)
+    - [How it works](#how-it-works)
+    - [Benefits](#benefits)
+    - [Usage notes](#usage-notes)
+    - [Currently Configured Collection Repositories](#currently-configured-collection-repositories)
 
 ## Automatic Jira Ticket Creation
 
@@ -20,7 +21,7 @@ The automation lives in the **cloud-content-ci-automation** repository under `to
 
 1. A user adds the `jira` label to a GitHub issue.
 2. An **AWS Lambda function** (github-to-jira-utility), triggered on a schedule via **EventBridge**, scans the configured cloud-content repositories for issues with the `jira` label.
-3. For each labeled issue that does not yet have a corresponding ACA issue, the Lambda creates an ACA Bug with summary, description, labels, components, and a link back to the GitHub issue, then transitions it to **Backlog**.
+3. For every labeled issue that does not already have a corresponding JIRA ticket, the Lambda function creates an ACA-type Bug in Jira, including the summary, description, labels, components, and a link to the related GitHub issue, and then moves it to **Backlog**.
 
 #### Details
 
@@ -42,7 +43,7 @@ cd cloud-content-ci-automation/tools/github-to-jira-utility
 2. **Deploy and run (recommended: Ansible)**
 
    - See [ansible/README.md](https://github.com/ansible/cloud-content-ci-automation/blob/main/tools/github-to-jira-utility/ansible/README.md) in the utility for the full Ansible deployment guide.
-   - Prerequisites: Ansible ≥ 2.15, AWS CLI configured, and an AWS Secrets Manager secret (e.g. `cloud_team_jira_login`) with the Jira and GitHub credentials.
+   - Prerequisites: ansible-core ≥ 2.15, AWS CLI configured, and an AWS Secrets Manager secret (e.g. `cloud_team_jira_login`) with the Jira and GitHub credentials.
    - One-command deploy:
 
    ```bash
