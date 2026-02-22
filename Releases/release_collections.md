@@ -19,6 +19,11 @@
 
 * For a **minor release**, make sure the backport of the PRs from the `main` branch to the release branch is successful. For more information on backporting PRs, refer to [the backporting page](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/backport_changes.md) of the team handbook.
 
+   > **HashiCorp Vault Collection (`hashicorp.vault`)**: Since the backport workflow is not currently [as of December 2025] running for this collection, **before starting the release preparation**, verify that the `stable-X` branch has all necessary changes from `main`:
+   > * Review PRs merged to `main` since the `stable-X` branch was created (or since the last release)
+   > * Ensure that all appropriate backports have been completed manually (see [backporting guidelines](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/backport_changes.md))
+   > * **Important**: Do NOT merge `main` directly into `stable-X`, as this would bring breaking changes that should not be included in the stable release. Only selective backports of appropriate changes (bugfixes, security fixes, minor features, etc.) should be included.
+
 * Create and check out a new branch (an ideal branch name is something like `prep_release_x_y_z`, where `x_y_z` are the version numbers, e.g., `prep_release_3_1_0`) and prepare the collection for release by following the instructions provided [here](https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_releasing.html#preparing-to-release-a-collection).
 
    ```
@@ -55,7 +60,20 @@ _Note : If the sanity tests fail locally or in the CI, the failures have to be a
    git push upstream <version>
    ```
 
-* Once the [CI for the release](https://ansible.softwarefactory-project.io/zuul/status) passes, post a message on the `#ansible-partners` Slack channel requesting an approval for any supported content collections (e.g., `amazon.aws`) for Automation Hub.
+   > **HashiCorp Vault Collection (`hashicorp.vault`)**:
+   > Instead of tagging directly, create a GitHub Release:
+   > 1. Navigate to the [Releases page](https://github.com/ansible-automation-platform/hashicorp.vault/releases) and select `Draft a new release`
+   > 2. Use `stable-X` as the target branch
+   > 3. Create a new tag with the version number (e.g., `1.1.0`)
+   > 4. **IMPORTANT**: Do NOT use the 'v' prefix in the tag (use `1.1.0`, not `v1.1.0`). Partner Engineering accepts only semantic versioning format `x.y.z`
+   > 5. Add release notes (typically copied from the CHANGELOG)
+   > 6. Publish the release
+   >
+   > Once published, the [`release_ah` workflow](https://github.com/ansible-automation-platform/hashicorp.vault/actions/workflows/release_ah.yml) will automatically trigger to build and publish to Automation Hub. Monitor the workflow to ensure it completes successfully.
+
+* **Once the [CI for the release](https://ansible.softwarefactory-project.io/zuul/status) passes** (standard collections), inform the Partner Engineering team on the `#ansible-partners` Slack channel about the release. For supported content collections (e.g., `amazon.aws`), this includes requesting approval for Automation Hub.
+
+   > ** HashiCorp Vault Collection (`hashicorp.vault`)**: Skip the Zuul CI step - the GitHub Actions workflow handles publishing automatically. After the workflow completes successfully, inform the Partner Engineering team on the `#ansible-partners` channel about the release.
 
 * Manual upload is performed in cases where automated upload to Automation Hub fails. To do this, please refer to the instructions [here](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_automation_hub.md).
 
@@ -89,6 +107,12 @@ _Note : If the sanity tests fail locally or in the CI, the failures have to be a
 
    **NOTE:** For the [`amazon.aws` collection](https://github.com/ansible-collections/amazon.aws) _only_, an additional version value that needs to be incrememented in the case of a major release is `AMAZON_AWS_COLLECTION_VERSION` in [`plugins/module_utils/common.py`](https://github.com/ansible-collections/amazon.aws/blob/5100ca0d861fec6a9ef88d55c98c656fe345c149/plugins/module_utils/common.py#L7).
 
+
+## Collection-Specific Notes
+
+* **HashiCorp Vault Collection (`hashicorp.vault`)**: This collection uses GitHub Actions instead of Zuul CI for automated publishing. Look for the  HashiCorp Vault Collection callouts throughout the steps above for specific instructions. The key differences are:
+  * Create a GitHub Release instead of tagging directly (do NOT use 'v' prefix in tags)
+  * The [`release_ah` workflow](https://github.com/ansible-automation-platform/hashicorp.vault/actions/workflows/release_ah.yml) automatically publishes to Automation Hub when a GitHub release is created
 
 # Reference:
 https://docs.ansible.com/ansible/latest/community/collection_contributors/collection_release_with_branches.html#releasing-major-collection-versions
