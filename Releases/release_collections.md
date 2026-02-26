@@ -18,7 +18,10 @@
    git checkout stable-X
    ```
 
-*  For a **major release** in the [`amazon.aws`](https://github.com/ansible-collections/amazon.aws), [`community.aws`](https://github.com/ansible-collections/community.aws), [`cloud.aws_ops`](https://github.com/redhat-cop/cloud.aws_ops), [`ansible.mcp`](https://github.com/ansible-collections/ansible.mcp) and [`amazon.ai`](https://github.com/ansible-collections/amazon.ai) collections _only_, create a separate PR to update the branch reference in [`docs/docsite/links.yml`](https://github.com/ansible-collections/amazon.aws/blob/stable-10/docs/docsite/links.yml#L10) to `stable-x` and ensure it is merged to the `stable-X` branch before starting the release preparation PR. 
+* For a **major release**, create a separate PR to update any branch references from `main` to `stable-x` and ensure it is merged to the `stable-X` branch before starting the release preparation PR. The file changes needed for this step vary in each collection. Common locations are:
+   * galaxy.yml
+   * README.md
+   * docs/docsite/links.yml
 
 * For a **major release**, if an ansible-core version (`requires_ansible`) update is not already included, please verify whether an update is needed. If it is, create a separate PR for the version update and ensure it is merged to the `stable-X` branch before starting the release preparation PR. If you're unsure whether an update is required, please consult the team in the team Slack channel.
 
