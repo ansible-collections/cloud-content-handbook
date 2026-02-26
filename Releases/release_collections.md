@@ -18,7 +18,7 @@
    git checkout stable-X
    ```
 
-* For a **major release**, create a separate PR to update any branch references from `main` to `stable-x` and ensure it is merged to the `stable-X` branch before starting the release preparation PR. The file changes needed for this step vary in each collection. Common locations are:
+* For a **major release**, create a separate PR to update any branch references from `main` to `stable-x` and ensure it is merged to the `stable-X` branch before starting the release preparation PR. The file changes needed for this step vary in each collection. Commonly updated files include:
    * galaxy.yml
    * README.md
    * docs/docsite/links.yml
