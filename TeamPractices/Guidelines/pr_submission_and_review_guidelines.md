@@ -31,21 +31,24 @@ For details on how to create a changelog entry, please refer to the ["Creating c
 ### **9. Respect Branching Strategies**
 Adhere to the project's branching strategies. Submit your PR against the appropriate branch, and understand the project's [release cycle](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_cycles.md).
 
-### **10. Verify CI Status**
-Ensure that your changes pass the Continuous Integration (CI) checks. Address any CI failures promptly. To rerun the Zuul checks specifically, you may comment `recheck` on the PR. Note that this command only triggers Zuul; other CI checks must be rerun using the standard GitHub interface (e.g., clicking the "Re-run" button next to the specific check). 
+### **10. Sign Your Commits**
+Ensure all commits in your PR are signed. Signed commits verify your identity and confirm that the code originates from a trusted source, protecting the codebase from unauthorized or malicious changes. For instructions on setting up commit signing, see [Signing commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
+
+### **11. Verify CI Status**
+Ensure that your changes pass the Continuous Integration (CI) checks. Address any CI failures promptly. To rerun the Zuul checks specifically, you may comment `recheck` on the PR. Note that this command only triggers Zuul; other CI checks must be rerun using the standard GitHub interface (e.g., clicking the "Re-run" button next to the specific check).
 
 If you discover issues unrelated to your PR, please open a separate issue to address them. This practice ensures that PRs remain concise and focused on specific changes.
 
-### **11. Don't Squash Commits Once a PR is Under Review**
+### **12. Don't Squash Commits Once a PR is Under Review**
 Refrain from squashing commits during the review process to preserve a transparent history of changes. However, once the review process is concluded, and the PR has obtained the required approvals, you may use squash and commit, with the exception of PRs associated with module promotion.
 
-### **12. Respond to Feedback**
+### **13. Respond to Feedback**
 Be responsive to feedback from reviewers. Address comments, make necessary adjustments, and engage in discussions to improve the PR.
 
-### **13. Be Patient**
+### **14. Be Patient**
 Understand that code reviews take time. Be patient and responsive during the review process.
 
-### **14. Merging**
+### **15. Merging**
 Once a PR has addressed all reviewer feedback and has at least two approvals, the submitter of the PR may apply the `mergeit` label to merge their changes into the codebase. 
 
 Applying the `mergeit` label will trigger the CI to rerun. Please note that only a failure in the Zuul checks will block the PR from merging. Therefore, you must manually verify the status of all other CI checks and ensure they have passed before applying the `mergeit` label.
