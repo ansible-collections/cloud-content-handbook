@@ -32,7 +32,7 @@ For details on how to create a changelog entry, please refer to the ["Creating c
 Adhere to the project's branching strategies. Submit your PR against the appropriate branch, and understand the project's [release cycle](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_cycles.md).
 
 ### **10. Sign Your Commits**
-Ensure all commits in your PR are signed. Signed commits verify your identity and confirm that the code originates from a trusted source, protecting the codebase from unauthorized or malicious changes. For instructions on setting up commit signing, see [Signing commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
+Ensure all commits in your PR are signed. Signed commits verify your identity and confirm that the code originates from a trusted source, protecting the codebase from unauthorized or malicious changes. For instructions on setting up commit signing, see [Signing commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification#gpg-commit-signature-verification).
 
 ### **11. Verify CI Status**
 Ensure that your changes pass the Continuous Integration (CI) checks. Address any CI failures promptly. To rerun the Zuul checks specifically, you may comment `recheck` on the PR. Note that this command only triggers Zuul; other CI checks must be rerun using the standard GitHub interface (e.g., clicking the "Re-run" button next to the specific check).
