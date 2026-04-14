@@ -1,6 +1,6 @@
 # Introduction
 
-This is the handbook for the Ansible Cloud Content Team. It contains information about how we work as a team, and is guided by a few high level principles:
+This is the handbook for the [Ansible Cloud Content Team](https://github.com/orgs/ansible-collections/teams/cloud-team-all). It contains information about how we work as a team, and is guided by a few high level principles:
 
 1. Everything we do should be open.
 2. Documentation comes first.
