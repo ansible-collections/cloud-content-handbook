@@ -122,8 +122,6 @@
 
 The `hashicorp.vault` collection follows the same release process as other collections, with one additional step after tagging.
 
-**Note:** For hashicorp.vault, the backport workflow is not currently running. Before starting release preparation, follow the same "Before starting the release preparation" checks above and do manual backports as needed (see [backporting guidelines](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/backport_changes.md)); do not merge `main` directly into `stable-X`.
-
 After you **create and push the tag** (same as other collections — see [Git Tagging](#git-tagging) above), create a **GitHub Release** that uses that tag. Publishing the release triggers the GitHub Action that publishes to Automation Hub. Steps:
 
 ### After pushing the tag: create a GitHub Release using that tag
