@@ -15,7 +15,7 @@ These are the collections that generally fall under the Cloud Content team's pur
 | [community.okd](https://github.com/ansible-collections/community.okd) | Community | Automate OKD (Openshift Upstream) |
 | [kubernetes.core](https://github.com/ansible-collections/kubernetes.core) | Supported | Automate Kubernetes |
 | redhat.openshift | Supported[^1] | Automate Openshift |
-| [hashicorp.vault](https://github.com/ansible-automation-platform/hashicorp.vault) | Certified | Automate Hashicorp Vault |
+| [hashicorp.vault](https://github.com/ansible-collections/hashicorp.vault) | Certified | Automate Hashicorp Vault |
 | [ansible.mcp](https://github.com/ansible-collections/ansible.mcp) | Supported | Ansible Plugin for MCP Servers |
 
 [^1]: While redhat.openshift is the supported collection for OpenShift, it is auto-generated from community.okd. As such, when changes are needed to the redhat.openshift collection they are first made in the community.okd repository and from that redhat.openshift is generated and uploaded to Ansible Automation Hub.
