@@ -6,7 +6,7 @@ This guide covers using Claude Code skills to automate and streamline the collec
 
 ## Prerequisites
 
-- [Claude Code](https://claude.ai/code) CLI installed and configured
+- Claude Code CLI installed and configured (Check with the team if you donot have access)
 - `gh` CLI authenticated with GitHub
 - `git` configured with appropriate remotes
 - Collection cloned locally with `upstream` remote pointing to the canonical repository
