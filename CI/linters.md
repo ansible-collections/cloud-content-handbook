@@ -8,6 +8,7 @@ In our continuous integration (CI) pipeline, we utilize several linters to maint
 - [isort](https://pycqa.github.io/isort/index.html) - ensures that import statements are sorted correctly.
 - [mypy](https://mypy.readthedocs.io/en/stable/) - performs static type checking to detect type-related errors early in the development process.
 - [flynt](https://pypi.org/project/flynt/) - string formatting converter that converts Python code from old `"%-formatted"` and `.format(...)` strings into Python 3.6+'s `"f-strings"`.
+-[ruff](https://docs.astral.sh/ruff/) - An extremely fast Python linter and code formatter which is 10-100x faster than existing linters (like Flake8) and formatters (like Black)
 
 The use of linters is critical for several reasons. First, linters help ensure that our codebase follows coding standards, conventions, and best practices, improving readability and maintainability. By detecting potential problems such as syntax errors, style violations, unused variables, and type inconsistencies early on, linters help prevent bugs and improve codebase quality. In addition, linters promote consistency within the codebase, making it easier for developers to collaborate and understand each other's code.
 
