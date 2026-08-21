@@ -25,6 +25,8 @@
 
 * For a **major release**, if an ansible-core version (`requires_ansible`) update is not already included, please verify whether an update is needed. If it is, create a separate PR for the version update and ensure it is merged to the `stable-X` branch before starting the release preparation PR. If you're unsure whether an update is required, please consult the team in the team Slack channel.
 
+   > Certified and validated collections that are published to Automation Hub must specify a supported version of ansible-core. Consult the [ansible-core compatibility](https://docs.ansible.com/projects/partner-certification-requirements/ansible-core-compatibility/) section of the certification requirements.
+
 * For a **major release**, create a separate, standalone PR for the main branch that increments the development version in the `galaxy.yml` file, located in the root directory of the collection, with the appropriate value (e.g., `version: 10.0.0-dev0` would be changed to `version: 11.0.0-dev0`).
 
    **NOTE:** For the [`amazon.aws`](https://github.com/ansible-collections/amazon.aws) and [`community.aws`](https://github.com/ansible-collections/community.aws) collections _only_, an additional version value that needs to be incremented is `AMAZON_AWS_COLLECTION_VERSION` in [`plugins/module_utils/common.py`](https://github.com/ansible-collections/amazon.aws/blob/5100ca0d861fec6a9ef88d55c98c656fe345c149/plugins/module_utils/common.py#L7).
