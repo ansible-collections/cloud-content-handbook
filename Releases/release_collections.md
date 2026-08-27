@@ -23,9 +23,9 @@
    * README.md
    * docs/docsite/links.yml
 
-* For a **major release**, if an ansible-core version (`requires_ansible`) update is not already included, please verify whether an update is needed. If it is, create a separate PR for the version update and ensure it is merged to the `stable-X` branch before starting the release preparation PR. If you're unsure whether an update is required, please consult the team in the team Slack channel.
+* For a **major release**, if an ansible-core version (`requires_ansible`) update is not already included, please verify whether an update is needed. To verify updates to the ansible-core version, consult the team via Slack. If you confirm that the ansible-core version requires an update, create a separate PR for the change and ensure it is merged to the `stable-X` branch before starting the release preparation PR.
 
-   > Certified and validated collections that are published to Automation Hub must specify a supported version of ansible-core. Consult the [ansible-core compatibility](https://docs.ansible.com/projects/partner-certification-requirements/ansible-core-compatibility/) section of the certification requirements.
+   > Certified and validated collections that are published to Automation Hub must specify a supported version of ansible-core. Consult the [ansible-core compatibility](https://docs.ansible.com/projects/partner-certification-requirements/ansible-core-compatibility/) section of the certification requirements. **Double check that the version is supported with the PE team before you make any changes.**
 
 * For a **major release**, create a separate, standalone PR for the main branch that increments the development version in the `galaxy.yml` file, located in the root directory of the collection, with the appropriate value (e.g., `version: 10.0.0-dev0` would be changed to `version: 11.0.0-dev0`).
 
