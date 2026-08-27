@@ -292,10 +292,14 @@ Verify changelog configuration exists:
 cat changelogs/config.yaml
 ```
 
-Validate fragment YAML syntax:
+Validate changelog fragments and the compiled changelog (schema-aware):
 
 ```bash
-yamllint changelogs/fragments/*.yml
+# Validate the changelog fragments in changelogs/fragments/
+antsibull-changelog lint
+
+# Validate the compiled changelogs/changelog.yaml
+antsibull-changelog lint-changelog-yaml
 ```
 
 ## Configuration
