@@ -6,10 +6,18 @@ This guide covers using Claude Code skills to automate and streamline the collec
 
 ## Prerequisites
 
-- Claude Code CLI installed and configured (Check with the team if you donot have access)
+- Claude Code CLI installed and configured (Check with the team if you do not have access)
 - `gh` CLI authenticated with GitHub
-- `git` configured with appropriate remotes
-- Collection cloned locally with `upstream` remote pointing to the canonical repository
+- `git` configured with the appropriate remotes
+- Collection cloned locally with the `upstream` remote pointing to the canonical repository
+
+If you have not already done so, authenticate `gh` and add the `upstream` remote:
+
+```bash
+gh auth login
+git remote add upstream https://github.com/ansible-collections/<collection>.git
+git fetch upstream --tags
+```
 
 ## Quick Start
 
@@ -30,7 +38,7 @@ For a complete release workflow, run these skills in sequence:
 | `/collection-backport-status-check` | Check for open backport PRs and patchback failures that block releases |
 | `/stable-release` | End-to-end release orchestration (analyze → prep → validate → PR) |
 | `/stable-release-analyze` | Analyze stable branches to determine if releases are needed |
-| `/stable-release-prep` | Create prep branch, update version, generate changelog |
+| `/stable-release-prep` | Create a prep branch, update version, generate changelog |
 
 ## Step-by-Step Workflow
 
@@ -45,7 +53,7 @@ Before starting any release, verify that all backport PRs are merged and patchba
 **What it checks:**
 
 - Open backport PRs targeting stable branches
-- Patchback failures on merged main-branch PRs since the last tag
+- Patchback failures on merged main branch PRs since the last tag
 - PRs with backport labels that still need to be merged
 
 **Example output:**
@@ -87,13 +95,13 @@ Once backports are clear, run the orchestrated release:
 
 **What it does:**
 
-1. **Analyzes** stable branches to determine version needed (MAJOR/MINOR/PATCH)
-2. **Creates** prep branch (`prep_vX.Y.Z`)
-3. **Updates** `galaxy.yml` with new version
-4. **Generates** release summary changelog fragment
+1. **Analyzes** stable branches to determine the version needed (MAJOR/MINOR/PATCH)
+2. **Creates** a prep branch (`prep_vX.Y.Z`)
+3. **Updates** `galaxy.yml` with the new version
+4. **Generates** a release summary changelog fragment
 5. **Runs** `antsibull-changelog release` to produce `CHANGELOG.rst`
 6. **Validates** with linting and sanity checks
-7. **Creates** pull request (if `--create-pr` flag used)
+7. **Creates** a pull request (if the `--create-pr` flag used)
 
 **Common options:**
 
@@ -119,9 +127,9 @@ Once backports are clear, run the orchestrated release:
 After the skill creates the prep PR:
 
 1. Review the generated `CHANGELOG.rst` for accuracy
-2. Verify `galaxy.yml` version is correct
+2. Verify the `galaxy.yml` version is correct
 3. Ensure CI passes
-4. Get required approvals and merge to `stable-X` branch
+4. Get required approvals and merge to the `stable-X` branch
 
 ### Step 4: Tag and Release
 
@@ -153,7 +161,7 @@ Check backport readiness for specific or multiple branches:
 | Input | Required | Description |
 | ----- | -------- | ----------- |
 | `collection_git_url` | Yes | Clone URL or path to local clone |
-| `target_stable_branch` | No | Specific branch (e.g., `stable-11`). Defaults to checking two most recent. |
+| `target_stable_branch` | No | Specific branch (e.g., `stable-11`). Defaults to checking the two most recent branches. |
 
 ### stable-release-analyze
 
@@ -188,7 +196,7 @@ Summary: 1 release(s) needed
 
 ### stable-release-prep
 
-Prepare release branch with specific version:
+Prepare the release branch with a specific version:
 
 ```bash
 /stable-release-prep --version 10.0.1 --branch stable-10
