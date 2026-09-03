@@ -1,3 +1,5 @@
+# This document is archived.
+
 # Scrum Ceremonies: What, When, and How
 
 This document provides an overview of the key Scrum ceremonies, detailing what they are, when they occur, and how they should be conducted, specifically for the Cloud Content Team.
