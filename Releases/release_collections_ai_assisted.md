@@ -76,7 +76,7 @@ READY
 
 **If NOT READY:**
 
-The skill will list blockers and provide commands to resolve them:
+The skill lists blockers and provides commands to resolve them:
 
 ```bash
 # Manually cherry-pick patchback failures
