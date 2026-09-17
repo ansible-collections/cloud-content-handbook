@@ -60,21 +60,28 @@ The Team Lead collaborates with the Foundation Pod Lead to:
 - Ensure sustainable delivery.
 - Decide which technical debt items are in scope for the rotation. Technical debt work is taken on only after customer-reported defects, security/blocker issues, and planned releases are on track, and only if it can be completed within the six-week rotation without putting those higher-priority objectives at risk.
 
-## Scrum Ceremonies
+## ScrumBan
 
-### Sprint Planning
+### Refinement, Prioritization & Planning
+
+Review:
+
+- Newly reported defects
+- Customer escalations
+- Upcoming releases
+- Technical debt
+- Security work
 
 Attendees
 
 - Foundation Pod
-- Scrum Master
-- The team
+- Team Lead
+- Manager
 
 Outputs
 
-- Sprint goal(s)
-- Prioritized maintenance backlog
-- Capacity allocation
+- Prioritized backlog
+- ToDo items
 - Risks and dependencies
 
 ### Daily Standup (async via Slack)
@@ -91,17 +98,7 @@ Focus
 - Release readiness
 - Cross-pod dependencies
 
-### Weekly Backlog Refinement
-
-Review:
-
-- Newly reported defects
-- Customer escalations
-- Upcoming releases
-- Technical debt
-- Security work
-
-### Sprint Review
+### Review
 
 Demonstrate:
 
@@ -125,18 +122,10 @@ Discuss:
 | Daily Standup | Daily | Foundation Pod |
 | Backlog Refinement | Every 2 weeks | Foundation Pod |
 | Release Readiness | as needed | Pod Lead |
-| Sprint Review | Weekly | Team |
+| Review | Weekly | Team |
 | Retrospective | Every 2 weeks | Team |
 | Foundation Pod Handoff | End of rotation | Outgoing & Incoming Pod Leads |
 
-## Intake Process
-
-1. New work is triaged.
-2. Critical work is prioritized.
-3. The team confirms priority when needed.
-4. Pod Lead assigns ownership.
-5. Progress is tracked during standups.
-6. Completed work is reviewed and released.
 
 ## End-of-Rotation Handoff
 
