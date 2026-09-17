@@ -1,17 +1,17 @@
-# Maintenance Pod Operating Guide
+# Foundation Pod Operating Guide
 
 ## Purpose
 
-The Maintenance Pod is a rotating, six-week pod responsible for maintaining the health, stability, and release readiness of the team's supported content while feature pods focus on strategic initiatives.
+The Foundation Pod is a rotating, six-week pod responsible for maintaining the health, stability, and release readiness of the team's supported content, while feature pods advance the product roadmap. Both are essential to delivering value customers can depend on.
 
-The Maintenance Pod is accountable for operational excellence, timely customer support, and ensuring the team can continue delivering high-quality software.
+The Foundation Pod is accountable for operational excellence, the maintenance and release processes, and ensuring the team can continue delivering high-quality software.
 
 ## Objectives
 
 - Resolve customer-reported defects.
 - Address security and blocker issues.
 - Deliver planned patch and collection releases.
-- Reduce technical debt where appropriate.
+- Reduce technical debt as capacity allows, once higher-priority objectives above are covered (see [Roles](#roles) for how this is decided).
 - Triage and prioritize incoming maintenance work.
 
 ## Scope of Work
@@ -38,9 +38,9 @@ The Maintenance Pod is accountable for operational excellence, timely customer s
 
 ## Roles
 
-### Maintenance Pod Lead
+### Foundation Pod Lead
 
-The Maintenance Pod Lead is responsible for delivery coordination within the pod.
+The Foundation Pod Lead is responsible for delivery coordination within the pod.
 
 Responsibilities include:
 
@@ -52,12 +52,13 @@ Responsibilities include:
 - Provide status updates to stakeholders.
 - Partner closely with the Team Lead/Engineering Manager.
 
-The Team Lead collaborates with the Maintenance Pod Lead to:
+The Team Lead collaborates with the Foundation Pod Lead to:
 
 - Balance workload.
 - Resolve priority conflicts.
 - Escalate organizational risks.
 - Ensure sustainable delivery.
+- Decide which technical debt items are in scope for the rotation. Technical debt work is taken on only after customer-reported defects, security/blocker issues, and planned releases are on track, and only if it can be completed within the six-week rotation without putting those higher-priority objectives at risk.
 
 ## Scrum Ceremonies
 
@@ -65,23 +66,22 @@ The Team Lead collaborates with the Maintenance Pod Lead to:
 
 Attendees
 
-- Maintenance Pod
+- Foundation Pod
 - Scrum Master
-- Product Owner (or backlog owner)
-- Maintenance Pod Lead
+- The team
 
 Outputs
 
-- Sprint goal
+- Sprint goal(s)
 - Prioritized maintenance backlog
 - Capacity allocation
 - Risks and dependencies
 
-### Daily Standup
+### Daily Standup (async via Slack)
 
 Attendees
 
-- Maintenance Pod
+- Foundation Pod
 
 Focus
 
@@ -122,25 +122,25 @@ Discuss:
 
 | Meeting | Frequency | Owner |
 |---|---|---|
-| Daily Standup | Daily | Maintenance Pod |
-| Backlog Refinement | Every 2 weeks | Maintenance Pod |
+| Daily Standup | Daily | Foundation Pod |
+| Backlog Refinement | Every 2 weeks | Foundation Pod |
 | Release Readiness | as needed | Pod Lead |
 | Sprint Review | Weekly | Team |
 | Retrospective | Every 2 weeks | Team |
-| Maintenance Handoff | End of rotation | Outgoing & Incoming Pod Leads |
+| Foundation Pod Handoff | End of rotation | Outgoing & Incoming Pod Leads |
 
 ## Intake Process
 
 1. New work is triaged.
 2. Critical work is prioritized.
-3. Product Owner confirms priority when needed.
+3. The team confirms priority when needed.
 4. Pod Lead assigns ownership.
 5. Progress is tracked during standups.
 6. Completed work is reviewed and released.
 
 ## End-of-Rotation Handoff
 
-The outgoing Maintenance Pod should provide:
+The outgoing Foundation Pod should provide:
 
 - Open work
 - Outstanding blockers
@@ -164,8 +164,7 @@ A short handoff meeting between outgoing and incoming pod members is recommended
 
 ## Guiding Principles
 
-- Protect feature pod focus whenever possible.
+- Absorb incoming interrupts so both pods can stay focused on their committed work.
 - Prioritize customer impact and system stability.
 - Maintain transparency through regular communication.
 - Keep operational knowledge documented.
-- Leave the platform healthier at the end of every rotation.
