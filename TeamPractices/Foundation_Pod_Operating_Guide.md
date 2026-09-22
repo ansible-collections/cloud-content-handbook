@@ -11,7 +11,7 @@ The Foundation Pod is accountable for operational excellence, the maintenance an
 - Resolve customer-reported defects.
 - Address security and blocker issues.
 - Deliver planned patch and collection releases.
-- Reduce technical debt as capacity allows, once higher-priority objectives above are covered (see [Roles](#roles) for how this is decided).
+- Reduce technical debt as capacity allows, once higher-priority objectives in this list are covered (see [Roles](#roles) for how this is decided).
 - Triage and prioritize incoming maintenance work.
 
 ## Scope of Work
@@ -72,13 +72,13 @@ Review:
 - Technical debt
 - Security work
 
-Attendees
+Attendees:
 
 - Foundation Pod
 - Team Lead
 - Manager
 
-Outputs
+Outputs:
 
 - Prioritized backlog
 - ToDo items
@@ -86,11 +86,11 @@ Outputs
 
 ### Daily Standup (async via Slack)
 
-Attendees
+Attendees:
 
 - Foundation Pod
 
-Focus
+Focus:
 
 - Progress on active work
 - Blockers
