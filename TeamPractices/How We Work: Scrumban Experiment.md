@@ -62,48 +62,49 @@ Scrumban changes how we manage work through this workflow; it does not require u
 
 New work enters the board here.
 
-New items should be triaged and prioritized before moving into **Backlog (ToDo)**.
+New items should be triaged and prioritized before moving into **ToDo**.
 
-### Backlog (ToDo)
+### ToDo
 
 The backlog remains prioritized.
 
 Refinement will continue to ensure that upcoming work:
 
-* Has clear requirements
-* Has known dependencies identified
-* Has been estimated where appropriate
-* Has a clear priority
-* Wherever applicable target due date is set
+* Has clear requirements (captured in the Jira **Description**)
+* Has known dependencies identified (captured via Jira **Linked Issues**)
+* Has been estimated where appropriate (captured in the Jira **Story Points** field)
+* Has a clear priority (reflected by its position in **ToDo** and in the Scrumban board Backlog  — highest priority at the top)
+* Wherever applicable, a target due date is set (captured in the Jira **Target Due Date** field, see Section 6)
 * Is ready to be pulled when capacity becomes available
 
-We do not need to pre-commit the contents of Backlog (ToDo) to a specific sprint.
+An item that meets the criteria above is considered **Ready**.
+
 
 ### Pulling Work
 
-When an engineer has capacity, they pull the highest-priority Ready item from **Backlog (ToDo)** into **In Progress**.
+The goal is to **finish work before starting more work**.
 
 Instead of receiving a fixed batch of sprint work, work is pulled continuously based on priority and available capacity.
 
-The goal is to **finish work before starting more work**.
+When an engineer has capacity, they pull the highest-priority **Ready** item from **ToDo** into **In Progress**.
 
 ### In Progress
 
-Once work is pulled into In Progress, the focus is on moving it toward Done.
+Once work is pulled into **In Progress**, the focus is on moving it toward **Review**.
 
-If work becomes blocked, the blocker should be made visible and the team should look for ways to help move the item forward.
+If work becomes blocked, the blocker should be made visible immediately (for example, during standup), and the team should look for ways to help move the item forward.
 
 ### Review
 
 Review becomes an important part of managing flow.
 
-If work is accumulating in Review, the team should treat that as a flow problem and help move those items through rather than continuing to start additional work.
+If work in the **Review** column starts reaching the WIP threshold (outlined below), the team should treat that as a flow problem and help move those items through rather than continuing to start additional work.
 
 ### Done
 
-Completed work contributes to our throughput metrics.
+Completed work contributes to our throughput metrics (see Section 7, tracked via the Cumulative Flow Diagram and Control Chart).
 
-Over time, this gives us a more realistic picture of how much work is actually flowing through the system.
+Over time, this gives us a more realistic picture of how much work is actually flowing through the system, which in turn improves our estimation and planning.
 
 ---
 
@@ -128,17 +129,17 @@ If WIP crosses 10, we will pause and analyze what is contributing to the increas
 In particular, we will look at:
 
 * How many of the active tickets are from the Foundation Pod
-* Whether work is accumulating in In Progress or Review
+* Whether work is accumulating in **In Progress** or **Review**
 * Whether there are blockers or dependencies preventing work from moving
 * Whether we are starting more work than we are finishing
-* Whether Review is becoming a bottleneck
+* Whether **Review** is becoming a bottleneck
 
 ### Foundation Pod Guardrails
 
 Because Foundation Pod work has a different flow from feature work, we will also use specific guardrails for the Foundation Pod:
 
-* **Maximum 10 Foundation Pod tickets in Backlog (ToDo)**
-* **Maximum 3 tickets per person across Backlog (ToDo) + Review**
+* **Maximum 10 Foundation Pod tickets in ToDo**
+* **Maximum 3 tickets per person across In Progress + Review**
 
 These are guardrails intended to prevent the Foundation Pod from building up an unnecessarily large queue of work while also ensuring that individual engineers do not have excessive work waiting in their queue or awaiting review.
 
@@ -164,8 +165,8 @@ When the team-level WIP threshold is crossed, the default response is **not to s
 Instead, we should focus on moving existing work through the workflow:
 
 1. Review blocked or aging items.
-2. Prioritize getting existing work to Done.
-3. Help with items sitting in Review.
+2. Prioritize getting existing work to **Done**.
+3. Help with items sitting in **Review**.
 4. Identify dependencies or bottlenecks.
 5. Reassess whether the current WIP limits are appropriate.
 
@@ -181,11 +182,13 @@ rather than:
 
 # 5. How We Will Handle Priorities
 
+The goal is not to constantly reshuffle work. The goal is to avoid being locked into a sprint plan when priorities genuinely change.
+
 With Scrumban, priorities can change without requiring us to formally modify sprint scope.
 
 The backlog should always reflect the current priorities.
 
-When someone finishes an item and has capacity, they pull the next highest-priority Ready item.
+When someone finishes an item and has capacity, they pull the next highest-priority **Ready** item.
 
 This gives us flexibility to respond to:
 
@@ -195,8 +198,6 @@ This gives us flexibility to respond to:
 * Release work
 * Maintenance work
 * New information discovered during implementation
-
-The goal is not to constantly reshuffle work. The goal is to avoid being locked into a sprint plan when priorities genuinely change.
 
 ---
 
@@ -221,7 +222,7 @@ For those items, we can use Jira's **Target Due Date** field.
 A target date can be established:
 
 * During backlog refinement, when we have enough information to estimate timing; or
-* When an item is ready to be pulled into In Progress and the timing becomes clearer.
+* When an item is ready to be pulled into **In Progress** and the timing becomes clearer.
 
 For example, collection release tickets are relatively well-understood work. We may reasonably expect a release, including associated backport cleanup, to be completed within a couple of weeks.
 
@@ -284,8 +285,8 @@ We will use the **Cumulative Flow Diagram (CFD)** to understand where work is ac
 
 For example:
 
-* Increasing In Progress may indicate that we are starting too much work.
-* Increasing Review may indicate a review bottleneck.
+* Increasing **In Progress** may indicate that we are starting too much work.
+* Increasing **Review** may indicate a review bottleneck.
 * Increasing blocked work may indicate dependency or coordination problems.
 
 The CFD helps us identify system bottlenecks rather than focusing only on individual tickets.
@@ -435,7 +436,7 @@ We will evaluate the experiment using both metrics and team feedback.
 ## WIP
 
 * Are we starting too much work?
-* Is work accumulating in In Progress or Review?
+* Is work accumulating in **In Progress** or **Review**?
 * Are WIP limits helping us finish work?
 * How much of the team's WIP is Foundation Pod work?
 
