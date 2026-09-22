@@ -7,6 +7,7 @@ This guide covers using Claude Code skills to automate and streamline the collec
 ## Prerequisites
 
 - Claude Code CLI installed and configured (Check with the team if you do not have access)
+- [`cloud-content`](https://github.com/ansible-community/ai-forge/tree/main/cloud_content) module installed
 - `gh` CLI authenticated with GitHub
 - `git` configured with the appropriate remotes
 - Collection cloned locally with the `upstream` remote pointing to the canonical repository
@@ -15,9 +16,11 @@ If you have not already done so, authenticate `gh` and add the `upstream` remote
 
 ```bash
 gh auth login
-git remote add upstream https://github.com/ansible-collections/<collection>.git
+git remote add upstream git@github.com:ansible-collections/<collection>.git
 git fetch upstream --tags
 ```
+
+**Note:** Some Ansible GitHub organizations do not allow Personal Access Tokens (PATs), so use an SSH remote URL (as shown above) rather than HTTPS.
 
 ## Quick Start
 
@@ -27,9 +30,17 @@ For a complete release workflow, run these skills in sequence:
 # 1. Check if there are any backport blockers
 /collection-backport-status-check
 
+# example:
+# /collection-backport-status-check kubernetes.core 5.4.5
+
 # 2. Run the full release workflow (analyzes, prepares, validates)
 /stable-release
+
+# example:
+# /stable-release kubernetes.core --version 5.5.0 --branch stable-5
 ```
+
+See [Common options](#step-2-run-the-full-release-workflow) for additional `/stable-release` flags, such as `--analyze-only` and `--dry-run`.
 
 ## Skills Overview
 
@@ -268,7 +279,7 @@ git branch -a | grep stable
 Add the upstream remote:
 
 ```bash
-git remote add upstream https://github.com/ansible-collections/<collection>.git
+git remote add upstream git@github.com:ansible-collections/<collection>.git
 git fetch upstream --tags
 ```
 
