@@ -117,11 +117,11 @@ Discuss:
 
 ## Recommended Recurring Meetings
 
-| Meeting | Frequency | Owner |
+| Meeting | Frequency | Attendees |
 |---|---|---|
 | Daily Standup | Daily | Foundation Pod |
 | Backlog Refinement | Every 2 weeks | Foundation Pod |
-| Release Readiness | as needed | Pod Lead |
+| Release Readiness | as needed | Foundation Pod |
 | Review | Weekly | Team |
 | Retrospective | Every 2 weeks | Team |
 | Foundation Pod Handoff | End of rotation | Outgoing & Incoming Pod Leads |
