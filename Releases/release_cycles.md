@@ -13,14 +13,10 @@ For collections that are also released in the Ansible community package (which i
 1. Note the release cycle for the upcoming [ansible-core release](https://docs.ansible.com/ansible/latest/roadmap/ansible_core_roadmap_index.html) and the upcoming [ansible community release](https://docs.ansible.com/ansible/latest/roadmap/ansible_roadmap_index.html).
 2. After the latest ansible-core release candidate (RC) has been released, check with the core team whether another RC is planned.
 3. Once the last planned RC has been made, confirm with the PE team (#ansible-partners) that we can discontinue the support for the current ansible-core version mentioned in the README and meta/runtime.yml.
-4. Consult the PE team to ensure that bumping the ansible-core version in `requires_ansible` does not break [ansible-core compatibility requirements](https://docs.ansible.com/projects/partner-certification-requirements/ansible-core-compatibility/).
-  For supported collections the `requires_ansible` key should stay at `>=2.18`.
-  This version is supported until 2029, according to the [AAP lifecycle policy](https://access.redhat.com/support/policy/updates/ansible-automation-platform#coreversion).
-  Additionally `2.18` is the last stable version of ansible-core before the templating changes that landed in `2.19`, which is not a supported version downstream.
-  Setting `requires_ansible` to an ansible-core version higher than `2.18`, in a supported collection that is available from Automation Hub, should only be done with explicit approval from the Red Hat PE team.
-  For community collections, the `requires_ansible` version should be increased by one version to match the oldest supported version [after the next ansible-core release](https://docs.ansible.com/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-core-support-matrix).
-  This follows Ansible community package support for the latest ansible-core version and the previous two versions.
-  For example, if ansible-core latest is `2.23` then the community package supports `2.23`, `2.22`, and `2.21`.
+4. Consult the PE team before bumping the ansible-core version in `requires_ansible`.
+  For supported collections, the ansible-core version in `requires_ansible` should follow [ansible-core compatibility requirements](https://docs.ansible.com/projects/partner-certification-requirements/ansible-core-compatibility/).
+  In general, for a major release, the `requires_ansible` version should be increased by one version to match the oldest supported version [after the next ansible-core release](https://docs.ansible.com/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-core-support-matrix).
+  This follows the Ansible community package n-2 policy for the latest ansible-core version and the previous two versions.
 5. Ensure that the project README and other documentation reflect any changes to the `requires_ansible` key.
 6. Prep and perform a release no more than two weeks before the next ansible-core release.
 
