@@ -52,6 +52,7 @@ Create a PR to this repo with your proposed changes. While a conversation about 
 - [Scrum Ceremonies](https://github.com/ansible-collections/cloud-content-handbook/blob/main/TeamPractices/scrum_ceremonies.md)
 - [GitHub Permissions](https://github.com/ansible-collections/cloud-content-handbook/blob/main/TeamPractices/github_permissions.md)
 - [Demo Catalog](https://github.com/ansible-collections/cloud-content-handbook/blob/main/TeamPractices/demo_catalog.md)
+- [Decision Record](https://github.com/ansible-collections/cloud-content-handbook/blob/main/TeamPractices/decision_record.md)
 
 ### Guidelines
 - [AWS Account Creation](https://github.com/ansible-collections/cloud-content-handbook/blob/main/TeamPractices/Guidelines/aws_account_creation.md)
