@@ -103,7 +103,7 @@ deps =
   -rmeta/ee-requirements.txt
   ansible2.17: ansible-core>2.17,<2.18
   ...
-  with_constraints: -rtests/unit/requirements.in
+  with_constraints: -ctests/constraints.in -rtests/unit/requirements.in
   without_constraints: -rtests/unit/requirements.txt
 ```
 
