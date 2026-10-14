@@ -55,11 +55,12 @@ As a result collection dependencies have single sources of truth, CI validation,
 │   ├── test-requirements.in # Common test framework deps
 │   ├── integration
 │   │   ├── requirements.in # Integration test deps
-│   │   ├── requirements.txt # Compiled lockfile for integration test deps
-│   │   └── requirements.yml # Collection deps for integration tests (unchanged)
+│   │   ├── requirements.txt # Compiled lockfile for integration test deps (latest versions)
+│   │   └── requirements.yml # Collection deps for integration tests (consolidated)
 │   └── unit
 │       ├── requirements.in # Unit test deps
-│       └── requirements.txt # Compiled lockfile for unit test deps
+│       ├── requirements.txt # Compiled lockfile for unit test deps (latest versions)
+│       └── requirements.yml # Collection deps for unit tests (unchanged)
 ```
 
 ## Design decisions
@@ -73,20 +74,10 @@ The design of the proposed dependency layout address the following criteria:
 **Test-specific:** `tests/unit/requirements.in` and `tests/integration/requirements.in`  
 **Collections:** `tests/integration/requirements.yml`
 
-### CI catches dependency changes
-
-**Mechanism:** `tox -e check-requirements` CI gate  
-
-- Runs `uv pip compile` without `--upgrade`
-- Uses `git diff --exit-code` to detect changes
-- Fails if lockfiles are out of sync with `.in` sources
-
 ### EE/ansible-builder ready
 
-**Files:**
-
 - `meta/execution-environment.yml` points to `meta/ee-requirements.txt` and `meta/ee-bindep.txt`
-- `galaxy.yml` build_ignore does not include `meta/`
+- `galaxy.yml` `build_ignore` does not include `meta/`
 - Runtime deps use `>=` (not `==`) for cross-collection compatibility
 
 ### Runtime vs dev vs test separation
@@ -97,18 +88,33 @@ The design of the proposed dependency layout address the following criteria:
 
 ### Oldest and newest SDK paths both survive
 
-```ini
-# tox.ini configuration
-deps =
-  -rmeta/ee-requirements.txt
-  ansible2.17: ansible-core>2.17,<2.18
-  ...
-  with_constraints: -ctests/constraints.in -rtests/unit/requirements.in
-  without_constraints: -rtests/unit/requirements.txt
+Unit tests run against two SDK paths:
+
+- Pinned against minimum versions (`==`)
+- Compiled against latest versions
+
+For example, unit test dependencies are installed as follows:
+
+```shell
+# Install minimum versions
+python3 -m pip install -c tests/constraints.in -r meta/ee-requirements.txt -r tests/unit/requirements.in
+
+# Install latest versions
+python3 -m pip install -r meta/ee-requirements.txt -r tests/unit/requirements.txt
 ```
 
-- `with_constraints` → installs from `.in` files → applies `tests/constraints.in` → gets pinned floor (==1.38.23)
-- `without_constraints` → installs from `.txt` lockfiles → gets recent versions from compile
+Integration tests run in GHA via `.github/workflows/integration.yml` and use minimum versions only.
+
+For example, integration test dependencies are installed as follows:
+
+```shell
+# Install minimum versions
+python3 -m pip install -c tests/constraints.in -r meta/ee-requirements.txt -r tests/integration/requirements.in
+```
+
+> `tests/integration/requirements.txt` is not installed but compiled for parity with unit test dependencies.
+> This file shows the full dependency tree for reference and allows CI checks to keep deps in sync.
+> If developers need to install latest integration test dependencies, this provides a known good lockfile.
 
 ### Constraints stay in sync
 
@@ -123,14 +129,26 @@ aiobotocore==2.23.0
 awscli==1.40.22
 ```
 
-Validation logic is TBD but could be a straightforward action in `cloud-content-ci-automation` or a tox environment.
+Additional logic is required to ensure that changes to `meta/ee-requirements.txt` are kept in sync with the following files:
+
+- `tests/constraints/in`
+- `plugins/module_utils/botocore.py`
+- `tests/unit/plugins/module_utils/modules/ansible_aws_module/test_minimal_versions.py`
+
+While this proposal does not outline the implementation details, preference should be given to a shared action in the `cloud-content-ci-automation` repository for re-use in other collections.
+
+For compiled `requirements.txt` files for unit test dependencies, use `tox -e check-requirements` as a CI gate:
+
+- Runs `uv pip compile` without `--upgrade`
+- Uses `git diff --exit-code` to detect changes
+- Fails if lockfiles are out of sync with `.in` sources
 
 ### tox-ansible can find test deps
 
 Test deps are in standard locations:
 
-- `tests/unit/requirements.txt`
-- `tests/integration/requirements.txt`  
+- `tests/unit/requirements.in`
+- `tests/integration/requirements.in`  
 - `tests/integration/requirements.yml`
 
 `tox.ini` also explicitly references test deps.
@@ -141,4 +159,21 @@ Test deps are in standard locations:
 This provides a convenient way for contributors to find runtime dependencies in an expected location.
 Additionally developers can use `requirements.txt` to add or adjust dependencies during local development.
 
-`requirements.txt` is also added to the build ignore list in `galaxy.yml`.
+`requirements.txt` is also added to the build ignore list in `galaxy.yml` to avoid ansible-builder introspection issues.
+
+### Collection dependencies for integration tests
+
+`.github/workflows/integration.yml` currently specifies an inconsistent set of collection dependencies to `tests/integration/requirements.yml`.
+
+As part of this proposal, `tests/integration/requirements.yml` becomes the single source of truth for collection dependencies.
+To achieve this, a step to parse the dependencies in `requirements.yml` and set them in `$GITHUB_OUTPUT` can be added to `integration.yml`.
+The `test-deps` parameter in the workflow step to run integration tests can then be as follows:
+
+```yaml
+test-deps: >-
+    ${{ steps.list-deps.outputs.collections }}
+    ${{ steps.set-path.outputs.collection_dep }}
+```
+
+Note that we'll need a step to parse dependencies as `ansible-community/ansible-test-gh-action` does not currently support collection dependencies from `requirements.yml` files.
+See [the PR to add requirements.yml as a supported input](https://github.com/ansible-community/ansible-test-gh-action/pull/132)
