@@ -30,7 +30,7 @@ Complete the following steps to branch for a **major release**:
    git push upstream stable-X
    ```
 
-1. Checkout a new branch from `stable-X` and update any branch name references.
+1. Create a separate PR for the `stable-X` branch and update any branch name references.
   For example, change documentation urls in the `README.md` file to point to `stable-X` instead of `main`.
   Changes needed for this step vary in each collection but commonly include files such as:
 
@@ -43,11 +43,11 @@ Complete the following steps to branch for a **major release**:
   The best way to do this is consult the team via Slack.
   External contributors can also create issues in the GitHub repository or ask on the community forum.
   If you confirm that the ansible-core version requires an update, create a separate PR for the change.
-  Checkout a new branch from `main` and ensure it is backported to the `stable-X` branch before starting the release preparation PR.
+  Create a separate PR for the `main` branch and ensure it is backported to the `stable-X` branch before starting the release preparation PR.
 
    > Certified and validated collections that are published to Automation Hub must specify a supported version of ansible-core. Consult the [ansible-core compatibility](https://docs.ansible.com/projects/partner-certification-requirements/ansible-core-compatibility/) section of the certification requirements. **Double check that the version is supported with the PE team before you make any changes.**
 
-1. Checkout a new branch from `main` and increment the development version in the `galaxy.yml` file, located in the root directory of the collection, with the appropriate value (e.g., `version: 10.0.0-dev0` would be changed to `version: 11.0.0-dev0`).
+1. Create a separate PR for the `main` branch and increment the development version in the `galaxy.yml` file, located in the root directory of the collection, with the appropriate value (e.g., `version: 10.0.0-dev0` would be changed to `version: 11.0.0-dev0`).
 
    For the [`amazon.aws`](https://github.com/ansible-collections/amazon.aws) and [`community.aws`](https://github.com/ansible-collections/community.aws) collections _only_, increment the version of `AMAZON_AWS_COLLECTION_VERSION` in [`plugins/module_utils/common.py`](https://github.com/ansible-collections/amazon.aws/blob/5100ca0d861fec6a9ef88d55c98c656fe345c149/plugins/module_utils/common.py#L7), for example:
 
@@ -66,7 +66,7 @@ To create a release prep PR, complete the following steps to update the collecti
 
 #### Updating the collection version
 
-1. Checkout a new branch from `stable-X`.
+1. Create a new PR for the `stable-X` branch.
   An ideal name for a release prep PR is something like `prep_release_x_y_z`, where `x_y_z` are the version numbers.
   For example, if you are preparing a major version release for 10.0.0, name your branch `prep_release_10_0_0`.
 
