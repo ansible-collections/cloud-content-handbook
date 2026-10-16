@@ -98,7 +98,7 @@ To create a release prep PR, complete the following steps to update the collecti
    release_summary: < release content >
    ```
 
-1. Install the latest version of [`antsibull-changelog`](https://ansible.readthedocs.io/projects/antsibull-changelog/) installed.
+1. Install the latest version of [`antsibull-changelog`](https://ansible.readthedocs.io/projects/antsibull-changelog/).
 1. Confirm there are fragments for all known changes in the `changelogs/fragments` folder.
 1. Generate release changelogs:
 
