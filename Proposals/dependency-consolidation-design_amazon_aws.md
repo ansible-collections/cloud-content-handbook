@@ -136,6 +136,8 @@ Additional logic is required to ensure that changes to `meta/ee-requirements.txt
 - `tests/unit/plugins/module_utils/modules/ansible_aws_module/test_minimal_versions.py`
 
 While this proposal does not outline the implementation details, preference should be given to a shared action in the `cloud-content-ci-automation` repository for re-use in other collections.
+A pre-commit hook could also block commits when versions are out of sync.
+Any pre-commit hook should run only when dependency files are touched.
 
 For compiled `requirements.txt` files for unit test dependencies, use `tox -e check-requirements` as a CI gate:
 
