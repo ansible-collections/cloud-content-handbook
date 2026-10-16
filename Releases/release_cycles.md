@@ -44,7 +44,9 @@ We use a branch ruleset to make the freeze enforceable, blocking merges into the
 5. Add a small bypass list - typically the release managers and admins - so they can still merge PRs needed for the release.
 6. Set enforcement to **Active** and save.
 
-Creating or modifying a ruleset requires repository admin permissions, which the release manager may not have. If so, ask one of the repository admins ([@alinabuzachis](https://github.com/alinabuzachis), [@GomathiselviS](https://github.com/GomathiselviS), [@oraNod](https://github.com/oraNod), or [@beeankha](https://github.com/beeankha)) to set up the ruleset, and to deactivate it once the code freeze period ends.
+Creating or modifying a ruleset requires repository admin permissions, which the release manager may not have. If so, ask one of the repository admins ([@alinabuzachis](https://github.com/alinabuzachis), [@GomathiselviS](https://github.com/GomathiselviS), [@oraNod](https://github.com/oraNod), or [@beeankha](https://github.com/beeankha)) to set up the ruleset.
+
+Keep the ruleset active until the release preparation changes have been synced back to `main`. Then disable it. Keep the disabled ruleset for reference until the next code freeze; after the new ruleset is active, admins can delete the previous one if it is no longer needed.
 
 #### For Minor and Patch Releases:
 
