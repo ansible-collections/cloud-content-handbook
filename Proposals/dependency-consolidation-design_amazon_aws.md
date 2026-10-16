@@ -131,7 +131,7 @@ awscli==1.40.22
 
 Additional logic is required to ensure that changes to `meta/ee-requirements.txt` are kept in sync with the following files:
 
-- `tests/constraints/in`
+- `tests/constraints.in`
 - `plugins/module_utils/botocore.py`
 - `tests/unit/plugins/module_utils/modules/ansible_aws_module/test_minimal_versions.py`
 
