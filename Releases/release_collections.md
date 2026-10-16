@@ -1,8 +1,17 @@
-# Steps to release a collection to Automation hub and Galaxy
+# Steps to release collections on Automation Hub and Galaxy
 
-**Note:** If you are releasing a brand new collection for the first time, please follow the [steps to release a new collection](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_new_collection.md) before proceeding with the steps below.
+Use these guidelines to release collections on Ansible Galaxy and Red Hat Ansible Automation Hub.
+
+To release the first version of a collection, please follow the [steps to release a new collection](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_new_collection.md) before proceeding with the steps below.
+
+## Using collection release skills
+
+[Use collection release skills](https://github.com/ansible-collections/cloud-content-handbook/blob/main/Releases/release_collections_ai_assisted.md) ahead of manual effort.
+If the procedure can be documented, it can be encapsulated in a skill.
 
 ## Release Preparation
+
+The following steps outline procedures that should be used to troubleshoot and verify where necessary.
 
 ### Determining the Version Increment
 
