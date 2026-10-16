@@ -159,21 +159,17 @@ Test deps are in standard locations:
 This provides a convenient way for contributors to find runtime dependencies in an expected location.
 Additionally developers can use `requirements.txt` to add or adjust dependencies during local development.
 
-`requirements.txt` is also added to the build ignore list in `galaxy.yml` to avoid ansible-builder introspection issues.
+`requirements.txt` must be added to the build ignore list in `galaxy.yml` to avoid ansible-builder introspection issues.
+This creates additional separation between development and runtime environments.
 
-### Collection dependencies for integration tests
+### Consolidating integration test dependencies
 
 `.github/workflows/integration.yml` currently specifies an inconsistent set of collection dependencies to `tests/integration/requirements.yml`.
 
-As part of this proposal, `tests/integration/requirements.yml` becomes the single source of truth for collection dependencies.
-To achieve this, a step to parse the dependencies in `requirements.yml` and set them in `$GITHUB_OUTPUT` can be added to `integration.yml`.
-The `test-deps` parameter in the workflow step to run integration tests can then be as follows:
+`tests/integration/requirements.yml` should become the single source of truth for collection dependencies.
 
-```yaml
-test-deps: >-
-    ${{ steps.list-deps.outputs.collections }}
-    ${{ steps.set-path.outputs.collection_dep }}
-```
-
-Note that we'll need a step to parse dependencies as `ansible-community/ansible-test-gh-action` does not currently support collection dependencies from `requirements.yml` files.
+The current `integration.yml` workflow relies on `ansible-community/ansible-test-gh-action` which does not currently support collection dependencies from `requirements.yml` files.
 See [the PR to add requirements.yml as a supported input](https://github.com/ansible-community/ansible-test-gh-action/pull/132)
+
+Any alternative approach should avoid additional YAML parsing and install `requirements.yml` into the environment via the `ansible-galaxy` CLI.
+
