@@ -131,7 +131,8 @@ Unit and integration test failures in a release prep PR should be evaluated.
 It is generally acceptable to merge release prep PRs with test failures that stem from unrelated or transient issues, such as flakiness caused by network timeouts.
 This is especially true in cases where handling the failures would delay the release.
 
-However, it is always better if all tests pass cleanly before release prep PRs are merged.
+However, this must always be agreed with the team.
+It is always better if all tests pass cleanly before release prep PRs are merged.
 This fully validates functionality of the new version.
 
 ## Releasing collections
