@@ -33,6 +33,21 @@ A code freeze is a period before a release where we finalize the code that will 
 
 #### Our Code Freeze Process and Deadlines
 
+#### How We Enforce the Code Freeze
+
+We use a branch ruleset to make the freeze enforceable, blocking merges into the frozen branch(es) for everyone except a small bypass list:
+
+1. In the repo, go to **Settings → Rules → Rulesets → New branch ruleset**.
+2. Name it something clear, e.g. `Code freeze – Q4 release`.
+3. Target the release branch(es) and the `main` branch.
+4. Add the rule **Restrict updates**. This blocks pushes and merges for everyone except the bypass list.
+5. Add a small bypass list - typically the release managers and admins - so they can still merge PRs needed for the release.
+6. Set enforcement to **Active** and save.
+
+Creating or modifying a ruleset requires repository admin permissions, which the release manager may not have. If so, ask one of the repository admins ([@alinabuzachis](https://github.com/alinabuzachis), [@GomathiselviS](https://github.com/GomathiselviS), [@oraNod](https://github.com/oraNod), or [@beeankha](https://github.com/beeankha)) to set up the ruleset.
+
+Keep the ruleset active until the release preparation changes have been synced back to `main`. Then disable it. Keep the disabled ruleset for reference until the next code freeze; after the new ruleset is active, admins can delete the previous one if it is no longer needed.
+
 #### For Minor and Patch Releases:
 
 * The code freeze begins at 5:00 PM EST on the last Tuesday of each month.
