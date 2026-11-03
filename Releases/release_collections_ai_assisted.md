@@ -8,6 +8,7 @@ This guide covers using Claude Code skills to automate and streamline the collec
 
 - Claude Code CLI installed and configured (Check with the team if you do not have access)
 - [`cloud-content`](https://github.com/ansible-community/ai-forge/tree/main/cloud_content) module installed
+- [`ansible-collection-sdlc`](https://github.com/ansible-community/ai-forge/tree/main/ansible-collection-sdlc) module installed
 - `gh` CLI authenticated with GitHub
 - `git` configured with the appropriate remotes
 - Collection cloned locally with the `upstream` remote pointing to the canonical repository
