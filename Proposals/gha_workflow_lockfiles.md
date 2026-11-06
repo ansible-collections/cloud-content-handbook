@@ -21,7 +21,6 @@ When workflows fail to run, CI checks silently disappear from pull requests, all
 
 GitHub provides no built-in command to resolve a version tag to its commit SHA.
 Contributors resort to browser inspection, `git ls-remote`, or custom scripts.
-Dependabot configuration requires custom workarounds with the `target-branch` strategy, but this provides limited visibility compared to native lockfile support.
 
 ### GHA workflow lockfiles
 
@@ -76,7 +75,6 @@ actions/checkout@v7.0.1:
 
 #### Dependabot configuration
 
-- Remove custom `target-branch` strategies for SHA-pinned actions
 - Dependabot automatically tracks `*.yml.lock` files without additional config
 - PRs show semantic version bumps with lockfile resolution changes
 
