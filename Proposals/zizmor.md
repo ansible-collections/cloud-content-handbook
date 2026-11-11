@@ -15,7 +15,7 @@ Zizmor provides proactive, automated auditing to catch these issues, reducing th
 
 ## zizmor
 
-[zizmor](https://github.com/zizmor-team/zizmor) is a static analysis tool that performs security-focused audits to detect dangerous patterns, excessive permissions, script injection vulnerabilities, and other supply chain risks.
+[zizmor](https://github.com/zizmorcore/zizmor) is a static analysis tool that performs security-focused audits to detect dangerous patterns, excessive permissions, script injection vulnerabilities, and other supply chain risks.
 
 For Ansible collections, zizmor acts as an automated security checkpoint that runs alongside existing CI checks.
 It provides actionable findings with severity levels, allowing teams to prioritize critical security fixes while deferring informational warnings.
