@@ -25,7 +25,7 @@ The tool outputs both human-readable reports and machine-parseable formats (SARI
 
 There are some options for adding zizmor.
 This proposal does not provide implementation details.
-Rather, this proposal outlines some pros and cons to each option.
+Rather, this proposal outlines some pros and cons for each option.
 
 ### Third-Party zizmor-action (Turnkey)
 
