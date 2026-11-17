@@ -6,5 +6,6 @@ Operational notes for the **[ansible-collections/hashicorp.vault](https://github
 |----------|----------|
 | [set_up_integration_tests.md](set_up_integration_tests.md) | Greenfield setup, onboarding a repo, or rotating credentials (Vault, GitHub Actions, Bitwarden). |
 | [updating_integration_test_role.md](updating_integration_test_role.md) | Adding a new secrets engine or policy after the baseline exists. |
+| [vault_cli_login_and_secret_id_rotation](https://handbook.eng.ansible.com/Tools-and-Resources/tooling/GitHub/hashicorp-vault/vault_cli_login_and_secret_id_rotation) (in [The Ansible Engineering Handbook](https://github.com/ansible/handbook)) | Day-to-day CLI access and rotating the `integration-tests` AppRole SecretID. |
 
 ACL policy sources live under **[acl-policies/](acl-policies/)** (one `.hcl` file per Vault policy name). They are **broad on purpose** for automated tests in an isolated namespace—do not treat them as a production template.
