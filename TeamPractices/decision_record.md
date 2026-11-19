@@ -20,6 +20,7 @@ A good test: if someone could reasonably ask "why did we decide this?" six month
 
 | Date | Decision | Context / Why | Owner | Related work |
 |------|----------|----------------|-------|---------------|
+| Nov 19 | Use Zuul for collection release and publishing. |  Releases should go through Zuul for the time being with manual release as a fallback, rather than considering a move to Github Actions. | Gomathi | AAP-70670 |
 | Oct 1 | Keep the standalone `ansible-lint` workflow alongside the certification checker's lint check, accepting the duplication | The certification checker pins `ansible-lint` to an old version matching what galaxy-importer uses in Automation Hub, and getting that version updated upstream is difficult. A standalone job running a newer version of `ansible-lint` catches issues earlier instead of only surfacing them at certification time. This mirrors the sanity-test redundancy already accepted as part of adopting the certification checker. | dnaro | Agreed in Slack |
 | Oct 1 | Retire cloud.common once its remaining consumers have removed Turbo Mode | Turbo Mode is being deprecated in the consuming collections. A deprecation warning has already been added, providing a transition path before the functionality is removed. Once Turbo Mode is removed from both vmware.vmware and kubernetes.core, there will be no remaining consumers of the functionality provided by cloud.common. | Nebula Team | ACA-7179 |
 
